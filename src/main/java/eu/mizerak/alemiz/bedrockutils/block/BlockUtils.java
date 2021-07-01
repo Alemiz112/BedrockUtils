@@ -11,10 +11,14 @@ import lombok.extern.log4j.Log4j2;
 public class BlockUtils {
 
     public static void main(String[] args) {
-        generateBlockPalette(new BlockPaletteCreator407(), "runtime_block_states_407.dat");
+        // generateBlockPalette(new BlockPaletteCreator407(), "runtime_block_states_407.dat");
         // generateBlockPalette(new BlockPaletteCreator419(), "runtime_block_states_419.dat");
         // generateBlockPalette(new BlockPaletteCreator428(), "runtime_block_states_428.dat");
         // generateBlockPalette(new BlockPaletteCreator440(), "runtime_block_states_440.dat");
+
+        BlockPaletteCreator blockCreator = new BlockPaletteCreator440();
+        blockCreator.saveVanilla(blockCreator.createBlockPalette(), "runtime_block_states_440.nbt");
+
     }
 
     public static void generateBlockPalette(BlockPaletteCreator blockCreator, String saveFile) {

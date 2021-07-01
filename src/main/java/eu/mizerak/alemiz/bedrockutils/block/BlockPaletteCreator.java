@@ -40,6 +40,13 @@ public abstract class BlockPaletteCreator {
         BedrockUtils.saveCompound(blockPalette, saveFile);
     }
 
+    public void saveVanilla(List<NbtMap> blockStates, String saveFile) {
+        NbtMap blockPalette = NbtMap.builder()
+                .putList("blocks", NbtType.COMPOUND, blockStates)
+                .build();
+        BedrockUtils.saveCompound(blockPalette, saveFile);
+    }
+
     protected CompoundTagUpdaterContext createContext() {
         CompoundTagUpdaterContext context = new CompoundTagUpdaterContext();
         this.getUpdaters().forEach(updater -> updater.registerUpdaters(context));
