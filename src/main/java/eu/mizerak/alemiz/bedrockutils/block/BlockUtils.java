@@ -15,14 +15,14 @@ public class BlockUtils {
         // generateBlockPalette(new BlockPaletteCreator419(), "runtime_block_states_419.dat");
         // generateBlockPalette(new BlockPaletteCreator428(), "runtime_block_states_428.dat");
         // generateBlockPalette(new BlockPaletteCreator440(), "runtime_block_states_440.dat");
-        generateBlockPalette(new BlockPaletteCreator448(), "runtime_block_states_448.dat");
-
-        // BlockPaletteCreator blockCreator = new BlockPaletteCreator440();
-        // blockCreator.saveVanilla(blockCreator.createBlockPalette(), "runtime_block_states_440.nbt");
+        // generateBlockPalette(new BlockPaletteCreator448(), "runtime_block_states_448.dat");
+        generateBlockPalette(new BlockPaletteCreator465(), "runtime_block_states_465.dat");
     }
 
     public static void generateBlockPalette(BlockPaletteCreator blockCreator, String saveFile) {
-        blockCreator.save(blockCreator.createBlockPalette(), saveFile);
+        BlockPalette blockPalette = blockCreator.createBlockPalette();
+        blockPalette.printUnmatchedStates();
+        blockPalette.save(saveFile);
     }
 
     public static void saveCanonicalPalette(String canonicalFile, String saveFile) {

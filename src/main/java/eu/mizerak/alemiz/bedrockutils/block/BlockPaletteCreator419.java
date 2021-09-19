@@ -30,7 +30,7 @@ public class BlockPaletteCreator419 extends BlockPaletteCreator {
     }
 
     @Override
-    public List<NbtMap> createBlockPalette() {
+    public BlockPalette createBlockPalette() {
         List<NbtMap> blockPalette = this.getBlockPalette();
 
         // Create stateToRuntimeId map using provided states
@@ -60,21 +60,22 @@ public class BlockPaletteCreator419 extends BlockPaletteCreator {
             }
         }
 
-        List<NbtMap> blockStates = new ArrayList<>();
+        BlockPalette palette = new BlockPalette();
+
         for (BlockEntry blockEntry : createdStates) {
             NbtMap state = blockEntry.getBlockState();
 
             int runtimeId;
             if (!stateToRuntimeId.containsKey(state)) {
-                log.error("Unmatched state " + state);
+                palette.getUnmatchedStates().add(state);
                 NbtMap updateBlock = getFirstState(blockPalette, "minecraft:info_update");
                 runtimeId = stateToRuntimeId.get(updateBlock);
             } else {
                 runtimeId = stateToRuntimeId.get(state);
             }
-            blockStates.add(this.createState(blockEntry, runtimeId));
+            palette.getBlockStates().add(this.createState(blockEntry, runtimeId));
         }
-        return blockStates;
+        return palette;
     }
 
     @Override

@@ -27,24 +27,12 @@ public abstract class BlockPaletteCreator {
         this.context = this.createContext();
     }
 
-    public abstract List<NbtMap> createBlockPalette();
+    public abstract BlockPalette createBlockPalette();
     protected abstract NbtMap createUpdaterState(String identifier, int blockId, short damage);
     protected abstract NbtMap createState(BlockEntry blockEntry, int runtimeId);
 
     public NbtMap updateBlockState(NbtMap tag, int version) {
         return this.context.update(tag, version);
-    }
-
-    public void save(List<NbtMap> blockStates, String saveFile) {
-        NbtList<NbtMap> blockPalette = new NbtList<>(NbtType.COMPOUND, blockStates);
-        BedrockUtils.saveCompound(blockPalette, saveFile);
-    }
-
-    public void saveVanilla(List<NbtMap> blockStates, String saveFile) {
-        NbtMap blockPalette = NbtMap.builder()
-                .putList("blocks", NbtType.COMPOUND, blockStates)
-                .build();
-        BedrockUtils.saveCompound(blockPalette, saveFile);
     }
 
     protected CompoundTagUpdaterContext createContext() {

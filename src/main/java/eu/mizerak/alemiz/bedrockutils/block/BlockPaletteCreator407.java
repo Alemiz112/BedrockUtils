@@ -8,10 +8,7 @@ import com.nukkitx.nbt.NbtMap;
 import com.nukkitx.nbt.NbtMapBuilder;
 import lombok.extern.log4j.Log4j2;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Log4j2
 public class BlockPaletteCreator407 extends BlockPaletteCreator {
@@ -30,7 +27,7 @@ public class BlockPaletteCreator407 extends BlockPaletteCreator {
     }
 
     @Override
-    public List<NbtMap> createBlockPalette() {
+    public BlockPalette createBlockPalette() {
         List<NbtMap> blockPalette = this.getBlockPalette();
 
         // Create stateToRuntimeId map using provided states
@@ -60,31 +57,27 @@ public class BlockPaletteCreator407 extends BlockPaletteCreator {
             }
         }
 
-        List<NbtMap> blockStates = new ArrayList<>();
+        BlockPalette palette = new BlockPalette();
         for (BlockEntry blockEntry : createdStates) {
             if (!stateToRuntimeId.containsKey(blockEntry.getBlockState())) {
-                log.error("Unmatched state " + blockEntry.getBlockState());
-                continue;
+                palette.getUnmatchedStates().add(blockEntry.getBlockState());
+            } else {
+                // Runtime id will be incrementally allocated when server starts
+                palette.getBlockStates().add(this.createState(blockEntry, 0));
             }
-
-            // Runtime id will be incrementally allocated when server starts
-            blockStates.add(this.createState(blockEntry, 0));
         }
 
         // This is dump but because of Nukkit assuming "minecraft:air" has runtimeId 0
         // we need to reorder the palette.
         // At least this was removed after 1.16.210
-
-        for (int i = 0; i < blockStates.size(); i++) {
-            NbtMap state = blockStates.get(i);
-            String identifier = state.getCompound("block").getString("name");
-            if (identifier.equals("minecraft:air")) {
-                blockStates.remove(i);
-                blockStates.add(0, state);
-                break;
-            }
-        }
-        return blockStates;
+        palette.sort((state1, state2) -> {
+            String identifier1 = state1.getCompound("block").getString("name");
+            String identifier2 = state2.getCompound("block").getString("name");
+            return identifier1.equals(identifier2) ? 0 :
+                    (identifier1.equals("minecraft:air") ? -1 :
+                            (identifier2.equals("minecraft:air") ? 1 : 0));
+        });
+        return palette;
     }
 
     @Override
