@@ -14,10 +14,7 @@ import eu.mizerak.alemiz.bedrockutils.BedrockUtils;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public abstract class BlockPaletteCreator {
 
@@ -53,6 +50,18 @@ public abstract class BlockPaletteCreator {
             }
         }
         return null;
+    }
+
+    public List<NbtMap> compareStatesTo(BlockPaletteCreator compareTo) {
+        List<NbtMap> comparingStates = compareTo.getBlockPalette();
+        List<NbtMap> unmatchedStates = new ArrayList<>();
+
+        for (NbtMap state : this.getBlockPalette()) {
+            if (!comparingStates.contains(state)) {
+                unmatchedStates.add(state);
+            }
+        }
+        return unmatchedStates;
     }
 
     public List<NbtMap> getBlockPalette() {

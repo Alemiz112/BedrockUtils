@@ -34,6 +34,24 @@ public class BlockPalette {
         return this;
     }
 
+    public BlockPalette compareTo(BlockPalette compareTo) {
+        BlockPalette mergedPalette = new BlockPalette();
+
+        List<NbtMap> states = new ArrayList<>(this.blockStates);
+        states.addAll(this.unmatchedStates);
+
+        for (NbtMap currentState : states) {
+            boolean contains = compareTo.blockStates.contains(currentState) ||
+                    compareTo.unmatchedStates.contains(currentState);
+            if (contains) {
+                mergedPalette.blockStates.add(currentState);
+            } else {
+                mergedPalette.unmatchedStates.add(currentState);
+            }
+        }
+        return mergedPalette;
+    }
+
     public BlockPalette printUnmatchedStates() {
         for (NbtMap state : this.unmatchedStates) {
             log.warn("Unmatched state: " + state);

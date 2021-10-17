@@ -6,6 +6,8 @@ import com.nukkitx.nbt.NbtType;
 import eu.mizerak.alemiz.bedrockutils.BedrockUtils;
 import lombok.extern.log4j.Log4j2;
 
+import java.util.List;
+
 
 @Log4j2
 public class BlockUtils {
@@ -16,13 +18,23 @@ public class BlockUtils {
         // generateBlockPalette(new BlockPaletteCreator428(), "runtime_block_states_428.dat");
         // generateBlockPalette(new BlockPaletteCreator440(), "runtime_block_states_440.dat");
         // generateBlockPalette(new BlockPaletteCreator448(), "runtime_block_states_448.dat");
-        generateBlockPalette(new BlockPaletteCreator465(), "runtime_block_states_465.dat");
+        // generateBlockPalette(new BlockPaletteCreator465(), "runtime_block_states_465.dat");
+        generateBlockPalette(new BlockPaletteCreator471(), "runtime_block_states_471.dat");
+
+        // compareBlockPalettes(new BlockPaletteCreator471(), new BlockPaletteCreator465());
     }
 
     public static void generateBlockPalette(BlockPaletteCreator blockCreator, String saveFile) {
         BlockPalette blockPalette = blockCreator.createBlockPalette();
         blockPalette.printUnmatchedStates();
         blockPalette.save(saveFile);
+    }
+
+    public static void compareBlockPalettes(BlockPaletteCreator blockCreator, BlockPaletteCreator comparingBlockCreator) {
+       List<NbtMap> unmatchedStates = blockCreator.compareStatesTo(comparingBlockCreator);
+       for (NbtMap state : unmatchedStates) {
+           log.warn("Not matched state: " + state);
+       }
     }
 
     public static void saveCanonicalPalette(String canonicalFile, String saveFile) {
