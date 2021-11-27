@@ -19,9 +19,10 @@ public class BlockUtils {
         // generateBlockPalette(new BlockPaletteCreator440(), "runtime_block_states_440.dat");
         // generateBlockPalette(new BlockPaletteCreator448(), "runtime_block_states_448.dat");
         // generateBlockPalette(new BlockPaletteCreator465(), "runtime_block_states_465.dat");
-        generateBlockPalette(new BlockPaletteCreator471(), "runtime_block_states_471.dat");
+        // generateBlockPalette(new BlockPaletteCreator471(), "runtime_block_states_471.dat");
+        // generateBlockPalette(new BlockPaletteCreator475(), "runtime_block_states_475.dat");
 
-        // compareBlockPalettes(new BlockPaletteCreator471(), new BlockPaletteCreator465());
+        compareBlockPalettes(new BlockPaletteCreator475(), new BlockPaletteCreator471());
     }
 
     public static void generateBlockPalette(BlockPaletteCreator blockCreator, String saveFile) {
@@ -31,6 +32,7 @@ public class BlockUtils {
     }
 
     public static void compareBlockPalettes(BlockPaletteCreator blockCreator, BlockPaletteCreator comparingBlockCreator) {
+        log.info("Comparing {} to {}", blockCreator.getClass().getSimpleName(), comparingBlockCreator.getClass().getSimpleName());
        List<NbtMap> unmatchedStates = blockCreator.compareStatesTo(comparingBlockCreator);
        for (NbtMap state : unmatchedStates) {
            log.warn("Not matched state: " + state);
