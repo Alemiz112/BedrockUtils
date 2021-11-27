@@ -22,7 +22,7 @@ public class BlockUtils {
         // generateBlockPalette(new BlockPaletteCreator471(), "runtime_block_states_471.dat");
         // generateBlockPalette(new BlockPaletteCreator475(), "runtime_block_states_475.dat");
 
-        compareBlockPalettes(new BlockPaletteCreator475(), new BlockPaletteCreator471());
+        compareBlockPalettes(new BlockPaletteCreator475(), new BlockPaletteCreator471(), true);
     }
 
     public static void generateBlockPalette(BlockPaletteCreator blockCreator, String saveFile) {
@@ -31,11 +31,17 @@ public class BlockUtils {
         blockPalette.save(saveFile);
     }
 
-    public static void compareBlockPalettes(BlockPaletteCreator blockCreator, BlockPaletteCreator comparingBlockCreator) {
-        log.info("Comparing {} to {}", blockCreator.getClass().getSimpleName(), comparingBlockCreator.getClass().getSimpleName());
-       List<NbtMap> unmatchedStates = blockCreator.compareStatesTo(comparingBlockCreator);
-       for (NbtMap state : unmatchedStates) {
-           log.warn("Not matched state: " + state);
+    public static void compareBlockPalettes(BlockPaletteCreator blockCreator, BlockPaletteCreator comparing, boolean findExtraStates) {
+        log.info("Comparing {} to {}", blockCreator.getClass().getSimpleName(), comparing.getClass().getSimpleName());
+       List<NbtMap> unmatchedStates = blockCreator.compareStatesTo(comparing);
+       log.info("Found {} unmatched states!", unmatchedStates.size());
+       unmatchedStates.forEach(state -> log.warn("Not matched state: {}", state));
+
+       if (findExtraStates) {
+           log.info("Looking for extra states in {}", comparing.getClass().getSimpleName());
+           List<NbtMap> extraStates = blockCreator.findExtraStatesIn(comparing);
+           log.info("Found {} extra states!", extraStates.size());
+           extraStates.forEach(state -> log.warn("Extra state: {}", state));
        }
     }
 

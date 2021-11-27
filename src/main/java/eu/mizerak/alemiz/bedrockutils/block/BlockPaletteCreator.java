@@ -53,15 +53,23 @@ public abstract class BlockPaletteCreator {
     }
 
     public List<NbtMap> compareStatesTo(BlockPaletteCreator compareTo) {
-        List<NbtMap> comparingStates = compareTo.getBlockPalette();
+        List<NbtMap> comparingStates = new ArrayList<>(compareTo.getBlockPalette());
         List<NbtMap> unmatchedStates = new ArrayList<>();
 
         for (NbtMap state : this.getBlockPalette()) {
-            if (!comparingStates.contains(state)) {
+            if (!comparingStates.remove(state)) {
                 unmatchedStates.add(state);
             }
         }
         return unmatchedStates;
+    }
+
+    public List<NbtMap> findExtraStatesIn(BlockPaletteCreator palette) {
+        List<NbtMap> comparingStates = new ArrayList<>(palette.getBlockPalette());
+        for (NbtMap state : this.getBlockPalette()) {
+            comparingStates.remove(state);
+        }
+        return comparingStates;
     }
 
     public List<NbtMap> getBlockPalette() {
