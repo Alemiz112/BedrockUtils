@@ -257,7 +257,9 @@
       0
     ],
     "basalt":[
-      0
+      0,
+      1,
+      2
     ],
     "beacon":[
       0
@@ -705,7 +707,9 @@
       15
     ],
     "chain":[
-      0
+      0,
+      1,
+      2
     ],
     "chain_command_block":[
       0,
@@ -2987,7 +2991,9 @@
       7
     ],
     "polished_basalt":[
-      0
+      0,
+      1,
+      2
     ],
     "polished_blackstone":[
       0
@@ -3581,13 +3587,21 @@
       15
     ],
     "soul_campfire":[
-      0
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
     ],
     "soul_fire":[
       0
     ],
     "soul_lantern":[
-      0
+      0,
+      1
     ],
     "soul_sand":[
       0
@@ -3596,7 +3610,14 @@
       0
     ],
     "soul_torch":[
-      0
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
     ],
     "sponge":[
       0,
