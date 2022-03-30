@@ -502,7 +502,14 @@
       1
     ],
     "blackstone_stairs":[
-      0
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
     ],
     "blackstone_wall":[
       0
@@ -1108,7 +1115,14 @@
       1
     ],
     "crimson_stairs":[
-      0
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
     ],
     "crimson_standing_sign":[
       0
@@ -4406,7 +4420,14 @@
       1
     ],
     "warped_stairs":[
-      0
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
     ],
     "warped_standing_sign":[
       0
