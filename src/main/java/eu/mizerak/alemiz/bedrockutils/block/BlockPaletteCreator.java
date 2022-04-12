@@ -70,8 +70,19 @@ public abstract class BlockPaletteCreator {
     }
 
     public List<NbtMap> findExtraStatesIn(BlockPaletteCreator palette) {
-        List<NbtMap> comparingStates = new ArrayList<>(palette.getBlockPalette());
-        for (NbtMap state : this.getBlockPalette()) {
+        List<NbtMap> currentStates = new ArrayList<>(this.getBlockPalette());
+        List<NbtMap> comparingStates = new ArrayList<>();
+        for (NbtMap state : palette.getBlockPalette()) {
+            if (!comparingStates.remove(state)) {
+                NbtMap updatedState = this.updateBlockState(state, palette.getVersion())
+                        .toBuilder()
+                        .putInt("version", palette.getVersion())
+                        .build();
+                comparingStates.add(updatedState);
+            }
+        }
+
+        for (NbtMap state : currentStates) {
             if (!comparingStates.remove(state)) {
                 NbtMap updatedState = state.toBuilder()
                         .putInt("version", palette.getVersion())
