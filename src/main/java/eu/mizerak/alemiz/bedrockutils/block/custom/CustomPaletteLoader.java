@@ -74,6 +74,7 @@ public class CustomPaletteLoader {
             NbtMap vanillaState = this.vanillaStates.get(runtimeId);
             BlockState state = blockPalette.getBlockStates().get(runtimeId);
             if (state == null || !state.getBlockState().equals(vanillaState)) {
+                log.info("{} => {}", vanillaState, state.getBlockState());
                 return false;
             }
         }

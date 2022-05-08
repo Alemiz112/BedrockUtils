@@ -10,6 +10,6 @@ public class AlphabetPaletteComparator implements Comparator<BlockState> {
 
     @Override
     public int compare(BlockState o1, BlockState o2) {
-        return o1.getIdentifier().compareTo(o2.getIdentifier());
+        return o1.getIdentifier().compareToIgnoreCase(o2.getIdentifier());
     }
 }
