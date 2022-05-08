@@ -19,14 +19,14 @@ public class BlockPalette {
 
     public void save(String saveFile) {
         NbtList<NbtMap> blockPalette = new NbtList<>(NbtType.COMPOUND, this.blockStates);
-        BedrockUtils.saveCompound(blockPalette, saveFile);
+        BedrockUtils.saveCompoundCompressed(blockPalette, saveFile);
     }
 
     public void saveVanilla(String saveFile) {
         NbtMap blockPalette = NbtMap.builder()
                 .putList("blocks", NbtType.COMPOUND, this.blockStates)
                 .build();
-        BedrockUtils.saveCompound(blockPalette, saveFile);
+        BedrockUtils.saveCompoundCompressed(blockPalette, saveFile);
     }
 
     public BlockPalette sort(Comparator<NbtMap> comparator) {

@@ -22,7 +22,7 @@ public class BlockUtils {
         // generateBlockPalette(new BlockPaletteCreator471(), "runtime_block_states_471.dat");
         // generateBlockPalette(new BlockPaletteCreator475(), "runtime_block_states_475.dat");
         // generateBlockPalette(new BlockPaletteCreator486(), "runtime_block_states_486.dat");
-        generateBlockPalette(new BlockPaletteCreator503(), "runtime_block_states_503.dat");
+        generateBlockPalette(new BlockPaletteCreator503(), "runtime_block_states_503.nbt");
 
         // compareBlockPalettes(new BlockPaletteCreator503(), new BlockPaletteCreator486(), true);
     }
@@ -53,6 +53,6 @@ public class BlockUtils {
         NbtMap blockPalette = NbtMap.builder()
                 .putList("blocks", NbtType.COMPOUND, blockStates)
                 .build();
-        BedrockUtils.saveCompound(blockPalette, saveFile);
+        BedrockUtils.saveCompoundCompressed(blockPalette, saveFile);
     }
 }
