@@ -4,6 +4,8 @@ import com.nukkitx.nbt.NbtList;
 import com.nukkitx.nbt.NbtMap;
 import com.nukkitx.nbt.NbtType;
 import eu.mizerak.alemiz.bedrockutils.BedrockUtils;
+import eu.mizerak.alemiz.bedrockutils.block.creator.BlockPaletteCreator;
+import eu.mizerak.alemiz.bedrockutils.block.creator.BlockPaletteCreator503;
 import lombok.extern.log4j.Log4j2;
 
 import java.util.List;

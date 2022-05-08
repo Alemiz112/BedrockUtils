@@ -1,4 +1,4 @@
-package eu.mizerak.alemiz.bedrockutils.block;
+package eu.mizerak.alemiz.bedrockutils.block.creator;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -6,12 +6,17 @@ import com.google.gson.JsonObject;
 import com.nukkitx.blockstateupdater.*;
 import com.nukkitx.nbt.NbtMap;
 import com.nukkitx.nbt.NbtMapBuilder;
+import eu.mizerak.alemiz.bedrockutils.block.BlockPalette;
+import eu.mizerak.alemiz.bedrockutils.block.BlockState;
 import lombok.extern.log4j.Log4j2;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Log4j2
-public class BlockPaletteCreator407 extends BlockPaletteCreator {
+public class BlockPaletteCreator419 extends BlockPaletteCreator {
 
     @Override
     public List<BlockStateUpdater> getUpdaters() {
@@ -33,7 +38,7 @@ public class BlockPaletteCreator407 extends BlockPaletteCreator {
         // Create stateToRuntimeId map using provided states
         Map<NbtMap, Integer> stateToRuntimeId = new HashMap<>();
         for (int i = 0; i < blockPalette.size(); i++) {
-            NbtMap state = blockPalette.get(i).getCompound("block");
+            NbtMap state = blockPalette.get(i);
             stateToRuntimeId.put(state, i);
         }
 
@@ -58,26 +63,22 @@ public class BlockPaletteCreator407 extends BlockPaletteCreator {
         }
 
         BlockPalette palette = new BlockPalette();
-        for (BlockState blockState : createdStates) {
-            if (!stateToRuntimeId.containsKey(blockState.getBlockState())) {
-                palette.getUnmatchedStates().add(blockState);
-            } else {
-                // Runtime id will be incrementally allocated when server starts
-                NbtMap nukkitState = this.createStateNbt(blockState, 0);
-                palette.getBlockStates().add(new BlockState(blockState.getIdentifier(), blockState.getBlockId(), blockState.getData(), nukkitState));
-            }
-        }
 
-        // This is dump but because of Nukkit assuming "minecraft:air" has runtimeId 0
-        // we need to reorder the palette.
-        // At least this was removed after 1.16.210
-        palette.sort((state1, state2) -> {
-            String identifier1 = state1.getIdentifier();
-            String identifier2 = state2.getIdentifier();
-            return identifier1.equals(identifier2) ? 0 :
-                    (identifier1.equals("minecraft:air") ? -1 :
-                            (identifier2.equals("minecraft:air") ? 1 : 0));
-        });
+        for (BlockState blockState : createdStates) {
+            NbtMap state = blockState.getBlockState();
+
+            int runtimeId;
+            if (!stateToRuntimeId.containsKey(state)) {
+                palette.getUnmatchedStates().add(blockState);
+                NbtMap updateBlock = getFirstState(blockPalette, "minecraft:info_update");
+                runtimeId = stateToRuntimeId.get(updateBlock);
+            } else {
+                runtimeId = stateToRuntimeId.get(state);
+            }
+
+            NbtMap nukkitState = this.createStateNbt(blockState, runtimeId);
+            palette.getBlockStates().add(new BlockState(blockState.getIdentifier(), blockState.getBlockId(), blockState.getData(), nukkitState));
+        }
         return palette;
     }
 
@@ -88,24 +89,23 @@ public class BlockPaletteCreator407 extends BlockPaletteCreator {
                 .putShort("val", damage)
                 .putInt("version", 0)
                 .build();
-
         NbtMapBuilder builder = this.updateBlockState(emptyState, 0).toBuilder();
         builder.putInt("version", this.getVersion()); // Make sure correct version is in nbt
         return builder.build();
     }
 
     @Override
-    protected NbtMap createStateNbt(BlockState blockEntry, int runtimeId) {
-        NbtMapBuilder builder = NbtMap.builder();
-        builder.putCompound("block", blockEntry.getBlockState());
-        builder.putInt("id", blockEntry.getBlockId());
-        builder.putShort("data", blockEntry.getData());
+    protected NbtMap createStateNbt(BlockState blockState, int runtimeId) {
+        NbtMapBuilder builder = blockState.getBlockState().toBuilder();
+        builder.putInt("id", blockState.getBlockId());
+        builder.putShort("data", blockState.getData());
+        builder.putInt("runtimeId", runtimeId);
         return builder.build();
     }
 
     @Override
     public String getPaletteFileName() {
-        return "block/block_palette_407.nbt";
+        return "block/block_palette_419.nbt";
     }
 
     @Override

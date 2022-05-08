@@ -1,4 +1,4 @@
-package eu.mizerak.alemiz.bedrockutils.block;
+package eu.mizerak.alemiz.bedrockutils.block.creator;
 
 public class BlockPaletteCreator448 extends BlockPaletteCreator440 {
 

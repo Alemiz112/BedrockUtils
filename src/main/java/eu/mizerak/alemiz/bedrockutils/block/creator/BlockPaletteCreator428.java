@@ -1,4 +1,4 @@
-package eu.mizerak.alemiz.bedrockutils.block;
+package eu.mizerak.alemiz.bedrockutils.block.creator;
 
 import com.nukkitx.blockstateupdater.*;
 import lombok.extern.log4j.Log4j2;

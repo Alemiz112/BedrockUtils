@@ -1,4 +1,4 @@
-package eu.mizerak.alemiz.bedrockutils.block;
+package eu.mizerak.alemiz.bedrockutils.block.creator;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -8,6 +8,8 @@ import com.nukkitx.blockstateupdater.util.tagupdater.CompoundTagUpdaterContext;
 import com.nukkitx.nbt.NbtMap;
 import com.nukkitx.nbt.NbtType;
 import com.nukkitx.nbt.NbtUtils;
+import eu.mizerak.alemiz.bedrockutils.block.BlockPalette;
+import eu.mizerak.alemiz.bedrockutils.block.BlockState;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;

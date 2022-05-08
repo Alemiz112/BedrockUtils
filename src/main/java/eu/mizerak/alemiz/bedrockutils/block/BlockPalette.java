@@ -7,15 +7,19 @@ import eu.mizerak.alemiz.bedrockutils.BedrockUtils;
 import lombok.Data;
 import lombok.extern.log4j.Log4j2;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 @Log4j2
 @Data
 public class BlockPalette {
     private final List<BlockState> blockStates = new ArrayList<>();
     private final List<BlockState> unmatchedStates = new ArrayList<>();
+
+    public void addBlockState(BlockState blockState) {
+        if (!blockStates.contains(blockState)) {
+            this.blockStates.add(blockState);
+        }
+    }
 
     public void save(String saveFile) {
         List<NbtMap> nbtStates = new ArrayList<>();

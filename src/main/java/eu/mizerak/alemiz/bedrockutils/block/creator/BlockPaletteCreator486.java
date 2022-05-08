@@ -1,22 +1,22 @@
-package eu.mizerak.alemiz.bedrockutils.block;
+package eu.mizerak.alemiz.bedrockutils.block.creator;
 
 import com.nukkitx.blockstateupdater.BlockStateUpdater;
-import com.nukkitx.blockstateupdater.BlockStateUpdater_1_18_30;
+import com.nukkitx.blockstateupdater.BlockStateUpdater_1_18_10;
 
 import java.util.List;
 
-public class BlockPaletteCreator503 extends BlockPaletteCreator486 {
+public class BlockPaletteCreator486 extends BlockPaletteCreator475 {
 
     @Override
     public List<BlockStateUpdater> getUpdaters() {
         List<BlockStateUpdater> updaters = super.getUpdaters();
-        updaters.add(BlockStateUpdater_1_18_30.INSTANCE);
+        updaters.add(BlockStateUpdater_1_18_10.INSTANCE);
         return updaters;
     }
 
     @Override
     public String getPaletteFileName() {
-        return "block/block_palette_503.nbt";
+        return "block/block_palette_486.nbt";
     }
 
     @Override
