@@ -4,7 +4,7 @@ import com.nukkitx.nbt.NbtMap;
 import lombok.Data;
 
 @Data
-public class BlockEntry {
+public class BlockState {
     private final String identifier;
     private final int blockId;
     private final short data;

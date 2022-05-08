@@ -14,22 +14,27 @@ import java.util.List;
 @Log4j2
 @Data
 public class BlockPalette {
-    private final List<NbtMap> blockStates = new ArrayList<>();
-    private final List<NbtMap> unmatchedStates = new ArrayList<>();
+    private final List<BlockState> blockStates = new ArrayList<>();
+    private final List<BlockState> unmatchedStates = new ArrayList<>();
 
     public void save(String saveFile) {
-        NbtList<NbtMap> blockPalette = new NbtList<>(NbtType.COMPOUND, this.blockStates);
+        List<NbtMap> nbtStates = new ArrayList<>();
+        this.blockStates.forEach(state -> nbtStates.add(state.getBlockState()));
+        NbtList<NbtMap> blockPalette = new NbtList<>(NbtType.COMPOUND, nbtStates);
         BedrockUtils.saveCompoundCompressed(blockPalette, saveFile);
     }
 
     public void saveVanilla(String saveFile) {
+        List<NbtMap> nbtStates = new ArrayList<>();
+        this.blockStates.forEach(state -> nbtStates.add(state.getBlockState()));
+
         NbtMap blockPalette = NbtMap.builder()
-                .putList("blocks", NbtType.COMPOUND, this.blockStates)
+                .putList("blocks", NbtType.COMPOUND, nbtStates)
                 .build();
         BedrockUtils.saveCompoundCompressed(blockPalette, saveFile);
     }
 
-    public BlockPalette sort(Comparator<NbtMap> comparator) {
+    public BlockPalette sort(Comparator<BlockState> comparator) {
         this.blockStates.sort(comparator);
         return this;
     }
@@ -37,10 +42,10 @@ public class BlockPalette {
     public BlockPalette compareTo(BlockPalette compareTo) {
         BlockPalette mergedPalette = new BlockPalette();
 
-        List<NbtMap> states = new ArrayList<>(this.blockStates);
+        List<BlockState> states = new ArrayList<>(this.blockStates);
         states.addAll(this.unmatchedStates);
 
-        for (NbtMap currentState : states) {
+        for (BlockState currentState : states) {
             boolean contains = compareTo.blockStates.contains(currentState) ||
                     compareTo.unmatchedStates.contains(currentState);
             if (contains) {
@@ -53,15 +58,15 @@ public class BlockPalette {
     }
 
     public BlockPalette printUnmatchedStates() {
-        for (NbtMap state : this.unmatchedStates) {
-            log.warn("Unmatched state: " + state);
+        for (BlockState state : this.unmatchedStates) {
+            log.warn("Unmatched state: " + state.getBlockState());
         }
         return this;
     }
 
 
     public BlockPalette printStates() {
-        for (NbtMap state : this.blockStates) {
+        for (BlockState state : this.blockStates) {
             log.info(state);
         }
         return this;

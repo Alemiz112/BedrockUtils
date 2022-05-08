@@ -39,7 +39,7 @@ public class BlockPaletteCreator407 extends BlockPaletteCreator {
 
         JsonObject requiredStates = this.getRequiredBlockStates();
         Map<String, Integer> blockIdMap = this.getIdentifier2LegacyMap();
-        List<BlockEntry> createdStates = new ArrayList<>();
+        List<BlockState> createdStates = new ArrayList<>();
 
         for (String blockIdentifier : requiredStates.keySet()) {
             JsonArray blockValues = requiredStates.getAsJsonArray(blockIdentifier);
@@ -53,17 +53,18 @@ public class BlockPaletteCreator407 extends BlockPaletteCreator {
                 int blockId = blockIdMap.get(identifier);
                 short damage = element.getAsShort();
                 NbtMap blockState = this.createUpdaterState(identifier, blockId, damage);
-                createdStates.add(new BlockEntry(identifier, blockId, damage, blockState));
+                createdStates.add(new BlockState(identifier, blockId, damage, blockState));
             }
         }
 
         BlockPalette palette = new BlockPalette();
-        for (BlockEntry blockEntry : createdStates) {
-            if (!stateToRuntimeId.containsKey(blockEntry.getBlockState())) {
-                palette.getUnmatchedStates().add(blockEntry.getBlockState());
+        for (BlockState blockState : createdStates) {
+            if (!stateToRuntimeId.containsKey(blockState.getBlockState())) {
+                palette.getUnmatchedStates().add(blockState);
             } else {
                 // Runtime id will be incrementally allocated when server starts
-                palette.getBlockStates().add(this.createState(blockEntry, 0));
+                NbtMap nukkitState = this.createStateNbt(blockState, 0);
+                palette.getBlockStates().add(new BlockState(blockState.getIdentifier(), blockState.getBlockId(), blockState.getData(), nukkitState));
             }
         }
 
@@ -71,8 +72,8 @@ public class BlockPaletteCreator407 extends BlockPaletteCreator {
         // we need to reorder the palette.
         // At least this was removed after 1.16.210
         palette.sort((state1, state2) -> {
-            String identifier1 = state1.getCompound("block").getString("name");
-            String identifier2 = state2.getCompound("block").getString("name");
+            String identifier1 = state1.getIdentifier();
+            String identifier2 = state2.getIdentifier();
             return identifier1.equals(identifier2) ? 0 :
                     (identifier1.equals("minecraft:air") ? -1 :
                             (identifier2.equals("minecraft:air") ? 1 : 0));
@@ -94,7 +95,7 @@ public class BlockPaletteCreator407 extends BlockPaletteCreator {
     }
 
     @Override
-    protected NbtMap createState(BlockEntry blockEntry, int runtimeId) {
+    protected NbtMap createStateNbt(BlockState blockEntry, int runtimeId) {
         NbtMapBuilder builder = NbtMap.builder();
         builder.putCompound("block", blockEntry.getBlockState());
         builder.putInt("id", blockEntry.getBlockId());

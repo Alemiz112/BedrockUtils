@@ -5,11 +5,9 @@ import com.google.gson.JsonParser;
 import com.nukkitx.blockstateupdater.BlockStateUpdater;
 import com.nukkitx.blockstateupdater.BlockStateUpdaters;
 import com.nukkitx.blockstateupdater.util.tagupdater.CompoundTagUpdaterContext;
-import com.nukkitx.nbt.NbtList;
 import com.nukkitx.nbt.NbtMap;
 import com.nukkitx.nbt.NbtType;
 import com.nukkitx.nbt.NbtUtils;
-import eu.mizerak.alemiz.bedrockutils.BedrockUtils;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -26,7 +24,7 @@ public abstract class BlockPaletteCreator {
 
     public abstract BlockPalette createBlockPalette();
     protected abstract NbtMap createUpdaterState(String identifier, int blockId, short damage);
-    protected abstract NbtMap createState(BlockEntry blockEntry, int runtimeId);
+    protected abstract NbtMap createStateNbt(BlockState blockState, int runtimeId);
 
     public NbtMap updateBlockState(NbtMap tag, int version) {
         return this.context.update(tag, version);
