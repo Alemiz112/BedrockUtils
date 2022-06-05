@@ -73,7 +73,7 @@ public abstract class BlockPaletteCreator {
         List<NbtMap> currentStates = new ArrayList<>(this.getBlockPalette());
         List<NbtMap> comparingStates = new ArrayList<>();
         for (NbtMap state : palette.getBlockPalette()) {
-            if (!comparingStates.remove(state)) {
+            if (!currentStates.remove(state)) {
                 NbtMap updatedState = this.updateBlockState(state, palette.getVersion())
                         .toBuilder()
                         .putInt("version", palette.getVersion())

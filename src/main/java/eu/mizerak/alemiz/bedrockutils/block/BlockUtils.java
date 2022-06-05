@@ -6,6 +6,7 @@ import com.nukkitx.nbt.NbtType;
 import eu.mizerak.alemiz.bedrockutils.BedrockUtils;
 import eu.mizerak.alemiz.bedrockutils.block.creator.BlockPaletteCreator;
 import eu.mizerak.alemiz.bedrockutils.block.creator.BlockPaletteCreator503;
+import eu.mizerak.alemiz.bedrockutils.block.creator.BlockPaletteCreator527;
 import lombok.extern.log4j.Log4j2;
 
 import java.util.List;
@@ -24,9 +25,10 @@ public class BlockUtils {
         // generateBlockPalette(new BlockPaletteCreator471(), "runtime_block_states_471.dat");
         // generateBlockPalette(new BlockPaletteCreator475(), "runtime_block_states_475.dat");
         // generateBlockPalette(new BlockPaletteCreator486(), "runtime_block_states_486.dat");
-        generateBlockPalette(new BlockPaletteCreator503(), "runtime_block_states_503.dat");
+        // generateBlockPalette(new BlockPaletteCreator503(), "runtime_block_states_503.dat");
+        generateBlockPalette(new BlockPaletteCreator527(), "runtime_block_states_527.dat");
 
-        // compareBlockPalettes(new BlockPaletteCreator503(), new BlockPaletteCreator486(), true);
+        // compareBlockPalettes(new BlockPaletteCreator527(), new BlockPaletteCreator503(), true);
     }
 
     public static void generateBlockPalette(BlockPaletteCreator blockCreator, String saveFile) {
@@ -39,8 +41,10 @@ public class BlockUtils {
         log.info("Comparing {} to {}", blockCreator.getClass().getSimpleName(), comparing.getClass().getSimpleName());
        List<NbtMap> unmatchedStates = blockCreator.compareStatesTo(comparing);
        log.info("Found {} unmatched states!", unmatchedStates.size());
+       // This means that comparing palette does not contain state from blockCreator palette
        unmatchedStates.forEach(state -> log.warn("Not matched state: {}", state));
 
+       // Looks for extra states in comparing which are not in blockCreator
        if (findExtraStates) {
            log.info("Looking for extra states in {}", comparing.getClass().getSimpleName());
            List<NbtMap> extraStates = blockCreator.findExtraStatesIn(comparing);
