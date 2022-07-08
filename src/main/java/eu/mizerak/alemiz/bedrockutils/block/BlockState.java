@@ -1,9 +1,13 @@
 package eu.mizerak.alemiz.bedrockutils.block;
 
 import com.nukkitx.nbt.NbtMap;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder(toBuilder = true)
+@AllArgsConstructor
 public class BlockState {
     private final String identifier;
     private final int blockId;

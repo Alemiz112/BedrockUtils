@@ -8,6 +8,7 @@ import com.nukkitx.nbt.NbtMap;
 import com.nukkitx.nbt.NbtMapBuilder;
 import eu.mizerak.alemiz.bedrockutils.block.BlockPalette;
 import eu.mizerak.alemiz.bedrockutils.block.BlockState;
+import eu.mizerak.alemiz.bedrockutils.block.LegacyBlockMapping;
 import lombok.extern.log4j.Log4j2;
 
 import java.util.ArrayList;
@@ -43,19 +44,19 @@ public class BlockPaletteCreator419 extends BlockPaletteCreator {
         }
 
         JsonObject requiredStates = this.getRequiredBlockStates();
-        Map<String, Integer> blockIdMap = this.getIdentifier2LegacyMap();
+        LegacyBlockMapping blockIdMap = this.getIdentifier2LegacyMap();
         List<BlockState> createdStates = new ArrayList<>();
 
         for (String blockIdentifier : requiredStates.keySet()) {
             JsonArray blockValues = requiredStates.getAsJsonArray(blockIdentifier);
             for (JsonElement element : blockValues) {
                 String identifier = "minecraft:" + blockIdentifier;
-                if (!blockIdMap.containsKey(identifier)) {
+                int blockId = blockIdMap.getBlockId(identifier);
+                if (blockId == -1) {
                     log.warn("Can not find blockId for " + identifier);
                     continue;
                 }
 
-                int blockId = blockIdMap.get(identifier);
                 short damage = element.getAsShort();
                 NbtMap blockState = this.createUpdaterState(identifier, blockId, damage);
                 createdStates.add(new BlockState(identifier, blockId, damage, blockState));
@@ -66,18 +67,31 @@ public class BlockPaletteCreator419 extends BlockPaletteCreator {
 
         for (BlockState blockState : createdStates) {
             NbtMap state = blockState.getBlockState();
+            String identifier = state.getString("name");
 
-            int runtimeId;
-            if (!stateToRuntimeId.containsKey(state)) {
-                palette.getUnmatchedStates().add(blockState);
-                NbtMap updateBlock = getFirstState(blockPalette, "minecraft:info_update");
-                runtimeId = stateToRuntimeId.get(updateBlock);
-            } else {
-                runtimeId = stateToRuntimeId.get(state);
+            boolean stateOverload = false;
+            if (!identifier.equals(blockIdMap.gteBlockIdentifier(blockState.getBlockId()))) {
+                int blockId = blockIdMap.getBlockId(identifier);
+                if (blockId != -1 && blockState.getBlockId() != blockId) {
+                    stateOverload = true;
+                }
             }
 
-            NbtMap nukkitState = this.createStateNbt(blockState, runtimeId);
-            palette.getBlockStates().add(new BlockState(blockState.getIdentifier(), blockState.getBlockId(), blockState.getData(), nukkitState));
+            int runtimeId;
+            if (stateToRuntimeId.containsKey(state)) {
+                runtimeId = stateToRuntimeId.get(state);
+            } else {
+                palette.getUnmatchedStates().add(blockState);
+                runtimeId = stateToRuntimeId.get(getFirstState(blockPalette, "minecraft:info_update"));
+            }
+
+            NbtMapBuilder nukkitState = this.createStateNbt(blockState, runtimeId);
+            nukkitState.putBoolean("stateOverload", stateOverload);
+
+            blockState = blockState.toBuilder()
+                    .blockState(nukkitState.build())
+                    .build();
+            palette.getBlockStates().add(blockState);
         }
         return palette;
     }
@@ -95,12 +109,12 @@ public class BlockPaletteCreator419 extends BlockPaletteCreator {
     }
 
     @Override
-    protected NbtMap createStateNbt(BlockState blockState, int runtimeId) {
+    protected NbtMapBuilder createStateNbt(BlockState blockState, int runtimeId) {
         NbtMapBuilder builder = blockState.getBlockState().toBuilder();
         builder.putInt("id", blockState.getBlockId());
         builder.putShort("data", blockState.getData());
         builder.putInt("runtimeId", runtimeId);
-        return builder.build();
+        return builder;
     }
 
     @Override

@@ -6,10 +6,12 @@ import com.nukkitx.blockstateupdater.BlockStateUpdater;
 import com.nukkitx.blockstateupdater.BlockStateUpdaters;
 import com.nukkitx.blockstateupdater.util.tagupdater.CompoundTagUpdaterContext;
 import com.nukkitx.nbt.NbtMap;
+import com.nukkitx.nbt.NbtMapBuilder;
 import com.nukkitx.nbt.NbtType;
 import com.nukkitx.nbt.NbtUtils;
 import eu.mizerak.alemiz.bedrockutils.block.BlockPalette;
 import eu.mizerak.alemiz.bedrockutils.block.BlockState;
+import eu.mizerak.alemiz.bedrockutils.block.LegacyBlockMapping;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -26,7 +28,7 @@ public abstract class BlockPaletteCreator {
 
     public abstract BlockPalette createBlockPalette();
     protected abstract NbtMap createUpdaterState(String identifier, int blockId, short damage);
-    protected abstract NbtMap createStateNbt(BlockState blockState, int runtimeId);
+    protected abstract NbtMapBuilder createStateNbt(BlockState blockState, int runtimeId);
 
     public NbtMap updateBlockState(NbtMap tag, int version) {
         return this.context.update(tag, version);
@@ -101,7 +103,7 @@ public abstract class BlockPaletteCreator {
         }
     }
 
-    public Map<String, Integer> getIdentifier2LegacyMap() {
+    public LegacyBlockMapping getIdentifier2LegacyMap() {
         JsonObject blockIdJson;
         try (InputStream stream = BlockStateUpdaters.class.getClassLoader().getResourceAsStream("block/block_id_map.json")) {
             blockIdJson = (JsonObject) JsonParser.parseReader(new InputStreamReader(stream, StandardCharsets.UTF_8));
@@ -109,12 +111,15 @@ public abstract class BlockPaletteCreator {
             throw new AssertionError("Error loading block id map!");
         }
 
-        Map<String, Integer> blockIdMap = new HashMap<>();
+        Map<String, Integer> identifier2BlockId = new HashMap<>();
+        Map<Integer, String> blockId2Identifier = new HashMap<>();
+
         for (String identifier : blockIdJson.keySet()) {
             int blockId = blockIdJson.get(identifier).getAsInt();
-            blockIdMap.put(identifier, blockId);
+            identifier2BlockId.put(identifier, blockId);
+            blockId2Identifier.put(blockId, identifier);
         }
-        return blockIdMap;
+        return new LegacyBlockMapping(identifier2BlockId, blockId2Identifier);
     }
 
     public JsonObject getRequiredBlockStates() {

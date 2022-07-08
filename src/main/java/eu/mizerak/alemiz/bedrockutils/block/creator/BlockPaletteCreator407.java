@@ -8,6 +8,7 @@ import com.nukkitx.nbt.NbtMap;
 import com.nukkitx.nbt.NbtMapBuilder;
 import eu.mizerak.alemiz.bedrockutils.block.BlockPalette;
 import eu.mizerak.alemiz.bedrockutils.block.BlockState;
+import eu.mizerak.alemiz.bedrockutils.block.LegacyBlockMapping;
 import lombok.extern.log4j.Log4j2;
 
 import java.util.*;
@@ -40,19 +41,20 @@ public class BlockPaletteCreator407 extends BlockPaletteCreator {
         }
 
         JsonObject requiredStates = this.getRequiredBlockStates();
-        Map<String, Integer> blockIdMap = this.getIdentifier2LegacyMap();
+        LegacyBlockMapping blockIdMap = this.getIdentifier2LegacyMap();
         List<BlockState> createdStates = new ArrayList<>();
 
         for (String blockIdentifier : requiredStates.keySet()) {
             JsonArray blockValues = requiredStates.getAsJsonArray(blockIdentifier);
             for (JsonElement element : blockValues) {
                 String identifier = "minecraft:" + blockIdentifier;
-                if (!blockIdMap.containsKey(identifier)) {
+                int blockId = blockIdMap.getBlockId(identifier);
+                if (blockId == -1) {
                     log.warn("Can not find blockId for " + identifier);
                     continue;
                 }
 
-                int blockId = blockIdMap.get(identifier);
+
                 short damage = element.getAsShort();
                 NbtMap blockState = this.createUpdaterState(identifier, blockId, damage);
                 createdStates.add(new BlockState(identifier, blockId, damage, blockState));
@@ -65,7 +67,7 @@ public class BlockPaletteCreator407 extends BlockPaletteCreator {
                 palette.getUnmatchedStates().add(blockState);
             } else {
                 // Runtime id will be incrementally allocated when server starts
-                NbtMap nukkitState = this.createStateNbt(blockState, 0);
+                NbtMap nukkitState = this.createStateNbt(blockState, 0).build();
                 palette.getBlockStates().add(new BlockState(blockState.getIdentifier(), blockState.getBlockId(), blockState.getData(), nukkitState));
             }
         }
@@ -97,12 +99,12 @@ public class BlockPaletteCreator407 extends BlockPaletteCreator {
     }
 
     @Override
-    protected NbtMap createStateNbt(BlockState blockEntry, int runtimeId) {
+    protected NbtMapBuilder createStateNbt(BlockState blockEntry, int runtimeId) {
         NbtMapBuilder builder = NbtMap.builder();
         builder.putCompound("block", blockEntry.getBlockState());
         builder.putInt("id", blockEntry.getBlockId());
         builder.putShort("data", blockEntry.getData());
-        return builder.build();
+        return builder;
     }
 
     @Override
