@@ -54,16 +54,33 @@ public abstract class BlockPaletteCreator {
         return null;
     }
 
-    public List<NbtMap> compareStatesTo(BlockPaletteCreator compareTo) {
-        List<NbtMap> comparingStates = new ArrayList<>(compareTo.getBlockPalette());
+    public List<NbtMap> compareStatesTo(BlockPaletteCreator compareTo, boolean strict) {
+        List<NbtMap> comparingStates = new ArrayList<>();
         List<NbtMap> unmatchedStates = new ArrayList<>();
+
+        // Remove identifier hash (name_hash) that MS started to append
+        if (strict) {
+            comparingStates.addAll(compareTo.getBlockPalette());
+        } else {
+            for (NbtMap state : compareTo.getBlockPalette()) {
+                if (state.containsKey("name_hash")) {
+                    NbtMapBuilder builder = state.toBuilder();
+                    builder.remove("name_hash");
+                    comparingStates.add(builder.build());
+                } else {
+                    comparingStates.add(state);
+                }
+            }
+        }
 
         for (NbtMap state : this.getBlockPalette()) {
             if (!comparingStates.remove(state)) {
-                NbtMap updatedState = state.toBuilder()
-                        .putInt("version", compareTo.getVersion())
-                        .build();
-                if (!comparingStates.remove(updatedState)) {
+                NbtMapBuilder builder = state.toBuilder();
+                if (!strict) {
+                    builder.remove("name_hash");
+                }
+                builder.putInt("version", compareTo.getVersion());
+                if (!comparingStates.remove(builder.build())) {
                     unmatchedStates.add(state);
                 }
             }
@@ -72,15 +89,26 @@ public abstract class BlockPaletteCreator {
     }
 
     public List<NbtMap> findExtraStatesIn(BlockPaletteCreator palette) {
-        List<NbtMap> currentStates = new ArrayList<>(this.getBlockPalette());
+        List<NbtMap> currentStates = new ArrayList<>();
         List<NbtMap> comparingStates = new ArrayList<>();
+
+        // Remove identifier hash (name_hash) that MS started to append
+        for (NbtMap state : this.getBlockPalette()) {
+            if (state.containsKey("name_hash")) {
+                NbtMapBuilder builder = state.toBuilder();
+                builder.remove("name_hash");
+                currentStates.add(builder.build());
+            } else {
+                currentStates.add(state);
+            }
+        }
+        
         for (NbtMap state : palette.getBlockPalette()) {
             if (!currentStates.remove(state)) {
-                NbtMap updatedState = this.updateBlockState(state, palette.getVersion())
-                        .toBuilder()
-                        .putInt("version", palette.getVersion())
-                        .build();
-                comparingStates.add(updatedState);
+                NbtMapBuilder builder = this.updateBlockState(state, palette.getVersion()).toBuilder();
+                builder.remove("name_hash");
+                builder.putInt("version", palette.getVersion());
+                comparingStates.add(builder.build());
             }
         }
 
