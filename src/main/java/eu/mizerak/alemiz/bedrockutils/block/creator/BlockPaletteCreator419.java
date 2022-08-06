@@ -34,13 +34,24 @@ public class BlockPaletteCreator419 extends BlockPaletteCreator {
 
     @Override
     public BlockPalette createBlockPalette() {
-        List<NbtMap> blockPalette = this.getBlockPalette();
-
+        List<NbtMap> blockPalette = new ArrayList<>();
         // Create stateToRuntimeId map using provided states
         Map<NbtMap, Integer> stateToRuntimeId = new HashMap<>();
-        for (int i = 0; i < blockPalette.size(); i++) {
-            NbtMap state = blockPalette.get(i);
-            stateToRuntimeId.put(state, i);
+
+        int rid = 0;
+        for (NbtMap state : this.getBlockPalette()) {
+            NbtMap blockState;
+            if (state.containsKey("name_hash")) {
+                NbtMapBuilder builder = state.toBuilder();
+                builder.remove("name_hash");
+                blockState = builder.build();
+            } else {
+                blockState = state;
+            }
+
+            blockPalette.add(blockState);
+            stateToRuntimeId.put(blockState, rid);
+            rid++;
         }
 
         JsonObject requiredStates = this.getRequiredBlockStates();

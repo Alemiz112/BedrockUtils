@@ -125,7 +125,7 @@ public abstract class BlockPaletteCreator {
 
     public List<NbtMap> getBlockPalette() {
         try (InputStream stream = BlockStateUpdaters.class.getClassLoader().getResourceAsStream(this.getPaletteFileName())) {
-            return  ((NbtMap) NbtUtils.createGZIPReader(stream).readTag()).getList("blocks", NbtType.COMPOUND);
+            return ((NbtMap) NbtUtils.createGZIPReader(stream).readTag()).getList("blocks", NbtType.COMPOUND);
         } catch (Exception e) {
             throw new AssertionError("Error loading block palette " + this.getPaletteFileName(), e);
         }
