@@ -23,17 +23,18 @@ public class BlockUtils {
         // generateBlockPalette(new BlockPaletteCreator471(), "runtime_block_states_471.dat");
         // generateBlockPalette(new BlockPaletteCreator475(), "runtime_block_states_475.dat");
         // generateBlockPalette(new BlockPaletteCreator486(), "runtime_block_states_486.dat");
-        // generateBlockPalette(new BlockPaletteCreator503(), "runtime_block_states_503.dat");
-        // generateBlockPalette(new BlockPaletteCreator527(), "runtime_block_states_527.dat");
+        generateBlockPalette(new BlockPaletteCreator503(), "runtime_block_states_503.dat");
+        generateBlockPalette(new BlockPaletteCreator527(), "runtime_block_states_527.dat");
         // generateBlockPalette(new BlockPaletteCreator534(), "runtime_block_states_534.dat");
 
-        compareBlockPalettes(new BlockPaletteCreator534(), new BlockPaletteCreator527(), true);
+        // compareBlockPalettes(new BlockPaletteCreator534(), new BlockPaletteCreator527(), true);
     }
 
     public static void generateBlockPalette(BlockPaletteCreator blockCreator, String saveFile) {
         BlockPalette blockPalette = blockCreator.createBlockPalette();
         blockPalette.printUnmatchedStates();
         blockPalette.save(saveFile);
+        // blockPalette.saveVanilla(saveFile.replace("dat", "nbt"));
     }
 
     public static void compareBlockPalettes(BlockPaletteCreator blockCreator, BlockPaletteCreator comparing, boolean findExtraStates) {
