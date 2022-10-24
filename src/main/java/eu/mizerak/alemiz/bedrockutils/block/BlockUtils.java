@@ -28,8 +28,9 @@ public class BlockUtils {
         // generateBlockPalette(new BlockPaletteCreator534(), "runtime_block_states_534.dat");
         // generateBlockPalette(new BlockPaletteCreator544(), "runtime_block_states_544.dat");
         // generateBlockPalette(new BlockPaletteCreator554(), "runtime_block_states_554.dat"); // equals to previous
+        // generateBlockPalette(new BlockPaletteCreator557(), "runtime_block_states_557.dat"); // equals to previous
 
-        // compareBlockPalettes(new BlockPaletteCreator554(), new BlockPaletteCreator544(), true);
+        compareBlockPalettes(new BlockPaletteCreator557(), new BlockPaletteCreator554(), true);
     }
 
     public static void generateBlockPalette(BlockPaletteCreator blockCreator, String saveFile) {
