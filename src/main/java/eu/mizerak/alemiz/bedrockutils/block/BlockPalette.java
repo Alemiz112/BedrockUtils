@@ -1,8 +1,8 @@
 package eu.mizerak.alemiz.bedrockutils.block;
 
-import com.nukkitx.nbt.NbtList;
-import com.nukkitx.nbt.NbtMap;
-import com.nukkitx.nbt.NbtType;
+import org.cloudburstmc.nbt.NbtList;
+import org.cloudburstmc.nbt.NbtMap;
+import org.cloudburstmc.nbt.NbtType;
 import eu.mizerak.alemiz.bedrockutils.BedrockUtils;
 import lombok.Data;
 import lombok.extern.log4j.Log4j2;

@@ -1,6 +1,6 @@
 package eu.mizerak.alemiz.bedrockutils.block;
 
-import com.nukkitx.nbt.NbtMap;
+import org.cloudburstmc.nbt.NbtMap;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

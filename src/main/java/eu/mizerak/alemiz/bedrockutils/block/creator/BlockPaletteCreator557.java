@@ -1,6 +1,6 @@
 package eu.mizerak.alemiz.bedrockutils.block.creator;
 
-import com.nukkitx.blockstateupdater.BlockStateUpdater;
+import org.cloudburstmc.blockstateupdater.BlockStateUpdater;
 
 import java.util.List;
 

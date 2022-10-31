@@ -1,8 +1,8 @@
 package eu.mizerak.alemiz.bedrockutils;
 
-import com.nukkitx.nbt.NBTInputStream;
-import com.nukkitx.nbt.NBTOutputStream;
-import com.nukkitx.nbt.NbtUtils;
+import org.cloudburstmc.nbt.NBTInputStream;
+import org.cloudburstmc.nbt.NBTOutputStream;
+import org.cloudburstmc.nbt.NbtUtils;
 
 import java.io.*;
 

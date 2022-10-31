@@ -1,9 +1,9 @@
 package eu.mizerak.alemiz.bedrockutils.block.custom;
 
-import com.nukkitx.blockstateupdater.BlockStateUpdaters;
-import com.nukkitx.nbt.NbtMap;
-import com.nukkitx.nbt.NbtType;
-import com.nukkitx.nbt.NbtUtils;
+import org.cloudburstmc.blockstateupdater.BlockStateUpdaters;
+import org.cloudburstmc.nbt.NbtMap;
+import org.cloudburstmc.nbt.NbtType;
+import org.cloudburstmc.nbt.NbtUtils;
 import eu.mizerak.alemiz.bedrockutils.block.BlockPalette;
 import eu.mizerak.alemiz.bedrockutils.block.BlockState;
 import eu.mizerak.alemiz.bedrockutils.block.comparator.AlphabetPaletteComparator;

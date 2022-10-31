@@ -1,7 +1,7 @@
 package eu.mizerak.alemiz.bedrockutils.block.custom;
 
-import com.nukkitx.nbt.NbtMap;
-import com.nukkitx.nbt.NbtType;
+import org.cloudburstmc.nbt.NbtMap;
+import org.cloudburstmc.nbt.NbtType;
 import eu.mizerak.alemiz.bedrockutils.block.BlockPalette;
 import lombok.extern.log4j.Log4j2;
 
