@@ -5,7 +5,7 @@ import org.cloudburstmc.nbt.NbtMap;
 import org.cloudburstmc.nbt.NbtType;
 import org.cloudburstmc.nbt.NbtUtils;
 import eu.mizerak.alemiz.bedrockutils.block.BlockPalette;
-import eu.mizerak.alemiz.bedrockutils.block.BlockState;
+import eu.mizerak.alemiz.bedrockutils.block.state.BlockState;
 import eu.mizerak.alemiz.bedrockutils.block.comparator.AlphabetPaletteComparator;
 import eu.mizerak.alemiz.bedrockutils.block.comparator.HashedPaletteComparator;
 import lombok.Data;

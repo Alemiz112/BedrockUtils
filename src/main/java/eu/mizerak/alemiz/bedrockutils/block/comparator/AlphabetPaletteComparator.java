@@ -1,8 +1,7 @@
 package eu.mizerak.alemiz.bedrockutils.block.comparator;
 
-import eu.mizerak.alemiz.bedrockutils.block.BlockState;
+import eu.mizerak.alemiz.bedrockutils.block.state.BlockState;
 
-import java.nio.charset.StandardCharsets;
 import java.util.Comparator;
 
 public class AlphabetPaletteComparator implements Comparator<BlockState> {

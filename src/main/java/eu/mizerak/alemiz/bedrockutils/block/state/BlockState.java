@@ -1,4 +1,4 @@
-package eu.mizerak.alemiz.bedrockutils.block;
+package eu.mizerak.alemiz.bedrockutils.block.state;
 
 import org.cloudburstmc.nbt.NbtMap;
 import lombok.AllArgsConstructor;

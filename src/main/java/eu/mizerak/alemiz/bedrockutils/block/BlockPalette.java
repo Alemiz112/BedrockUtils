@@ -1,5 +1,6 @@
 package eu.mizerak.alemiz.bedrockutils.block;
 
+import eu.mizerak.alemiz.bedrockutils.block.state.BlockState;
 import org.cloudburstmc.nbt.NbtList;
 import org.cloudburstmc.nbt.NbtMap;
 import org.cloudburstmc.nbt.NbtType;
@@ -43,7 +44,7 @@ public class BlockPalette {
         return this;
     }
 
-    public BlockPalette compareTo(BlockPalette compareTo) {
+    /*public BlockPalette compareTo(BlockPalette compareTo) {
         BlockPalette mergedPalette = new BlockPalette();
 
         List<BlockState> states = new ArrayList<>(this.blockStates);
@@ -59,7 +60,7 @@ public class BlockPalette {
             }
         }
         return mergedPalette;
-    }
+    }*/
 
     public BlockPalette printUnmatchedStates() {
         for (BlockState state : this.unmatchedStates) {

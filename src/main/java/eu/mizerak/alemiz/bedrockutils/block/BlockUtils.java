@@ -1,5 +1,7 @@
 package eu.mizerak.alemiz.bedrockutils.block;
 
+import eu.mizerak.alemiz.bedrockutils.block.comparator.AlphabetPaletteComparator;
+import eu.mizerak.alemiz.bedrockutils.block.state.BlockDefinition;
 import org.cloudburstmc.nbt.NbtList;
 import org.cloudburstmc.nbt.NbtMap;
 import org.cloudburstmc.nbt.NbtType;
@@ -7,38 +9,60 @@ import eu.mizerak.alemiz.bedrockutils.BedrockUtils;
 import eu.mizerak.alemiz.bedrockutils.block.creator.*;
 import lombok.extern.log4j.Log4j2;
 
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.StringJoiner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 @Log4j2
 public class BlockUtils {
 
-    public static void main(String[] args) {
-        // generateBlockPalette(new BlockPaletteCreator407(), "runtime_block_states_407.dat");
-        // generateBlockPalette(new BlockPaletteCreator419(), "runtime_block_states_419.dat");
-        // generateBlockPalette(new BlockPaletteCreator428(), "runtime_block_states_428.dat");
-        // generateBlockPalette(new BlockPaletteCreator440(), "runtime_block_states_440.dat");
-        // generateBlockPalette(new BlockPaletteCreator448(), "runtime_block_states_448.dat");
-        // generateBlockPalette(new BlockPaletteCreator465(), "runtime_block_states_465.dat");
-        // generateBlockPalette(new BlockPaletteCreator471(), "runtime_block_states_471.dat");
-        // generateBlockPalette(new BlockPaletteCreator475(), "runtime_block_states_475.dat");
-        // generateBlockPalette(new BlockPaletteCreator486(), "runtime_block_states_486.dat");
-        // generateBlockPalette(new BlockPaletteCreator503(), "runtime_block_states_503.dat");
-        // generateBlockPalette(new BlockPaletteCreator527(), "runtime_block_states_527.dat");
-        // generateBlockPalette(new BlockPaletteCreator534(), "runtime_block_states_534.dat");
-        // generateBlockPalette(new BlockPaletteCreator544(), "runtime_block_states_544.dat");
-        // generateBlockPalette(new BlockPaletteCreator554(), "runtime_block_states_554.dat"); // equals to previous
-        // generateBlockPalette(new BlockPaletteCreator557(), "runtime_block_states_557.dat"); // equals to previous
-        generateBlockPalette(new BlockPaletteCreator560(), "runtime_block_states_560.dat"); // 1.20 block states
+    private static final Pattern PATTERN = Pattern.compile("\\d+$");
 
-        // compareBlockPalettes(new BlockPaletteCreator560(), new BlockPaletteCreator557(), true);
+    public static void main(String[] args) {
+        List<BlockPaletteCreator> creators = new ArrayList<>();
+        creators.add(new BlockPaletteCreator407());
+        creators.add(new BlockPaletteCreator419());
+        creators.add(new BlockPaletteCreator428());
+        creators.add(new BlockPaletteCreator440());
+        creators.add(new BlockPaletteCreator448());
+        creators.add(new BlockPaletteCreator465());
+        creators.add(new BlockPaletteCreator471());
+        creators.add(new BlockPaletteCreator475());
+        creators.add(new BlockPaletteCreator486());
+        creators.add(new BlockPaletteCreator503());
+        creators.add(new BlockPaletteCreator527());
+        creators.add(new BlockPaletteCreator534());
+        creators.add(new BlockPaletteCreator544());
+        creators.add(new BlockPaletteCreator554()); // equals to previous
+        creators.add(new BlockPaletteCreator557()); // equals to previous
+        creators.add(new BlockPaletteCreator560()); // 1.20 block states
+
+        BlockPaletteCreator latest = creators.get(creators.size() - 1);
+        int version = getBedrockVersion(latest);
+
+        // Generate a Nukkit friendly block palette
+        // generateBlockPalette(latest, "runtime_block_states_" + version + ".dat");
+
+        // Compare block states between latest and previous palette
+        BlockPaletteCreator previous = creators.get(creators.size() - 2);
+        // compareBlockPalettes(latest, previous, true);
+
+        // Generate a pretty block palette dump
+        createPaletteDump(latest, "block_properties.txt");
     }
 
     public static void generateBlockPalette(BlockPaletteCreator blockCreator, String saveFile) {
         BlockPalette blockPalette = blockCreator.createBlockPalette();
         blockPalette.printUnmatchedStates();
         blockPalette.save(saveFile);
-        // blockPalette.saveVanilla(saveFile.replace("dat", "nbt"));
+        blockPalette.saveVanilla(saveFile.replace("dat", "nbt"));
     }
 
     public static void compareBlockPalettes(BlockPaletteCreator blockCreator, BlockPaletteCreator comparing, boolean findExtraStates) {
@@ -64,5 +88,21 @@ public class BlockUtils {
                 .putList("blocks", NbtType.COMPOUND, blockStates)
                 .build();
         BedrockUtils.saveCompoundCompressed(blockPalette, saveFile);
+    }
+
+    public static void createPaletteDump(BlockPaletteCreator creator, String saveFile) {
+        StringJoiner joiner = new StringJoiner("\n");
+        for (BlockDefinition definition : creator.getBlockDefinitions()) {
+            joiner.add(definition.toStringPretty());
+        }
+        BedrockUtils.saveBytes(joiner.toString().getBytes(StandardCharsets.UTF_8), saveFile);
+    }
+
+    public static int getBedrockVersion(BlockPaletteCreator creator) {
+        Matcher matcher = PATTERN.matcher(creator.getClass().getSimpleName());
+        if (matcher.find()) {
+            return Integer.parseInt(matcher.group());
+        }
+        return 0;
     }
 }

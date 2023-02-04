@@ -7,7 +7,7 @@ import org.cloudburstmc.blockstateupdater.*;
 import org.cloudburstmc.nbt.NbtMap;
 import org.cloudburstmc.nbt.NbtMapBuilder;
 import eu.mizerak.alemiz.bedrockutils.block.BlockPalette;
-import eu.mizerak.alemiz.bedrockutils.block.BlockState;
+import eu.mizerak.alemiz.bedrockutils.block.state.BlockState;
 import eu.mizerak.alemiz.bedrockutils.block.LegacyBlockMapping;
 import lombok.extern.log4j.Log4j2;
 

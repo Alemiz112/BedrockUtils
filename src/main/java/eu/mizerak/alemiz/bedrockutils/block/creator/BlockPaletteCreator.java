@@ -2,6 +2,7 @@ package eu.mizerak.alemiz.bedrockutils.block.creator;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import eu.mizerak.alemiz.bedrockutils.block.state.BlockDefinition;
 import org.cloudburstmc.blockstateupdater.BlockStateUpdater;
 import org.cloudburstmc.blockstateupdater.BlockStateUpdaters;
 import org.cloudburstmc.blockstateupdater.util.tagupdater.CompoundTagUpdaterContext;
@@ -10,7 +11,7 @@ import org.cloudburstmc.nbt.NbtMapBuilder;
 import org.cloudburstmc.nbt.NbtType;
 import org.cloudburstmc.nbt.NbtUtils;
 import eu.mizerak.alemiz.bedrockutils.block.BlockPalette;
-import eu.mizerak.alemiz.bedrockutils.block.BlockState;
+import eu.mizerak.alemiz.bedrockutils.block.state.BlockState;
 import eu.mizerak.alemiz.bedrockutils.block.LegacyBlockMapping;
 
 import java.io.InputStream;
@@ -121,6 +122,22 @@ public abstract class BlockPaletteCreator {
             }
         }
         return comparingStates;
+    }
+
+    public List<BlockDefinition> getBlockDefinitions() {
+        List<NbtMap> palette = this.getBlockPalette();
+        Map<String, List<BlockState>> blocks = new TreeMap<>();
+
+        for (NbtMap state : palette) {
+            BlockState blockState = new BlockState(state.getString("name"), 0, (short) 0, state);
+            blocks.computeIfAbsent(blockState.getIdentifier(), i -> new ArrayList<>()).add(blockState);
+        }
+
+        List<BlockDefinition> definitions = new ArrayList<>();
+        for (Map.Entry<String, List<BlockState>> entry : blocks.entrySet()) {
+            definitions.add(new BlockDefinition(entry.getKey(), entry.getValue()));
+        }
+        return definitions;
     }
 
     public List<NbtMap> getBlockPalette() {

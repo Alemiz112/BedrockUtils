@@ -37,4 +37,13 @@ public class BedrockUtils {
             throw new RuntimeException(e);
         }
     }
+
+    public static void saveBytes(byte[] bytes, String fileName) {
+        File file = new File(System.getProperty("user.dir"), fileName);
+        try (OutputStream stream = new FileOutputStream(file)) {
+            stream.write(bytes);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
