@@ -32,3 +32,5 @@ target/
 
 # Bedrock generated artifacts
 *.dat
+
+runtime_block_states*

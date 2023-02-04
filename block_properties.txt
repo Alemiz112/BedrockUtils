@@ -19,6 +19,7 @@ minecraft:azalea{}
 minecraft:azalea_leaves{persistent_bit[0, 1], update_bit[0, 1]}
 minecraft:azalea_leaves_flowered{persistent_bit[0, 1], update_bit[0, 1]}
 minecraft:bamboo{age_bit[0, 1], bamboo_leaf_size[small_leaves, large_leaves, no_leaves], bamboo_stalk_thickness[thick, thin]}
+minecraft:bamboo_block{pillar_axis[x, y, z]}
 minecraft:bamboo_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:bamboo_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:bamboo_double_slab{top_slot_bit[0, 1]}
@@ -103,7 +104,7 @@ minecraft:chain_command_block{conditional_bit[0, 1], facing_direction[0, 1, 2, 3
 minecraft:chemical_heat{}
 minecraft:chemistry_table{chemistry_table_type[material_reducer, element_constructor, compound_creator, lab_table], direction[0, 1, 2, 3]}
 minecraft:chest{facing_direction[0, 1, 2, 3, 4, 5]}
-minecraft:chiseled_bookshelf{books_stored[0, 1, 2, 3, 4, 5, 6], direction[0, 1, 2, 3], last_interacted_slot[0, 1, 2, 3, 4, 5, 6]}
+minecraft:chiseled_bookshelf{books_stored[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63], direction[0, 1, 2, 3]}
 minecraft:chiseled_deepslate{}
 minecraft:chiseled_nether_bricks{}
 minecraft:chiseled_polished_blackstone{}
@@ -660,6 +661,7 @@ minecraft:stonebrick{stone_brick_type[default, mossy, chiseled, cracked, smooth]
 minecraft:stonecutter{}
 minecraft:stonecutter_block{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:stripped_acacia_log{pillar_axis[x, y, z]}
+minecraft:stripped_bamboo_block{pillar_axis[x, y, z]}
 minecraft:stripped_birch_log{pillar_axis[x, y, z]}
 minecraft:stripped_crimson_hyphae{pillar_axis[x, y, z]}
 minecraft:stripped_crimson_stem{pillar_axis[x, y, z]}

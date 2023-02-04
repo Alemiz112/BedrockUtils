@@ -42,13 +42,14 @@ public class BlockUtils {
         creators.add(new BlockPaletteCreator544());
         creators.add(new BlockPaletteCreator554()); // equals to previous
         creators.add(new BlockPaletteCreator557()); // equals to previous
-        creators.add(new BlockPaletteCreator560()); // 1.20 block states
+        creators.add(new BlockPaletteCreator560()); // first 1.20 block states
+        creators.add(new BlockPaletteCreator567());
 
         BlockPaletteCreator latest = creators.get(creators.size() - 1);
         int version = getBedrockVersion(latest);
 
         // Generate a Nukkit friendly block palette
-        // generateBlockPalette(latest, "runtime_block_states_" + version + ".dat");
+        generateBlockPalette(latest, "runtime_block_states_" + version + ".dat");
 
         // Compare block states between latest and previous palette
         BlockPaletteCreator previous = creators.get(creators.size() - 2);
