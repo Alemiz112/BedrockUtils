@@ -1,6 +1,5 @@
 package eu.mizerak.alemiz.bedrockutils.block;
 
-import eu.mizerak.alemiz.bedrockutils.block.comparator.AlphabetPaletteComparator;
 import eu.mizerak.alemiz.bedrockutils.block.state.BlockDefinition;
 import org.cloudburstmc.nbt.NbtList;
 import org.cloudburstmc.nbt.NbtMap;
@@ -10,15 +9,11 @@ import eu.mizerak.alemiz.bedrockutils.block.creator.*;
 import lombok.extern.log4j.Log4j2;
 
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 
 @Log4j2
 public class BlockUtils {
@@ -44,6 +39,7 @@ public class BlockUtils {
         creators.add(new BlockPaletteCreator557()); // equals to previous
         creators.add(new BlockPaletteCreator560()); // first 1.20 block states
         creators.add(new BlockPaletteCreator567());
+        creators.add(new BlockPaletteCreator575()); // wool color is prepended to the name
 
         BlockPaletteCreator latest = creators.get(creators.size() - 1);
         int version = getBedrockVersion(latest);

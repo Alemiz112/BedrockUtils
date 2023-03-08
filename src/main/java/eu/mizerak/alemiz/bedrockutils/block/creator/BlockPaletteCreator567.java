@@ -7,11 +7,6 @@ import java.util.List;
 public class BlockPaletteCreator567 extends BlockPaletteCreator560 {
 
     @Override
-    public List<BlockStateUpdater> getUpdaters() {
-        return super.getUpdaters();
-    }
-
-    @Override
     public String getPaletteFileName() {
         return "block/block_palette_567.nbt";
     }
