@@ -16,6 +16,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static eu.mizerak.alemiz.bedrockutils.block.BlockUtils.cleanBlockState;
+
 @Log4j2
 public class BlockPaletteCreator419 extends BlockPaletteCreator {
 
@@ -40,15 +42,7 @@ public class BlockPaletteCreator419 extends BlockPaletteCreator {
 
         int rid = 0;
         for (NbtMap state : this.getBlockPalette()) {
-            NbtMap blockState;
-            if (state.containsKey("name_hash")) {
-                NbtMapBuilder builder = state.toBuilder();
-                builder.remove("name_hash");
-                blockState = builder.build();
-            } else {
-                blockState = state;
-            }
-
+            NbtMap blockState = cleanBlockState(state);
             blockPalette.add(blockState);
             stateToRuntimeId.put(blockState, rid);
             rid++;

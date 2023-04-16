@@ -1,8 +1,10 @@
 package eu.mizerak.alemiz.bedrockutils.block;
 
 import eu.mizerak.alemiz.bedrockutils.block.state.BlockDefinition;
+import org.cloudburstmc.blockstateupdater.BlockStateUpdaters;
 import org.cloudburstmc.nbt.NbtList;
 import org.cloudburstmc.nbt.NbtMap;
+import org.cloudburstmc.nbt.NbtMapBuilder;
 import org.cloudburstmc.nbt.NbtType;
 import eu.mizerak.alemiz.bedrockutils.BedrockUtils;
 import eu.mizerak.alemiz.bedrockutils.block.creator.*;
@@ -40,6 +42,7 @@ public class BlockUtils {
         creators.add(new BlockPaletteCreator560()); // first 1.20 block states
         creators.add(new BlockPaletteCreator567());
         creators.add(new BlockPaletteCreator575()); // wool color is prepended to the name
+        creators.add(new BlockPaletteCreator582()); // each log and fence type has own identifier now
 
         BlockPaletteCreator latest = creators.get(creators.size() - 1);
         int version = getBedrockVersion(latest);
@@ -101,5 +104,18 @@ public class BlockUtils {
             return Integer.parseInt(matcher.group());
         }
         return 0;
+    }
+
+    public static NbtMap cleanBlockState(NbtMap state) {
+        if (state.containsKey("name_hash") || state.containsKey("network_id")) {
+            return cleanBlockState(state.toBuilder()).build();
+        }
+        return state;
+    }
+
+    public static NbtMapBuilder cleanBlockState(NbtMapBuilder builder) {
+        builder.remove("name_hash");
+        builder.remove("network_id");
+        return builder;
     }
 }

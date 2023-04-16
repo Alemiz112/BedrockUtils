@@ -19,6 +19,8 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
+import static eu.mizerak.alemiz.bedrockutils.block.BlockUtils.cleanBlockState;
+
 public abstract class BlockPaletteCreator {
 
     private final CompoundTagUpdaterContext context;
@@ -64,13 +66,7 @@ public abstract class BlockPaletteCreator {
             comparingStates.addAll(compareTo.getBlockPalette());
         } else {
             for (NbtMap state : compareTo.getBlockPalette()) {
-                if (state.containsKey("name_hash")) {
-                    NbtMapBuilder builder = state.toBuilder();
-                    builder.remove("name_hash");
-                    comparingStates.add(builder.build());
-                } else {
-                    comparingStates.add(state);
-                }
+                comparingStates.add(cleanBlockState(state));
             }
         }
 
@@ -78,7 +74,7 @@ public abstract class BlockPaletteCreator {
             if (!comparingStates.remove(state)) {
                 NbtMapBuilder builder = state.toBuilder();
                 if (!strict) {
-                    builder.remove("name_hash");
+                    cleanBlockState(builder);
                 }
                 builder.putInt("version", compareTo.getVersion());
                 if (!comparingStates.remove(builder.build())) {
@@ -95,19 +91,13 @@ public abstract class BlockPaletteCreator {
 
         // Remove identifier hash (name_hash) that MS started to append
         for (NbtMap state : this.getBlockPalette()) {
-            if (state.containsKey("name_hash")) {
-                NbtMapBuilder builder = state.toBuilder();
-                builder.remove("name_hash");
-                currentStates.add(builder.build());
-            } else {
-                currentStates.add(state);
-            }
+            currentStates.add(cleanBlockState(state));
         }
         
         for (NbtMap state : palette.getBlockPalette()) {
             if (!currentStates.remove(state)) {
                 NbtMapBuilder builder = this.updateBlockState(state, palette.getVersion()).toBuilder();
-                builder.remove("name_hash");
+                cleanBlockState(builder);
                 builder.putInt("version", palette.getVersion());
                 comparingStates.add(builder.build());
             }
