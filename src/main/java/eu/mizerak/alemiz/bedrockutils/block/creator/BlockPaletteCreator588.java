@@ -1,0 +1,27 @@
+package eu.mizerak.alemiz.bedrockutils.block.creator;
+
+import org.cloudburstmc.blockstateupdater.BlockStateUpdater;
+import org.cloudburstmc.blockstateupdater.BlockStateUpdater_1_19_80;
+import org.cloudburstmc.blockstateupdater.BlockStateUpdater_1_20_0;
+
+import java.util.List;
+
+public class BlockPaletteCreator588 extends BlockPaletteCreator582 {
+
+    @Override
+    public List<BlockStateUpdater> getUpdaters() {
+        List<BlockStateUpdater> updaters = super.getUpdaters();
+        updaters.add(BlockStateUpdater_1_20_0.INSTANCE);
+        return updaters;
+    }
+
+    @Override
+    public String getPaletteFileName() {
+        return "block/block_palette_588.nbt";
+    }
+
+    @Override
+    public int getVersion() {
+        return 18087969;
+    }
+}

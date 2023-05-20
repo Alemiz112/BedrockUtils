@@ -43,6 +43,7 @@ public class BlockUtils {
         creators.add(new BlockPaletteCreator567());
         creators.add(new BlockPaletteCreator575()); // wool color is prepended to the name
         creators.add(new BlockPaletteCreator582()); // each log and fence type has own identifier now
+        creators.add(new BlockPaletteCreator588());
 
         BlockPaletteCreator latest = creators.get(creators.size() - 1);
         int version = getBedrockVersion(latest);
