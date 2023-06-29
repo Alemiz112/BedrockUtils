@@ -65,7 +65,9 @@ minecraft:birch_wall_sign{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:black_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:black_candle_cake{lit[0, 1]}
 minecraft:black_carpet{}
+minecraft:black_concrete{}
 minecraft:black_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:black_shulker_box{}
 minecraft:black_wool{}
 minecraft:blackstone{}
 minecraft:blackstone_double_slab{top_slot_bit[0, 1]}
@@ -76,8 +78,10 @@ minecraft:blast_furnace{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:blue_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:blue_candle_cake{lit[0, 1]}
 minecraft:blue_carpet{}
+minecraft:blue_concrete{}
 minecraft:blue_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:blue_ice{}
+minecraft:blue_shulker_box{}
 minecraft:blue_wool{}
 minecraft:bone_block{deprecated[0, 1, 2, 3], pillar_axis[x, y, z]}
 minecraft:bookshelf{}
@@ -89,9 +93,11 @@ minecraft:brick_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:brown_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:brown_candle_cake{lit[0, 1]}
 minecraft:brown_carpet{}
+minecraft:brown_concrete{}
 minecraft:brown_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:brown_mushroom{}
 minecraft:brown_mushroom_block{huge_mushroom_bits[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
+minecraft:brown_shulker_box{}
 minecraft:brown_wool{}
 minecraft:bubble_column{drag_down[0, 1]}
 minecraft:bubble_coral{}
@@ -155,7 +161,6 @@ minecraft:colored_torch_bp{color_bit[0, 1], torch_facing_direction[east, top, so
 minecraft:colored_torch_rg{color_bit[0, 1], torch_facing_direction[east, top, south, north, west, unknown]}
 minecraft:command_block{conditional_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:composter{composter_fill_level[0, 1, 2, 3, 4, 5, 6, 7, 8]}
-minecraft:concrete{color[magenta, pink, green, lime, yellow, black, light_blue, brown, cyan, orange, red, gray, white, blue, purple, silver]}
 minecraft:concrete_powder{color[magenta, pink, green, lime, yellow, black, light_blue, brown, cyan, orange, red, gray, white, blue, purple, silver]}
 minecraft:conduit{}
 minecraft:copper_block{}
@@ -196,7 +201,9 @@ minecraft:cut_copper_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:cyan_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:cyan_candle_cake{lit[0, 1]}
 minecraft:cyan_carpet{}
+minecraft:cyan_concrete{}
 minecraft:cyan_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:cyan_shulker_box{}
 minecraft:cyan_wool{}
 minecraft:dark_oak_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:dark_oak_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
@@ -422,12 +429,16 @@ minecraft:gravel{}
 minecraft:gray_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:gray_candle_cake{lit[0, 1]}
 minecraft:gray_carpet{}
+minecraft:gray_concrete{}
 minecraft:gray_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:gray_shulker_box{}
 minecraft:gray_wool{}
 minecraft:green_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:green_candle_cake{lit[0, 1]}
 minecraft:green_carpet{}
+minecraft:green_concrete{}
 minecraft:green_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:green_shulker_box{}
 minecraft:green_wool{}
 minecraft:grindstone{attachment[standing, side, multiple, hanging], direction[0, 1, 2, 3]}
 minecraft:hanging_roots{}
@@ -480,18 +491,24 @@ minecraft:light_block{block_light_level[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
 minecraft:light_blue_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:light_blue_candle_cake{lit[0, 1]}
 minecraft:light_blue_carpet{}
+minecraft:light_blue_concrete{}
 minecraft:light_blue_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:light_blue_shulker_box{}
 minecraft:light_blue_wool{}
 minecraft:light_gray_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:light_gray_candle_cake{lit[0, 1]}
 minecraft:light_gray_carpet{}
+minecraft:light_gray_concrete{}
+minecraft:light_gray_shulker_box{}
 minecraft:light_gray_wool{}
 minecraft:light_weighted_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:lightning_rod{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:lime_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:lime_candle_cake{lit[0, 1]}
 minecraft:lime_carpet{}
+minecraft:lime_concrete{}
 minecraft:lime_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:lime_shulker_box{}
 minecraft:lime_wool{}
 minecraft:lit_blast_furnace{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:lit_deepslate_redstone_ore{}
@@ -505,7 +522,9 @@ minecraft:loom{direction[0, 1, 2, 3]}
 minecraft:magenta_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:magenta_candle_cake{lit[0, 1]}
 minecraft:magenta_carpet{}
+minecraft:magenta_concrete{}
 minecraft:magenta_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:magenta_shulker_box{}
 minecraft:magenta_wool{}
 minecraft:magma{}
 minecraft:mangrove_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
@@ -561,13 +580,15 @@ minecraft:oak_fence{}
 minecraft:oak_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
 minecraft:oak_log{pillar_axis[x, y, z]}
 minecraft:oak_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
-minecraft:observer{facing_direction[0, 1, 2, 3, 4, 5], powered_bit[0, 1]}
+minecraft:observer{minecraft:facing_direction[east, south, north, west, up, down], powered_bit[0, 1]}
 minecraft:obsidian{}
 minecraft:ochre_froglight{pillar_axis[x, y, z]}
 minecraft:orange_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:orange_candle_cake{lit[0, 1]}
 minecraft:orange_carpet{}
+minecraft:orange_concrete{}
 minecraft:orange_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:orange_shulker_box{}
 minecraft:orange_wool{}
 minecraft:oxidized_copper{}
 minecraft:oxidized_cut_copper{}
@@ -580,8 +601,10 @@ minecraft:pearlescent_froglight{pillar_axis[x, y, z]}
 minecraft:pink_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:pink_candle_cake{lit[0, 1]}
 minecraft:pink_carpet{}
+minecraft:pink_concrete{}
 minecraft:pink_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:pink_petals{direction[0, 1, 2, 3], growth[0, 1, 2, 3, 4, 5, 6, 7]}
+minecraft:pink_shulker_box{}
 minecraft:pink_wool{}
 minecraft:piston{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:piston_arm_collision{facing_direction[0, 1, 2, 3, 4, 5]}
@@ -624,7 +647,9 @@ minecraft:pumpkin_stem{facing_direction[0, 1, 2, 3, 4, 5], growth[0, 1, 2, 3, 4,
 minecraft:purple_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:purple_candle_cake{lit[0, 1]}
 minecraft:purple_carpet{}
+minecraft:purple_concrete{}
 minecraft:purple_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:purple_shulker_box{}
 minecraft:purple_wool{}
 minecraft:purpur_block{chisel_type[default, chiseled, lines, smooth], pillar_axis[x, y, z]}
 minecraft:purpur_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
@@ -639,6 +664,7 @@ minecraft:raw_iron_block{}
 minecraft:red_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:red_candle_cake{lit[0, 1]}
 minecraft:red_carpet{}
+minecraft:red_concrete{}
 minecraft:red_flower{flower_type[poppy, tulip_red, tulip_orange, cornflower, allium, houstonia, tulip_pink, lily_of_the_valley, tulip_white, oxeye, orchid]}
 minecraft:red_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:red_mushroom{}
@@ -647,6 +673,7 @@ minecraft:red_nether_brick{}
 minecraft:red_nether_brick_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:red_sandstone{sand_stone_type[default, cut, heiroglyphs, smooth]}
 minecraft:red_sandstone_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
+minecraft:red_shulker_box{}
 minecraft:red_wool{}
 minecraft:redstone_block{}
 minecraft:redstone_lamp{}
@@ -672,7 +699,6 @@ minecraft:sea_lantern{}
 minecraft:sea_pickle{cluster_count[0, 1, 2, 3], dead_bit[0, 1]}
 minecraft:seagrass{sea_grass_type[default, double_bot, double_top]}
 minecraft:shroomlight{}
-minecraft:shulker_box{color[magenta, pink, green, lime, yellow, black, light_blue, brown, cyan, orange, red, gray, white, blue, purple, silver]}
 minecraft:silver_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:skull{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:slime{}
@@ -823,7 +849,9 @@ minecraft:wheat{growth[0, 1, 2, 3, 4, 5, 6, 7]}
 minecraft:white_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:white_candle_cake{lit[0, 1]}
 minecraft:white_carpet{}
+minecraft:white_concrete{}
 minecraft:white_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:white_shulker_box{}
 minecraft:white_wool{}
 minecraft:wither_rose{}
 minecraft:wood{pillar_axis[x, y, z], stripped_bit[0, 1], wood_type[birch, oak, acacia, jungle, dark_oak, spruce]}
@@ -834,6 +862,8 @@ minecraft:wooden_slab{top_slot_bit[0, 1], wood_type[birch, oak, acacia, jungle, 
 minecraft:yellow_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:yellow_candle_cake{lit[0, 1]}
 minecraft:yellow_carpet{}
+minecraft:yellow_concrete{}
 minecraft:yellow_flower{}
 minecraft:yellow_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:yellow_shulker_box{}
 minecraft:yellow_wool{}
