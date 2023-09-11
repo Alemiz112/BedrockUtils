@@ -45,6 +45,7 @@ public class BlockUtils {
         creators.add(new BlockPaletteCreator582()); // each log and fence type has own identifier now
         creators.add(new BlockPaletteCreator588());
         creators.add(new BlockPaletteCreator594()); // shulker box, concrete have own type per color
+        creators.add(new BlockPaletteCreator617()); // stained_glass, stained_glass_pane, concrete_powder, stained_hardened_clay have own type per color
 
         BlockPaletteCreator latest = creators.get(creators.size() - 1);
         int version = getBedrockVersion(latest);
@@ -58,6 +59,8 @@ public class BlockUtils {
 
         // Generate a pretty block palette dump
         createPaletteDump(latest, "block_properties.txt");
+
+        // findExtraStates(latest, creators.get(creators.size() - 2));
     }
 
     public static void generateBlockPalette(BlockPaletteCreator blockCreator, String saveFile) {
@@ -67,20 +70,20 @@ public class BlockUtils {
         blockPalette.saveVanilla(saveFile.replace("dat", "nbt"));
     }
 
-    public static void compareBlockPalettes(BlockPaletteCreator blockCreator, BlockPaletteCreator comparing, boolean findExtraStates) {
+    public static void compareBlockPalettes(BlockPaletteCreator blockCreator, BlockPaletteCreator comparing) {
         log.info("Comparing {} to {}", blockCreator.getClass().getSimpleName(), comparing.getClass().getSimpleName());
         List<NbtMap> unmatchedStates = blockCreator.compareStatesTo(comparing, false);
         log.info("Found {} unmatched states!", unmatchedStates.size());
         // This means that comparing palette does not contain state from blockCreator palette
         unmatchedStates.forEach(state -> log.warn("Not matched state: {}", state));
+    }
 
-        // Looks for extra states in comparing which are not in blockCreator
-        if (findExtraStates) {
-            log.info("Looking for extra states in {}", comparing.getClass().getSimpleName());
-            List<NbtMap> extraStates = blockCreator.findExtraStatesIn(comparing);
-            log.info("Found {} extra states!", extraStates.size());
-            extraStates.forEach(state -> log.warn("Extra state: {}", state));
-        }
+    // Looks for extra states in comparing which are not in blockCreator
+    public static void findExtraStates(BlockPaletteCreator blockCreator, BlockPaletteCreator comparing) {
+        log.info("Looking for extra states in {}", comparing.getClass().getSimpleName());
+        List<NbtMap> extraStates = blockCreator.findExtraStatesIn(comparing);
+        log.info("Found {} extra states!", extraStates.size());
+        extraStates.forEach(state -> log.warn("Extra state: {}", state));
     }
 
     public static void saveCanonicalPalette(String canonicalFile, String saveFile) {

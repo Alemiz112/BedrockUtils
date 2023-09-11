@@ -66,6 +66,7 @@ public class BlockPalette {
         for (BlockState state : this.unmatchedStates) {
             log.warn("Unmatched state: " + state.getBlockState());
         }
+        log.warn("Total unmatched states: {}", this.unmatchedStates.size());
         return this;
     }
 

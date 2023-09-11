@@ -13,10 +13,10 @@ minecraft:activator_rail{rail_data_bit[0, 1], rail_direction[0, 1, 2, 3, 4, 5]}
 minecraft:air{}
 minecraft:allow{}
 minecraft:amethyst_block{}
-minecraft:amethyst_cluster{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:amethyst_cluster{minecraft:block_face[east, south, north, west, up, down]}
 minecraft:ancient_debris{}
 minecraft:andesite_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
-minecraft:anvil{damage[very_damaged, broken, undamaged, slightly_damaged], direction[0, 1, 2, 3]}
+minecraft:anvil{damage[very_damaged, broken, undamaged, slightly_damaged], minecraft:cardinal_direction[east, south, north, west]}
 minecraft:azalea{}
 minecraft:azalea_leaves{persistent_bit[0, 1], update_bit[0, 1]}
 minecraft:azalea_leaves_flowered{persistent_bit[0, 1], update_bit[0, 1]}
@@ -24,18 +24,18 @@ minecraft:bamboo{age_bit[0, 1], bamboo_leaf_size[small_leaves, large_leaves, no_
 minecraft:bamboo_block{pillar_axis[x, y, z]}
 minecraft:bamboo_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:bamboo_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
-minecraft:bamboo_double_slab{top_slot_bit[0, 1]}
+minecraft:bamboo_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:bamboo_fence{}
 minecraft:bamboo_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
 minecraft:bamboo_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
 minecraft:bamboo_mosaic{}
-minecraft:bamboo_mosaic_double_slab{top_slot_bit[0, 1]}
-minecraft:bamboo_mosaic_slab{top_slot_bit[0, 1]}
+minecraft:bamboo_mosaic_double_slab{minecraft:vertical_half[top, bottom]}
+minecraft:bamboo_mosaic_slab{minecraft:vertical_half[top, bottom]}
 minecraft:bamboo_mosaic_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:bamboo_planks{}
 minecraft:bamboo_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:bamboo_sapling{age_bit[0, 1], sapling_type[birch, oak, acacia, jungle, dark_oak, spruce]}
-minecraft:bamboo_slab{top_slot_bit[0, 1]}
+minecraft:bamboo_slab{minecraft:vertical_half[top, bottom]}
 minecraft:bamboo_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:bamboo_standing_sign{ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:bamboo_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
@@ -50,7 +50,7 @@ minecraft:bee_nest{direction[0, 1, 2, 3], honey_level[0, 1, 2, 3, 4, 5]}
 minecraft:beehive{direction[0, 1, 2, 3], honey_level[0, 1, 2, 3, 4, 5]}
 minecraft:beetroot{growth[0, 1, 2, 3, 4, 5, 6, 7]}
 minecraft:bell{attachment[standing, side, multiple, hanging], direction[0, 1, 2, 3], toggle_bit[0, 1]}
-minecraft:big_dripleaf{big_dripleaf_head[0, 1], big_dripleaf_tilt[unstable, partial_tilt, full_tilt, none], direction[0, 1, 2, 3]}
+minecraft:big_dripleaf{big_dripleaf_head[0, 1], big_dripleaf_tilt[unstable, partial_tilt, full_tilt, none], minecraft:cardinal_direction[east, south, north, west]}
 minecraft:birch_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:birch_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:birch_fence{}
@@ -66,22 +66,30 @@ minecraft:black_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:black_candle_cake{lit[0, 1]}
 minecraft:black_carpet{}
 minecraft:black_concrete{}
+minecraft:black_concrete_powder{}
 minecraft:black_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:black_shulker_box{}
+minecraft:black_stained_glass{}
+minecraft:black_stained_glass_pane{}
+minecraft:black_terracotta{}
 minecraft:black_wool{}
 minecraft:blackstone{}
-minecraft:blackstone_double_slab{top_slot_bit[0, 1]}
-minecraft:blackstone_slab{top_slot_bit[0, 1]}
+minecraft:blackstone_double_slab{minecraft:vertical_half[top, bottom]}
+minecraft:blackstone_slab{minecraft:vertical_half[top, bottom]}
 minecraft:blackstone_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:blackstone_wall{wall_connection_type_east[short, none, tall], wall_connection_type_north[short, none, tall], wall_connection_type_south[short, none, tall], wall_connection_type_west[short, none, tall], wall_post_bit[0, 1]}
-minecraft:blast_furnace{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:blast_furnace{minecraft:cardinal_direction[east, south, north, west]}
 minecraft:blue_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:blue_candle_cake{lit[0, 1]}
 minecraft:blue_carpet{}
 minecraft:blue_concrete{}
+minecraft:blue_concrete_powder{}
 minecraft:blue_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:blue_ice{}
 minecraft:blue_shulker_box{}
+minecraft:blue_stained_glass{}
+minecraft:blue_stained_glass_pane{}
+minecraft:blue_terracotta{}
 minecraft:blue_wool{}
 minecraft:bone_block{deprecated[0, 1, 2, 3], pillar_axis[x, y, z]}
 minecraft:bookshelf{}
@@ -94,10 +102,14 @@ minecraft:brown_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:brown_candle_cake{lit[0, 1]}
 minecraft:brown_carpet{}
 minecraft:brown_concrete{}
+minecraft:brown_concrete_powder{}
 minecraft:brown_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:brown_mushroom{}
 minecraft:brown_mushroom_block{huge_mushroom_bits[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:brown_shulker_box{}
+minecraft:brown_stained_glass{}
+minecraft:brown_stained_glass_pane{}
+minecraft:brown_terracotta{}
 minecraft:brown_wool{}
 minecraft:bubble_column{drag_down[0, 1]}
 minecraft:bubble_coral{}
@@ -105,9 +117,9 @@ minecraft:budding_amethyst{}
 minecraft:cactus{age[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:cake{bite_counter[0, 1, 2, 3, 4, 5, 6]}
 minecraft:calcite{}
-minecraft:calibrated_sculk_sensor{direction[0, 1, 2, 3], sculk_sensor_phase[0, 1, 2]}
+minecraft:calibrated_sculk_sensor{minecraft:cardinal_direction[east, south, north, west], sculk_sensor_phase[0, 1, 2]}
 minecraft:camera{}
-minecraft:campfire{direction[0, 1, 2, 3], extinguished[0, 1]}
+minecraft:campfire{extinguished[0, 1], minecraft:cardinal_direction[east, south, north, west]}
 minecraft:candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:candle_cake{lit[0, 1]}
 minecraft:carrots{growth[0, 1, 2, 3, 4, 5, 6, 7]}
@@ -123,7 +135,7 @@ minecraft:chemical_heat{}
 minecraft:chemistry_table{chemistry_table_type[material_reducer, element_constructor, compound_creator, lab_table], direction[0, 1, 2, 3]}
 minecraft:cherry_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:cherry_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
-minecraft:cherry_double_slab{top_slot_bit[0, 1]}
+minecraft:cherry_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:cherry_fence{}
 minecraft:cherry_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
 minecraft:cherry_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
@@ -132,7 +144,7 @@ minecraft:cherry_log{pillar_axis[x, y, z]}
 minecraft:cherry_planks{}
 minecraft:cherry_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:cherry_sapling{age_bit[0, 1]}
-minecraft:cherry_slab{top_slot_bit[0, 1]}
+minecraft:cherry_slab{minecraft:vertical_half[top, bottom]}
 minecraft:cherry_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:cherry_standing_sign{ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:cherry_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
@@ -150,8 +162,8 @@ minecraft:client_request_placeholder_block{}
 minecraft:coal_block{}
 minecraft:coal_ore{}
 minecraft:cobbled_deepslate{}
-minecraft:cobbled_deepslate_double_slab{top_slot_bit[0, 1]}
-minecraft:cobbled_deepslate_slab{top_slot_bit[0, 1]}
+minecraft:cobbled_deepslate_double_slab{minecraft:vertical_half[top, bottom]}
+minecraft:cobbled_deepslate_slab{minecraft:vertical_half[top, bottom]}
 minecraft:cobbled_deepslate_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:cobbled_deepslate_wall{wall_connection_type_east[short, none, tall], wall_connection_type_north[short, none, tall], wall_connection_type_south[short, none, tall], wall_connection_type_west[short, none, tall], wall_post_bit[0, 1]}
 minecraft:cobblestone{}
@@ -161,7 +173,6 @@ minecraft:colored_torch_bp{color_bit[0, 1], torch_facing_direction[east, top, so
 minecraft:colored_torch_rg{color_bit[0, 1], torch_facing_direction[east, top, south, north, west, unknown]}
 minecraft:command_block{conditional_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:composter{composter_fill_level[0, 1, 2, 3, 4, 5, 6, 7, 8]}
-minecraft:concrete_powder{color[magenta, pink, green, lime, yellow, black, light_blue, brown, cyan, orange, red, gray, white, blue, purple, silver]}
 minecraft:conduit{}
 minecraft:copper_block{}
 minecraft:copper_ore{}
@@ -178,7 +189,7 @@ minecraft:cracked_polished_blackstone_bricks{}
 minecraft:crafting_table{}
 minecraft:crimson_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:crimson_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
-minecraft:crimson_double_slab{top_slot_bit[0, 1]}
+minecraft:crimson_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:crimson_fence{}
 minecraft:crimson_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
 minecraft:crimson_fungus{}
@@ -188,7 +199,7 @@ minecraft:crimson_nylium{}
 minecraft:crimson_planks{}
 minecraft:crimson_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:crimson_roots{}
-minecraft:crimson_slab{top_slot_bit[0, 1]}
+minecraft:crimson_slab{minecraft:vertical_half[top, bottom]}
 minecraft:crimson_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:crimson_standing_sign{ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:crimson_stem{pillar_axis[x, y, z]}
@@ -196,14 +207,18 @@ minecraft:crimson_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bi
 minecraft:crimson_wall_sign{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:crying_obsidian{}
 minecraft:cut_copper{}
-minecraft:cut_copper_slab{top_slot_bit[0, 1]}
+minecraft:cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:cut_copper_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:cyan_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:cyan_candle_cake{lit[0, 1]}
 minecraft:cyan_carpet{}
 minecraft:cyan_concrete{}
+minecraft:cyan_concrete_powder{}
 minecraft:cyan_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:cyan_shulker_box{}
+minecraft:cyan_stained_glass{}
+minecraft:cyan_stained_glass_pane{}
+minecraft:cyan_terracotta{}
 minecraft:cyan_wool{}
 minecraft:dark_oak_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:dark_oak_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
@@ -227,8 +242,8 @@ minecraft:dead_tube_coral{}
 minecraft:deadbush{}
 minecraft:decorated_pot{direction[0, 1, 2, 3]}
 minecraft:deepslate{pillar_axis[x, y, z]}
-minecraft:deepslate_brick_double_slab{top_slot_bit[0, 1]}
-minecraft:deepslate_brick_slab{top_slot_bit[0, 1]}
+minecraft:deepslate_brick_double_slab{minecraft:vertical_half[top, bottom]}
+minecraft:deepslate_brick_slab{minecraft:vertical_half[top, bottom]}
 minecraft:deepslate_brick_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:deepslate_brick_wall{wall_connection_type_east[short, none, tall], wall_connection_type_north[short, none, tall], wall_connection_type_south[short, none, tall], wall_connection_type_west[short, none, tall], wall_post_bit[0, 1]}
 minecraft:deepslate_bricks{}
@@ -240,8 +255,8 @@ minecraft:deepslate_gold_ore{}
 minecraft:deepslate_iron_ore{}
 minecraft:deepslate_lapis_ore{}
 minecraft:deepslate_redstone_ore{}
-minecraft:deepslate_tile_double_slab{top_slot_bit[0, 1]}
-minecraft:deepslate_tile_slab{top_slot_bit[0, 1]}
+minecraft:deepslate_tile_double_slab{minecraft:vertical_half[top, bottom]}
+minecraft:deepslate_tile_slab{minecraft:vertical_half[top, bottom]}
 minecraft:deepslate_tile_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:deepslate_tile_wall{wall_connection_type_east[short, none, tall], wall_connection_type_north[short, none, tall], wall_connection_type_south[short, none, tall], wall_connection_type_west[short, none, tall], wall_post_bit[0, 1]}
 minecraft:deepslate_tiles{}
@@ -253,13 +268,13 @@ minecraft:diorite_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:dirt{dirt_type[normal, coarse]}
 minecraft:dirt_with_roots{}
 minecraft:dispenser{facing_direction[0, 1, 2, 3, 4, 5], triggered_bit[0, 1]}
-minecraft:double_cut_copper_slab{top_slot_bit[0, 1]}
+minecraft:double_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:double_plant{double_plant_type[fern, syringa, grass, paeonia, rose, sunflower], upper_block_bit[0, 1]}
-minecraft:double_stone_block_slab{stone_slab_type[cobblestone, quartz, wood, stone_brick, brick, smooth_stone, sandstone, nether_brick], top_slot_bit[0, 1]}
-minecraft:double_stone_block_slab2{stone_slab_type_2[prismarine_rough, red_sandstone, prismarine_dark, smooth_sandstone, purpur, red_nether_brick, prismarine_brick, mossy_cobblestone], top_slot_bit[0, 1]}
-minecraft:double_stone_block_slab3{stone_slab_type_3[smooth_red_sandstone, polished_granite, end_stone_brick, granite, polished_diorite, andesite, polished_andesite, diorite], top_slot_bit[0, 1]}
-minecraft:double_stone_block_slab4{stone_slab_type_4[mossy_stone_brick, smooth_quartz, cut_sandstone, cut_red_sandstone, stone], top_slot_bit[0, 1]}
-minecraft:double_wooden_slab{top_slot_bit[0, 1], wood_type[birch, oak, acacia, jungle, dark_oak, spruce]}
+minecraft:double_stone_block_slab{minecraft:vertical_half[top, bottom], stone_slab_type[cobblestone, quartz, wood, stone_brick, brick, smooth_stone, sandstone, nether_brick]}
+minecraft:double_stone_block_slab2{minecraft:vertical_half[top, bottom], stone_slab_type_2[prismarine_rough, red_sandstone, prismarine_dark, smooth_sandstone, purpur, red_nether_brick, prismarine_brick, mossy_cobblestone]}
+minecraft:double_stone_block_slab3{minecraft:vertical_half[top, bottom], stone_slab_type_3[smooth_red_sandstone, polished_granite, end_stone_brick, granite, polished_diorite, andesite, polished_andesite, diorite]}
+minecraft:double_stone_block_slab4{minecraft:vertical_half[top, bottom], stone_slab_type_4[mossy_stone_brick, smooth_quartz, cut_sandstone, cut_red_sandstone, stone]}
+minecraft:double_wooden_slab{minecraft:vertical_half[top, bottom], wood_type[birch, oak, acacia, jungle, dark_oak, spruce]}
 minecraft:dragon_egg{}
 minecraft:dried_kelp_block{}
 minecraft:dripstone_block{}
@@ -390,15 +405,15 @@ minecraft:end_brick_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:end_bricks{}
 minecraft:end_gateway{}
 minecraft:end_portal{}
-minecraft:end_portal_frame{direction[0, 1, 2, 3], end_portal_eye_bit[0, 1]}
+minecraft:end_portal_frame{end_portal_eye_bit[0, 1], minecraft:cardinal_direction[east, south, north, west]}
 minecraft:end_rod{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:end_stone{}
 minecraft:ender_chest{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:exposed_copper{}
 minecraft:exposed_cut_copper{}
-minecraft:exposed_cut_copper_slab{top_slot_bit[0, 1]}
+minecraft:exposed_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:exposed_cut_copper_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
-minecraft:exposed_double_cut_copper_slab{top_slot_bit[0, 1]}
+minecraft:exposed_double_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:farmland{moisturized_amount[0, 1, 2, 3, 4, 5, 6, 7]}
 minecraft:fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
 minecraft:fire{age[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
@@ -411,7 +426,7 @@ minecraft:flowing_water{liquid_depth[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1
 minecraft:frame{facing_direction[0, 1, 2, 3, 4, 5], item_frame_map_bit[0, 1], item_frame_photo_bit[0, 1]}
 minecraft:frog_spawn{}
 minecraft:frosted_ice{age[0, 1, 2, 3]}
-minecraft:furnace{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:furnace{minecraft:cardinal_direction[east, south, north, west]}
 minecraft:gilded_blackstone{}
 minecraft:glass{}
 minecraft:glass_pane{}
@@ -430,15 +445,23 @@ minecraft:gray_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:gray_candle_cake{lit[0, 1]}
 minecraft:gray_carpet{}
 minecraft:gray_concrete{}
+minecraft:gray_concrete_powder{}
 minecraft:gray_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:gray_shulker_box{}
+minecraft:gray_stained_glass{}
+minecraft:gray_stained_glass_pane{}
+minecraft:gray_terracotta{}
 minecraft:gray_wool{}
 minecraft:green_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:green_candle_cake{lit[0, 1]}
 minecraft:green_carpet{}
 minecraft:green_concrete{}
+minecraft:green_concrete_powder{}
 minecraft:green_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:green_shulker_box{}
+minecraft:green_stained_glass{}
+minecraft:green_stained_glass_pane{}
+minecraft:green_terracotta{}
 minecraft:green_wool{}
 minecraft:grindstone{attachment[standing, side, multiple, hanging], direction[0, 1, 2, 3]}
 minecraft:hanging_roots{}
@@ -481,25 +504,33 @@ minecraft:ladder{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:lantern{hanging[0, 1]}
 minecraft:lapis_block{}
 minecraft:lapis_ore{}
-minecraft:large_amethyst_bud{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:large_amethyst_bud{minecraft:block_face[east, south, north, west, up, down]}
 minecraft:lava{liquid_depth[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:leaves{old_leaf_type[birch, oak, jungle, spruce], persistent_bit[0, 1], update_bit[0, 1]}
 minecraft:leaves2{new_leaf_type[acacia, dark_oak], persistent_bit[0, 1], update_bit[0, 1]}
-minecraft:lectern{direction[0, 1, 2, 3], powered_bit[0, 1]}
+minecraft:lectern{minecraft:cardinal_direction[east, south, north, west], powered_bit[0, 1]}
 minecraft:lever{lever_direction[east, south, north, up_north_south, west, down_east_west, down_north_south, up_east_west], open_bit[0, 1]}
 minecraft:light_block{block_light_level[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:light_blue_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:light_blue_candle_cake{lit[0, 1]}
 minecraft:light_blue_carpet{}
 minecraft:light_blue_concrete{}
+minecraft:light_blue_concrete_powder{}
 minecraft:light_blue_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:light_blue_shulker_box{}
+minecraft:light_blue_stained_glass{}
+minecraft:light_blue_stained_glass_pane{}
+minecraft:light_blue_terracotta{}
 minecraft:light_blue_wool{}
 minecraft:light_gray_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:light_gray_candle_cake{lit[0, 1]}
 minecraft:light_gray_carpet{}
 minecraft:light_gray_concrete{}
+minecraft:light_gray_concrete_powder{}
 minecraft:light_gray_shulker_box{}
+minecraft:light_gray_stained_glass{}
+minecraft:light_gray_stained_glass_pane{}
+minecraft:light_gray_terracotta{}
 minecraft:light_gray_wool{}
 minecraft:light_weighted_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:lightning_rod{facing_direction[0, 1, 2, 3, 4, 5]}
@@ -507,29 +538,37 @@ minecraft:lime_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:lime_candle_cake{lit[0, 1]}
 minecraft:lime_carpet{}
 minecraft:lime_concrete{}
+minecraft:lime_concrete_powder{}
 minecraft:lime_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:lime_shulker_box{}
+minecraft:lime_stained_glass{}
+minecraft:lime_stained_glass_pane{}
+minecraft:lime_terracotta{}
 minecraft:lime_wool{}
-minecraft:lit_blast_furnace{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:lit_blast_furnace{minecraft:cardinal_direction[east, south, north, west]}
 minecraft:lit_deepslate_redstone_ore{}
-minecraft:lit_furnace{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:lit_furnace{minecraft:cardinal_direction[east, south, north, west]}
 minecraft:lit_pumpkin{minecraft:cardinal_direction[east, south, north, west]}
 minecraft:lit_redstone_lamp{}
 minecraft:lit_redstone_ore{}
-minecraft:lit_smoker{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:lit_smoker{minecraft:cardinal_direction[east, south, north, west]}
 minecraft:lodestone{}
 minecraft:loom{direction[0, 1, 2, 3]}
 minecraft:magenta_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:magenta_candle_cake{lit[0, 1]}
 minecraft:magenta_carpet{}
 minecraft:magenta_concrete{}
+minecraft:magenta_concrete_powder{}
 minecraft:magenta_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:magenta_shulker_box{}
+minecraft:magenta_stained_glass{}
+minecraft:magenta_stained_glass_pane{}
+minecraft:magenta_terracotta{}
 minecraft:magenta_wool{}
 minecraft:magma{}
 minecraft:mangrove_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:mangrove_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
-minecraft:mangrove_double_slab{top_slot_bit[0, 1]}
+minecraft:mangrove_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:mangrove_fence{}
 minecraft:mangrove_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
 minecraft:mangrove_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
@@ -539,13 +578,13 @@ minecraft:mangrove_planks{}
 minecraft:mangrove_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:mangrove_propagule{hanging[0, 1], propagule_stage[0, 1, 2, 3, 4]}
 minecraft:mangrove_roots{}
-minecraft:mangrove_slab{top_slot_bit[0, 1]}
+minecraft:mangrove_slab{minecraft:vertical_half[top, bottom]}
 minecraft:mangrove_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:mangrove_standing_sign{ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:mangrove_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
 minecraft:mangrove_wall_sign{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:mangrove_wood{pillar_axis[x, y, z], stripped_bit[0, 1]}
-minecraft:medium_amethyst_bud{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:medium_amethyst_bud{minecraft:block_face[east, south, north, west, up, down]}
 minecraft:melon_block{}
 minecraft:melon_stem{facing_direction[0, 1, 2, 3, 4, 5], growth[0, 1, 2, 3, 4, 5, 6, 7]}
 minecraft:mob_spawner{}
@@ -557,8 +596,8 @@ minecraft:mossy_cobblestone_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1,
 minecraft:mossy_stone_brick_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:moving_block{}
 minecraft:mud{}
-minecraft:mud_brick_double_slab{top_slot_bit[0, 1]}
-minecraft:mud_brick_slab{top_slot_bit[0, 1]}
+minecraft:mud_brick_double_slab{minecraft:vertical_half[top, bottom]}
+minecraft:mud_brick_slab{minecraft:vertical_half[top, bottom]}
 minecraft:mud_brick_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:mud_brick_wall{wall_connection_type_east[short, none, tall], wall_connection_type_north[short, none, tall], wall_connection_type_south[short, none, tall], wall_connection_type_west[short, none, tall], wall_post_bit[0, 1]}
 minecraft:mud_bricks{}
@@ -587,14 +626,18 @@ minecraft:orange_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:orange_candle_cake{lit[0, 1]}
 minecraft:orange_carpet{}
 minecraft:orange_concrete{}
+minecraft:orange_concrete_powder{}
 minecraft:orange_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:orange_shulker_box{}
+minecraft:orange_stained_glass{}
+minecraft:orange_stained_glass_pane{}
+minecraft:orange_terracotta{}
 minecraft:orange_wool{}
 minecraft:oxidized_copper{}
 minecraft:oxidized_cut_copper{}
-minecraft:oxidized_cut_copper_slab{top_slot_bit[0, 1]}
+minecraft:oxidized_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:oxidized_cut_copper_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
-minecraft:oxidized_double_cut_copper_slab{top_slot_bit[0, 1]}
+minecraft:oxidized_double_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:packed_ice{}
 minecraft:packed_mud{}
 minecraft:pearlescent_froglight{pillar_axis[x, y, z]}
@@ -602,9 +645,13 @@ minecraft:pink_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:pink_candle_cake{lit[0, 1]}
 minecraft:pink_carpet{}
 minecraft:pink_concrete{}
+minecraft:pink_concrete_powder{}
 minecraft:pink_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
-minecraft:pink_petals{direction[0, 1, 2, 3], growth[0, 1, 2, 3, 4, 5, 6, 7]}
+minecraft:pink_petals{growth[0, 1, 2, 3, 4, 5, 6, 7], minecraft:cardinal_direction[east, south, north, west]}
 minecraft:pink_shulker_box{}
+minecraft:pink_stained_glass{}
+minecraft:pink_stained_glass_pane{}
+minecraft:pink_terracotta{}
 minecraft:pink_wool{}
 minecraft:piston{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:piston_arm_collision{facing_direction[0, 1, 2, 3, 4, 5]}
@@ -616,20 +663,20 @@ minecraft:pointed_dripstone{dripstone_thickness[middle, merge, frustum, tip, bas
 minecraft:polished_andesite_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:polished_basalt{pillar_axis[x, y, z]}
 minecraft:polished_blackstone{}
-minecraft:polished_blackstone_brick_double_slab{top_slot_bit[0, 1]}
-minecraft:polished_blackstone_brick_slab{top_slot_bit[0, 1]}
+minecraft:polished_blackstone_brick_double_slab{minecraft:vertical_half[top, bottom]}
+minecraft:polished_blackstone_brick_slab{minecraft:vertical_half[top, bottom]}
 minecraft:polished_blackstone_brick_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:polished_blackstone_brick_wall{wall_connection_type_east[short, none, tall], wall_connection_type_north[short, none, tall], wall_connection_type_south[short, none, tall], wall_connection_type_west[short, none, tall], wall_post_bit[0, 1]}
 minecraft:polished_blackstone_bricks{}
 minecraft:polished_blackstone_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
-minecraft:polished_blackstone_double_slab{top_slot_bit[0, 1]}
+minecraft:polished_blackstone_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:polished_blackstone_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
-minecraft:polished_blackstone_slab{top_slot_bit[0, 1]}
+minecraft:polished_blackstone_slab{minecraft:vertical_half[top, bottom]}
 minecraft:polished_blackstone_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:polished_blackstone_wall{wall_connection_type_east[short, none, tall], wall_connection_type_north[short, none, tall], wall_connection_type_south[short, none, tall], wall_connection_type_west[short, none, tall], wall_post_bit[0, 1]}
 minecraft:polished_deepslate{}
-minecraft:polished_deepslate_double_slab{top_slot_bit[0, 1]}
-minecraft:polished_deepslate_slab{top_slot_bit[0, 1]}
+minecraft:polished_deepslate_double_slab{minecraft:vertical_half[top, bottom]}
+minecraft:polished_deepslate_slab{minecraft:vertical_half[top, bottom]}
 minecraft:polished_deepslate_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:polished_deepslate_wall{wall_connection_type_east[short, none, tall], wall_connection_type_north[short, none, tall], wall_connection_type_south[short, none, tall], wall_connection_type_west[short, none, tall], wall_post_bit[0, 1]}
 minecraft:polished_diorite_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
@@ -637,8 +684,8 @@ minecraft:polished_granite_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 
 minecraft:portal{portal_axis[x, z, unknown]}
 minecraft:potatoes{growth[0, 1, 2, 3, 4, 5, 6, 7]}
 minecraft:powder_snow{}
-minecraft:powered_comparator{direction[0, 1, 2, 3], output_lit_bit[0, 1], output_subtract_bit[0, 1]}
-minecraft:powered_repeater{direction[0, 1, 2, 3], repeater_delay[0, 1, 2, 3]}
+minecraft:powered_comparator{minecraft:cardinal_direction[east, south, north, west], output_lit_bit[0, 1], output_subtract_bit[0, 1]}
+minecraft:powered_repeater{minecraft:cardinal_direction[east, south, north, west], repeater_delay[0, 1, 2, 3]}
 minecraft:prismarine{prismarine_block_type[bricks, default, dark]}
 minecraft:prismarine_bricks_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:prismarine_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
@@ -648,8 +695,12 @@ minecraft:purple_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:purple_candle_cake{lit[0, 1]}
 minecraft:purple_carpet{}
 minecraft:purple_concrete{}
+minecraft:purple_concrete_powder{}
 minecraft:purple_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:purple_shulker_box{}
+minecraft:purple_stained_glass{}
+minecraft:purple_stained_glass_pane{}
+minecraft:purple_terracotta{}
 minecraft:purple_wool{}
 minecraft:purpur_block{chisel_type[default, chiseled, lines, smooth], pillar_axis[x, y, z]}
 minecraft:purpur_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
@@ -665,6 +716,7 @@ minecraft:red_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:red_candle_cake{lit[0, 1]}
 minecraft:red_carpet{}
 minecraft:red_concrete{}
+minecraft:red_concrete_powder{}
 minecraft:red_flower{flower_type[poppy, tulip_red, tulip_orange, cornflower, allium, houstonia, tulip_pink, lily_of_the_valley, tulip_white, oxeye, orchid]}
 minecraft:red_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:red_mushroom{}
@@ -674,6 +726,9 @@ minecraft:red_nether_brick_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 
 minecraft:red_sandstone{sand_stone_type[default, cut, heiroglyphs, smooth]}
 minecraft:red_sandstone_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:red_shulker_box{}
+minecraft:red_stained_glass{}
+minecraft:red_stained_glass_pane{}
+minecraft:red_terracotta{}
 minecraft:red_wool{}
 minecraft:redstone_block{}
 minecraft:redstone_lamp{}
@@ -702,10 +757,10 @@ minecraft:shroomlight{}
 minecraft:silver_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:skull{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:slime{}
-minecraft:small_amethyst_bud{facing_direction[0, 1, 2, 3, 4, 5]}
-minecraft:small_dripleaf_block{direction[0, 1, 2, 3], upper_block_bit[0, 1]}
+minecraft:small_amethyst_bud{minecraft:block_face[east, south, north, west, up, down]}
+minecraft:small_dripleaf_block{minecraft:cardinal_direction[east, south, north, west], upper_block_bit[0, 1]}
 minecraft:smithing_table{}
-minecraft:smoker{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:smoker{minecraft:cardinal_direction[east, south, north, west]}
 minecraft:smooth_basalt{}
 minecraft:smooth_quartz_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:smooth_red_sandstone_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
@@ -714,7 +769,7 @@ minecraft:smooth_stone{}
 minecraft:sniffer_egg{cracked_state[max_cracked, no_cracks, cracked]}
 minecraft:snow{}
 minecraft:snow_layer{covered_bit[0, 1], height[0, 1, 2, 3, 4, 5, 6, 7]}
-minecraft:soul_campfire{direction[0, 1, 2, 3], extinguished[0, 1]}
+minecraft:soul_campfire{extinguished[0, 1], minecraft:cardinal_direction[east, south, north, west]}
 minecraft:soul_fire{age[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:soul_lantern{hanging[0, 1]}
 minecraft:soul_sand{}
@@ -733,18 +788,15 @@ minecraft:spruce_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:spruce_standing_sign{ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:spruce_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
 minecraft:spruce_wall_sign{facing_direction[0, 1, 2, 3, 4, 5]}
-minecraft:stained_glass{color[magenta, pink, green, lime, yellow, black, light_blue, brown, cyan, orange, red, gray, white, blue, purple, silver]}
-minecraft:stained_glass_pane{color[magenta, pink, green, lime, yellow, black, light_blue, brown, cyan, orange, red, gray, white, blue, purple, silver]}
-minecraft:stained_hardened_clay{color[magenta, pink, green, lime, yellow, black, light_blue, brown, cyan, orange, red, gray, white, blue, purple, silver]}
 minecraft:standing_banner{ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:standing_sign{ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:sticky_piston{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:sticky_piston_arm_collision{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:stone{stone_type[andesite_smooth, diorite_smooth, granite, granite_smooth, andesite, stone, diorite]}
-minecraft:stone_block_slab{stone_slab_type[cobblestone, quartz, wood, stone_brick, brick, smooth_stone, sandstone, nether_brick], top_slot_bit[0, 1]}
-minecraft:stone_block_slab2{stone_slab_type_2[prismarine_rough, red_sandstone, prismarine_dark, smooth_sandstone, purpur, red_nether_brick, prismarine_brick, mossy_cobblestone], top_slot_bit[0, 1]}
-minecraft:stone_block_slab3{stone_slab_type_3[smooth_red_sandstone, polished_granite, end_stone_brick, granite, polished_diorite, andesite, polished_andesite, diorite], top_slot_bit[0, 1]}
-minecraft:stone_block_slab4{stone_slab_type_4[mossy_stone_brick, smooth_quartz, cut_sandstone, cut_red_sandstone, stone], top_slot_bit[0, 1]}
+minecraft:stone_block_slab{minecraft:vertical_half[top, bottom], stone_slab_type[cobblestone, quartz, wood, stone_brick, brick, smooth_stone, sandstone, nether_brick]}
+minecraft:stone_block_slab2{minecraft:vertical_half[top, bottom], stone_slab_type_2[prismarine_rough, red_sandstone, prismarine_dark, smooth_sandstone, purpur, red_nether_brick, prismarine_brick, mossy_cobblestone]}
+minecraft:stone_block_slab3{minecraft:vertical_half[top, bottom], stone_slab_type_3[smooth_red_sandstone, polished_granite, end_stone_brick, granite, polished_diorite, andesite, polished_andesite, diorite]}
+minecraft:stone_block_slab4{minecraft:vertical_half[top, bottom], stone_slab_type_4[mossy_stone_brick, smooth_quartz, cut_sandstone, cut_red_sandstone, stone]}
 minecraft:stone_brick_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:stone_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:stone_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
@@ -791,15 +843,15 @@ minecraft:underwater_torch{torch_facing_direction[east, top, south, north, west,
 minecraft:undyed_shulker_box{}
 minecraft:unknown{}
 minecraft:unlit_redstone_torch{torch_facing_direction[east, top, south, north, west, unknown]}
-minecraft:unpowered_comparator{direction[0, 1, 2, 3], output_lit_bit[0, 1], output_subtract_bit[0, 1]}
-minecraft:unpowered_repeater{direction[0, 1, 2, 3], repeater_delay[0, 1, 2, 3]}
+minecraft:unpowered_comparator{minecraft:cardinal_direction[east, south, north, west], output_lit_bit[0, 1], output_subtract_bit[0, 1]}
+minecraft:unpowered_repeater{minecraft:cardinal_direction[east, south, north, west], repeater_delay[0, 1, 2, 3]}
 minecraft:verdant_froglight{pillar_axis[x, y, z]}
 minecraft:vine{vine_direction_bits[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:wall_banner{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:wall_sign{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:warped_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:warped_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
-minecraft:warped_double_slab{top_slot_bit[0, 1]}
+minecraft:warped_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:warped_fence{}
 minecraft:warped_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
 minecraft:warped_fungus{}
@@ -809,7 +861,7 @@ minecraft:warped_nylium{}
 minecraft:warped_planks{}
 minecraft:warped_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:warped_roots{}
-minecraft:warped_slab{top_slot_bit[0, 1]}
+minecraft:warped_slab{minecraft:vertical_half[top, bottom]}
 minecraft:warped_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:warped_standing_sign{ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:warped_stem{pillar_axis[x, y, z]}
@@ -820,29 +872,29 @@ minecraft:water{liquid_depth[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1
 minecraft:waterlily{}
 minecraft:waxed_copper{}
 minecraft:waxed_cut_copper{}
-minecraft:waxed_cut_copper_slab{top_slot_bit[0, 1]}
+minecraft:waxed_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:waxed_cut_copper_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
-minecraft:waxed_double_cut_copper_slab{top_slot_bit[0, 1]}
+minecraft:waxed_double_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:waxed_exposed_copper{}
 minecraft:waxed_exposed_cut_copper{}
-minecraft:waxed_exposed_cut_copper_slab{top_slot_bit[0, 1]}
+minecraft:waxed_exposed_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:waxed_exposed_cut_copper_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
-minecraft:waxed_exposed_double_cut_copper_slab{top_slot_bit[0, 1]}
+minecraft:waxed_exposed_double_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:waxed_oxidized_copper{}
 minecraft:waxed_oxidized_cut_copper{}
-minecraft:waxed_oxidized_cut_copper_slab{top_slot_bit[0, 1]}
+minecraft:waxed_oxidized_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:waxed_oxidized_cut_copper_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
-minecraft:waxed_oxidized_double_cut_copper_slab{top_slot_bit[0, 1]}
+minecraft:waxed_oxidized_double_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:waxed_weathered_copper{}
 minecraft:waxed_weathered_cut_copper{}
-minecraft:waxed_weathered_cut_copper_slab{top_slot_bit[0, 1]}
+minecraft:waxed_weathered_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:waxed_weathered_cut_copper_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
-minecraft:waxed_weathered_double_cut_copper_slab{top_slot_bit[0, 1]}
+minecraft:waxed_weathered_double_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:weathered_copper{}
 minecraft:weathered_cut_copper{}
-minecraft:weathered_cut_copper_slab{top_slot_bit[0, 1]}
+minecraft:weathered_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:weathered_cut_copper_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
-minecraft:weathered_double_cut_copper_slab{top_slot_bit[0, 1]}
+minecraft:weathered_double_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:web{}
 minecraft:weeping_vines{weeping_vines_age[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]}
 minecraft:wheat{growth[0, 1, 2, 3, 4, 5, 6, 7]}
@@ -850,20 +902,28 @@ minecraft:white_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:white_candle_cake{lit[0, 1]}
 minecraft:white_carpet{}
 minecraft:white_concrete{}
+minecraft:white_concrete_powder{}
 minecraft:white_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:white_shulker_box{}
+minecraft:white_stained_glass{}
+minecraft:white_stained_glass_pane{}
+minecraft:white_terracotta{}
 minecraft:white_wool{}
 minecraft:wither_rose{}
 minecraft:wood{pillar_axis[x, y, z], stripped_bit[0, 1], wood_type[birch, oak, acacia, jungle, dark_oak, spruce]}
 minecraft:wooden_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:wooden_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:wooden_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
-minecraft:wooden_slab{top_slot_bit[0, 1], wood_type[birch, oak, acacia, jungle, dark_oak, spruce]}
+minecraft:wooden_slab{minecraft:vertical_half[top, bottom], wood_type[birch, oak, acacia, jungle, dark_oak, spruce]}
 minecraft:yellow_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:yellow_candle_cake{lit[0, 1]}
 minecraft:yellow_carpet{}
 minecraft:yellow_concrete{}
+minecraft:yellow_concrete_powder{}
 minecraft:yellow_flower{}
 minecraft:yellow_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:yellow_shulker_box{}
+minecraft:yellow_stained_glass{}
+minecraft:yellow_stained_glass_pane{}
+minecraft:yellow_terracotta{}
 minecraft:yellow_wool{}
