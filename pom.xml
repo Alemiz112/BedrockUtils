@@ -19,7 +19,7 @@
         <dependency>
             <groupId>org.cloudburstmc</groupId>
             <artifactId>block-state-updater</artifactId>
-            <version>1.20.30-SNAPSHOT</version>
+            <version>1.20.40-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>

@@ -2,6 +2,7 @@ package eu.mizerak.alemiz.bedrockutils.block;
 
 import eu.mizerak.alemiz.bedrockutils.block.state.BlockDefinition;
 import org.cloudburstmc.blockstateupdater.BlockStateUpdaters;
+import org.cloudburstmc.blockstateupdater.util.tagupdater.CompoundTagUpdaterContext;
 import org.cloudburstmc.nbt.NbtList;
 import org.cloudburstmc.nbt.NbtMap;
 import org.cloudburstmc.nbt.NbtMapBuilder;
@@ -46,6 +47,7 @@ public class BlockUtils {
         creators.add(new BlockPaletteCreator588());
         creators.add(new BlockPaletteCreator594()); // shulker box, concrete have own type per color
         creators.add(new BlockPaletteCreator617()); // stained_glass, stained_glass_pane, concrete_powder, stained_hardened_clay have own type per color
+        creators.add(new BlockPaletteCreator622());
 
         BlockPaletteCreator latest = creators.get(creators.size() - 1);
         int version = getBedrockVersion(latest);
@@ -61,6 +63,11 @@ public class BlockUtils {
         createPaletteDump(latest, "block_properties.txt");
 
         // findExtraStates(latest, creators.get(creators.size() - 2));
+
+        /*int vanilla = CompoundTagUpdaterContext.makeVersion(1, 20, 40);
+        System.out.println(latest.getVersion() - vanilla);
+
+        System.out.println(BlockStateUpdaters.getLatestVersion());*/
     }
 
     public static void generateBlockPalette(BlockPaletteCreator blockCreator, String saveFile) {
