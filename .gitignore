@@ -30,6 +30,10 @@ target/
 # Intellij Idea
 .idea/
 
+# NodeJS files
+node_modules/
+package-lock.json
+
 # Bedrock generated artifacts
 *.dat
 
