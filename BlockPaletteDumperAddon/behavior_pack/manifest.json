@@ -1,0 +1,39 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "Block Data Dump Tool",
+        "description": "",
+        "uuid": "9d1628ee-94b9-4a2a-accd-dc712eb531bd",
+        "version": [ 1, 0, 2 ],
+        "min_engine_version": [ 1, 20, 40 ]
+    },
+    "modules": [
+        {
+            "type": "data",
+            "description": "data",
+            "uuid": "8b950e0d-f508-4a5c-9033-9348fe73a900",
+            "version": [ 1, 0, 2 ]
+        },
+        {
+            "type": "script",
+            "description": "",
+            "uuid": "61e23007-801e-44c6-9aac-26594f3ef7da",
+            "version": [ 1, 0, 2 ],
+            "entry": "scripts/server.js"
+        }
+    ],
+    "dependencies": [
+        {
+            "module_name": "@minecraft/server",
+            "version": "1.7.0-beta"
+        },
+        {
+            "module_name": "@minecraft/server-admin",
+            "version": "1.0.0-beta"
+        },
+        {
+            "module_name": "@minecraft/server-net",
+            "version": "1.0.0-beta"
+        }
+    ]
+}
