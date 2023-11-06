@@ -48,6 +48,7 @@ public class BlockUtils {
         creators.add(new BlockPaletteCreator594()); // shulker box, concrete have own type per color
         creators.add(new BlockPaletteCreator617()); // stained_glass, stained_glass_pane, concrete_powder, stained_hardened_clay have own type per color
         creators.add(new BlockPaletteCreator622());
+        creators.add(new BlockPaletteCreator630());
 
         BlockPaletteCreator latest = creators.get(creators.size() - 1);
         int version = getBedrockVersion(latest);
@@ -64,10 +65,10 @@ public class BlockUtils {
 
         // findExtraStates(latest, creators.get(creators.size() - 2));
 
-        /*int vanilla = CompoundTagUpdaterContext.makeVersion(1, 20, 40);
+        int vanilla = CompoundTagUpdaterContext.makeVersion(1, 20, 50);
         System.out.println(latest.getVersion() - vanilla);
 
-        System.out.println(BlockStateUpdaters.getLatestVersion());*/
+        System.out.println(BlockStateUpdaters.getLatestVersion());
     }
 
     public static void generateBlockPalette(BlockPaletteCreator blockCreator, String saveFile) {
