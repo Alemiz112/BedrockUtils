@@ -484,10 +484,40 @@ minecraft:green_terracotta{}
 minecraft:green_wool{}
 minecraft:grindstone{attachment[standing, side, multiple, hanging], direction[0, 1, 2, 3]}
 minecraft:hanging_roots{}
+minecraft:hard_black_stained_glass{}
+minecraft:hard_black_stained_glass_pane{}
+minecraft:hard_blue_stained_glass{}
+minecraft:hard_blue_stained_glass_pane{}
+minecraft:hard_brown_stained_glass{}
+minecraft:hard_brown_stained_glass_pane{}
+minecraft:hard_cyan_stained_glass{}
+minecraft:hard_cyan_stained_glass_pane{}
 minecraft:hard_glass{}
 minecraft:hard_glass_pane{}
-minecraft:hard_stained_glass{color[magenta, pink, green, lime, yellow, black, light_blue, brown, cyan, orange, red, gray, white, blue, purple, silver]}
-minecraft:hard_stained_glass_pane{color[magenta, pink, green, lime, yellow, black, light_blue, brown, cyan, orange, red, gray, white, blue, purple, silver]}
+minecraft:hard_gray_stained_glass{}
+minecraft:hard_gray_stained_glass_pane{}
+minecraft:hard_green_stained_glass{}
+minecraft:hard_green_stained_glass_pane{}
+minecraft:hard_light_blue_stained_glass{}
+minecraft:hard_light_blue_stained_glass_pane{}
+minecraft:hard_light_gray_stained_glass{}
+minecraft:hard_light_gray_stained_glass_pane{}
+minecraft:hard_lime_stained_glass{}
+minecraft:hard_lime_stained_glass_pane{}
+minecraft:hard_magenta_stained_glass{}
+minecraft:hard_magenta_stained_glass_pane{}
+minecraft:hard_orange_stained_glass{}
+minecraft:hard_orange_stained_glass_pane{}
+minecraft:hard_pink_stained_glass{}
+minecraft:hard_pink_stained_glass_pane{}
+minecraft:hard_purple_stained_glass{}
+minecraft:hard_purple_stained_glass_pane{}
+minecraft:hard_red_stained_glass{}
+minecraft:hard_red_stained_glass_pane{}
+minecraft:hard_white_stained_glass{}
+minecraft:hard_white_stained_glass_pane{}
+minecraft:hard_yellow_stained_glass{}
+minecraft:hard_yellow_stained_glass_pane{}
 minecraft:hardened_clay{}
 minecraft:hay_block{deprecated[0, 1, 2, 3], pillar_axis[x, y, z]}
 minecraft:heavy_weighted_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
@@ -867,6 +897,7 @@ minecraft:torchflower{}
 minecraft:torchflower_crop{growth[0, 1, 2, 3, 4, 5, 6, 7]}
 minecraft:trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
 minecraft:trapped_chest{minecraft:cardinal_direction[east, south, north, west]}
+minecraft:trial_spawner{trial_spawner_state[0, 1, 2, 3, 4, 5]}
 minecraft:trip_wire{attached_bit[0, 1], disarmed_bit[0, 1], powered_bit[0, 1], suspended_bit[0, 1]}
 minecraft:tripwire_hook{attached_bit[0, 1], direction[0, 1, 2, 3], powered_bit[0, 1]}
 minecraft:tube_coral{}

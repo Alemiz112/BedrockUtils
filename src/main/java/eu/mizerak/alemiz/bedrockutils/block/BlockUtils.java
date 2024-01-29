@@ -1,5 +1,9 @@
 package eu.mizerak.alemiz.bedrockutils.block;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import eu.mizerak.alemiz.bedrockutils.block.state.BlockDefinition;
 import org.cloudburstmc.blockstateupdater.BlockStateUpdaters;
 import org.cloudburstmc.blockstateupdater.util.tagupdater.CompoundTagUpdaterContext;
@@ -11,9 +15,13 @@ import eu.mizerak.alemiz.bedrockutils.BedrockUtils;
 import eu.mizerak.alemiz.bedrockutils.block.creator.*;
 import lombok.extern.log4j.Log4j2;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.StringJoiner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -47,8 +55,9 @@ public class BlockUtils {
         creators.add(new BlockPaletteCreator588());
         creators.add(new BlockPaletteCreator594()); // shulker box, concrete have own type per color
         creators.add(new BlockPaletteCreator617()); // stained_glass, stained_glass_pane, concrete_powder, stained_hardened_clay have own type per color
-        creators.add(new BlockPaletteCreator622());
-        creators.add(new BlockPaletteCreator630());
+        creators.add(new BlockPaletteCreator622()); // FACING_TO_CARDINAL updates for chests
+        creators.add(new BlockPaletteCreator630()); // planks, stone blocks have own type now
+        creators.add(new BlockPaletteCreator649()); // hard_stained_glass, hard_stained_glass_pane have own type per color
 
         BlockPaletteCreator latest = creators.get(creators.size() - 1);
         int version = getBedrockVersion(latest);
@@ -58,14 +67,14 @@ public class BlockUtils {
 
         // Compare block states between latest and previous palette
         BlockPaletteCreator previous = creators.get(creators.size() - 2);
-        // compareBlockPalettes(latest, previous, true);
+        // compareBlockPalettes(latest, previous);
 
         // Generate a pretty block palette dump
         createPaletteDump(latest, "block_properties.txt");
 
         // findExtraStates(latest, creators.get(creators.size() - 2));
 
-        int vanilla = CompoundTagUpdaterContext.makeVersion(1, 20, 50);
+        int vanilla = CompoundTagUpdaterContext.makeVersion(1, 20, 60);
         System.out.println(latest.getVersion() - vanilla);
 
         System.out.println(BlockStateUpdaters.getLatestVersion());
@@ -120,7 +129,7 @@ public class BlockUtils {
     }
 
     public static NbtMap cleanBlockState(NbtMap state) {
-        if (state.containsKey("name_hash") || state.containsKey("network_id")) {
+        if (state.containsKey("name_hash") || state.containsKey("network_id") || state.containsKey("block_id")) {
             return cleanBlockState(state.toBuilder()).build();
         }
         return state;
@@ -129,6 +138,7 @@ public class BlockUtils {
     public static NbtMapBuilder cleanBlockState(NbtMapBuilder builder) {
         builder.remove("name_hash");
         builder.remove("network_id");
+        builder.remove("block_id");
         return builder;
     }
 }
