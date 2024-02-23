@@ -1,15 +1,19 @@
 minecraft:acacia_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:acacia_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:acacia_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:acacia_fence{}
 minecraft:acacia_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
 minecraft:acacia_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
+minecraft:acacia_leaves{persistent_bit[0, 1], update_bit[0, 1]}
 minecraft:acacia_log{pillar_axis[x, y, z]}
 minecraft:acacia_planks{}
 minecraft:acacia_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
+minecraft:acacia_slab{minecraft:vertical_half[top, bottom]}
 minecraft:acacia_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:acacia_standing_sign{ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:acacia_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
 minecraft:acacia_wall_sign{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:acacia_wood{pillar_axis[x, y, z]}
 minecraft:activator_rail{rail_data_bit[0, 1], rail_direction[0, 1, 2, 3, 4, 5]}
 minecraft:air{}
 minecraft:allow{}
@@ -55,16 +59,20 @@ minecraft:bell{attachment[standing, side, multiple, hanging], direction[0, 1, 2,
 minecraft:big_dripleaf{big_dripleaf_head[0, 1], big_dripleaf_tilt[unstable, partial_tilt, full_tilt, none], minecraft:cardinal_direction[east, south, north, west]}
 minecraft:birch_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:birch_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:birch_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:birch_fence{}
 minecraft:birch_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
 minecraft:birch_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
+minecraft:birch_leaves{persistent_bit[0, 1], update_bit[0, 1]}
 minecraft:birch_log{pillar_axis[x, y, z]}
 minecraft:birch_planks{}
 minecraft:birch_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
+minecraft:birch_slab{minecraft:vertical_half[top, bottom]}
 minecraft:birch_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:birch_standing_sign{ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:birch_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
 minecraft:birch_wall_sign{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:birch_wood{pillar_axis[x, y, z]}
 minecraft:black_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:black_candle_cake{lit[0, 1]}
 minecraft:black_carpet{}
@@ -233,14 +241,18 @@ minecraft:cyan_terracotta{}
 minecraft:cyan_wool{}
 minecraft:dark_oak_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:dark_oak_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:dark_oak_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:dark_oak_fence{}
 minecraft:dark_oak_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
 minecraft:dark_oak_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
+minecraft:dark_oak_leaves{persistent_bit[0, 1], update_bit[0, 1]}
 minecraft:dark_oak_log{pillar_axis[x, y, z]}
 minecraft:dark_oak_planks{}
 minecraft:dark_oak_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
+minecraft:dark_oak_slab{minecraft:vertical_half[top, bottom]}
 minecraft:dark_oak_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:dark_oak_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
+minecraft:dark_oak_wood{pillar_axis[x, y, z]}
 minecraft:dark_prismarine_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:darkoak_standing_sign{ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:darkoak_wall_sign{facing_direction[0, 1, 2, 3, 4, 5]}
@@ -287,7 +299,6 @@ minecraft:double_stone_block_slab{minecraft:vertical_half[top, bottom], stone_sl
 minecraft:double_stone_block_slab2{minecraft:vertical_half[top, bottom], stone_slab_type_2[prismarine_rough, red_sandstone, prismarine_dark, smooth_sandstone, purpur, red_nether_brick, prismarine_brick, mossy_cobblestone]}
 minecraft:double_stone_block_slab3{minecraft:vertical_half[top, bottom], stone_slab_type_3[smooth_red_sandstone, polished_granite, end_stone_brick, granite, polished_diorite, andesite, polished_andesite, diorite]}
 minecraft:double_stone_block_slab4{minecraft:vertical_half[top, bottom], stone_slab_type_4[mossy_stone_brick, smooth_quartz, cut_sandstone, cut_red_sandstone, stone]}
-minecraft:double_wooden_slab{minecraft:vertical_half[top, bottom], wood_type[birch, oak, acacia, jungle, dark_oak, spruce]}
 minecraft:dragon_egg{}
 minecraft:dried_kelp_block{}
 minecraft:dripstone_block{}
@@ -457,7 +468,7 @@ minecraft:gold_ore{}
 minecraft:golden_rail{rail_data_bit[0, 1], rail_direction[0, 1, 2, 3, 4, 5]}
 minecraft:granite{}
 minecraft:granite_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
-minecraft:grass{}
+minecraft:grass_block{}
 minecraft:grass_path{}
 minecraft:gravel{}
 minecraft:gray_candle{candles[0, 1, 2, 3], lit[0, 1]}
@@ -539,16 +550,20 @@ minecraft:jigsaw{facing_direction[0, 1, 2, 3, 4, 5], rotation[0, 1, 2, 3]}
 minecraft:jukebox{}
 minecraft:jungle_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:jungle_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:jungle_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:jungle_fence{}
 minecraft:jungle_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
 minecraft:jungle_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
+minecraft:jungle_leaves{persistent_bit[0, 1], update_bit[0, 1]}
 minecraft:jungle_log{pillar_axis[x, y, z]}
 minecraft:jungle_planks{}
 minecraft:jungle_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
+minecraft:jungle_slab{minecraft:vertical_half[top, bottom]}
 minecraft:jungle_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:jungle_standing_sign{ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:jungle_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
 minecraft:jungle_wall_sign{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:jungle_wood{pillar_axis[x, y, z]}
 minecraft:kelp{kelp_age[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]}
 minecraft:ladder{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:lantern{hanging[0, 1]}
@@ -556,8 +571,6 @@ minecraft:lapis_block{}
 minecraft:lapis_ore{}
 minecraft:large_amethyst_bud{minecraft:block_face[east, south, north, west, up, down]}
 minecraft:lava{liquid_depth[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
-minecraft:leaves{old_leaf_type[birch, oak, jungle, spruce], persistent_bit[0, 1], update_bit[0, 1]}
-minecraft:leaves2{new_leaf_type[acacia, dark_oak], persistent_bit[0, 1], update_bit[0, 1]}
 minecraft:lectern{minecraft:cardinal_direction[east, south, north, west], powered_bit[0, 1]}
 minecraft:lever{lever_direction[east, south, north, up_north_south, west, down_east_west, down_north_south, up_east_west], open_bit[0, 1]}
 minecraft:light_block{block_light_level[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
@@ -665,11 +678,15 @@ minecraft:netherrack{}
 minecraft:netherreactor{}
 minecraft:normal_stone_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:noteblock{}
+minecraft:oak_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:oak_fence{}
 minecraft:oak_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
+minecraft:oak_leaves{persistent_bit[0, 1], update_bit[0, 1]}
 minecraft:oak_log{pillar_axis[x, y, z]}
 minecraft:oak_planks{}
+minecraft:oak_slab{minecraft:vertical_half[top, bottom]}
 minecraft:oak_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
+minecraft:oak_wood{pillar_axis[x, y, z]}
 minecraft:observer{minecraft:facing_direction[east, south, north, west, up, down], powered_bit[0, 1]}
 minecraft:obsidian{}
 minecraft:ochre_froglight{pillar_axis[x, y, z]}
@@ -842,16 +859,20 @@ minecraft:sponge{sponge_type[wet, dry]}
 minecraft:spore_blossom{}
 minecraft:spruce_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:spruce_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:spruce_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:spruce_fence{}
 minecraft:spruce_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
 minecraft:spruce_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
+minecraft:spruce_leaves{persistent_bit[0, 1], update_bit[0, 1]}
 minecraft:spruce_log{pillar_axis[x, y, z]}
 minecraft:spruce_planks{}
 minecraft:spruce_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
+minecraft:spruce_slab{minecraft:vertical_half[top, bottom]}
 minecraft:spruce_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:spruce_standing_sign{ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:spruce_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
 minecraft:spruce_wall_sign{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:spruce_wood{pillar_axis[x, y, z]}
 minecraft:standing_banner{ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:standing_sign{ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:sticky_piston{facing_direction[0, 1, 2, 3, 4, 5]}
@@ -869,18 +890,24 @@ minecraft:stonebrick{stone_brick_type[default, mossy, chiseled, cracked, smooth]
 minecraft:stonecutter{}
 minecraft:stonecutter_block{minecraft:cardinal_direction[east, south, north, west]}
 minecraft:stripped_acacia_log{pillar_axis[x, y, z]}
+minecraft:stripped_acacia_wood{pillar_axis[x, y, z]}
 minecraft:stripped_bamboo_block{pillar_axis[x, y, z]}
 minecraft:stripped_birch_log{pillar_axis[x, y, z]}
+minecraft:stripped_birch_wood{pillar_axis[x, y, z]}
 minecraft:stripped_cherry_log{pillar_axis[x, y, z]}
 minecraft:stripped_cherry_wood{pillar_axis[x, y, z]}
 minecraft:stripped_crimson_hyphae{pillar_axis[x, y, z]}
 minecraft:stripped_crimson_stem{pillar_axis[x, y, z]}
 minecraft:stripped_dark_oak_log{pillar_axis[x, y, z]}
+minecraft:stripped_dark_oak_wood{pillar_axis[x, y, z]}
 minecraft:stripped_jungle_log{pillar_axis[x, y, z]}
+minecraft:stripped_jungle_wood{pillar_axis[x, y, z]}
 minecraft:stripped_mangrove_log{pillar_axis[x, y, z]}
 minecraft:stripped_mangrove_wood{pillar_axis[x, y, z]}
 minecraft:stripped_oak_log{pillar_axis[x, y, z]}
+minecraft:stripped_oak_wood{pillar_axis[x, y, z]}
 minecraft:stripped_spruce_log{pillar_axis[x, y, z]}
+minecraft:stripped_spruce_wood{pillar_axis[x, y, z]}
 minecraft:stripped_warped_hyphae{pillar_axis[x, y, z]}
 minecraft:stripped_warped_stem{pillar_axis[x, y, z]}
 minecraft:structure_block{structure_block_type[data, load, corner, save, invalid, export]}
@@ -919,6 +946,7 @@ minecraft:unknown{}
 minecraft:unlit_redstone_torch{torch_facing_direction[east, top, south, north, west, unknown]}
 minecraft:unpowered_comparator{minecraft:cardinal_direction[east, south, north, west], output_lit_bit[0, 1], output_subtract_bit[0, 1]}
 minecraft:unpowered_repeater{minecraft:cardinal_direction[east, south, north, west], repeater_delay[0, 1, 2, 3]}
+minecraft:vault{minecraft:cardinal_direction[east, south, north, west], vault_state[inactive, unlocking, active, ejecting]}
 minecraft:verdant_froglight{pillar_axis[x, y, z]}
 minecraft:vine{vine_direction_bits[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:wall_banner{facing_direction[0, 1, 2, 3, 4, 5]}
@@ -1009,11 +1037,9 @@ minecraft:white_stained_glass_pane{}
 minecraft:white_terracotta{}
 minecraft:white_wool{}
 minecraft:wither_rose{}
-minecraft:wood{pillar_axis[x, y, z], stripped_bit[0, 1], wood_type[birch, oak, acacia, jungle, dark_oak, spruce]}
 minecraft:wooden_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:wooden_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:wooden_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
-minecraft:wooden_slab{minecraft:vertical_half[top, bottom], wood_type[birch, oak, acacia, jungle, dark_oak, spruce]}
 minecraft:yellow_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:yellow_candle_cake{lit[0, 1]}
 minecraft:yellow_carpet{}
