@@ -60,6 +60,8 @@ public class BlockUtils {
         creators.add(new BlockPaletteCreator649()); // hard_stained_glass, hard_stained_glass_pane have own type per color
         creators.add(new BlockPaletteCreator662()); // double_wooden_slab, leaves, leaves2, wood, wooden_slab  have own type
 
+        // generateAllBlockPalettes(creators);
+
         BlockPaletteCreator latest = creators.get(creators.size() - 1);
         int version = getBedrockVersion(latest);
 
@@ -86,6 +88,15 @@ public class BlockUtils {
         blockPalette.printUnmatchedStates();
         blockPalette.save(saveFile);
         blockPalette.saveVanilla(saveFile.replace("dat", "nbt"));
+    }
+
+    public static void generateAllBlockPalettes(List<BlockPaletteCreator> creators) {
+        for (BlockPaletteCreator creator : creators) {
+            int version = getBedrockVersion(creator);
+            BlockPalette blockPalette = creator.createBlockPalette();
+            blockPalette.printUnmatchedStates();
+            blockPalette.save("runtime_block_states_" + version + ".dat");
+        }
     }
 
     public static void compareBlockPalettes(BlockPaletteCreator blockCreator, BlockPaletteCreator comparing) {
