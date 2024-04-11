@@ -58,7 +58,8 @@ public class BlockUtils {
         creators.add(new BlockPaletteCreator622()); // FACING_TO_CARDINAL updates for chests
         creators.add(new BlockPaletteCreator630()); // planks, stone blocks have own type now
         creators.add(new BlockPaletteCreator649()); // hard_stained_glass, hard_stained_glass_pane have own type per color
-        creators.add(new BlockPaletteCreator662()); // double_wooden_slab, leaves, leaves2, wood, wooden_slab  have own type
+        creators.add(new BlockPaletteCreator662()); // double_wooden_slab, leaves, leaves2, wood, wooden_slab have own type
+        creators.add(new BlockPaletteCreator671()); // sapling, red_flower, coral_fan, coral_fan_dead have own type
 
         // generateAllBlockPalettes(creators);
 
@@ -75,9 +76,9 @@ public class BlockUtils {
         // Generate a pretty block palette dump
         createPaletteDump(latest, "block_properties.txt");
 
-        // findExtraStates(latest, creators.get(creators.size() - 2));
+        // findExtraStates(latest, creators.get(creators.size() - 1));
 
-        int vanilla = CompoundTagUpdaterContext.makeVersion(1, 20, 70);
+        int vanilla = CompoundTagUpdaterContext.makeVersion(1, 20, 80);
         System.out.println(latest.getVersion() - vanilla);
 
         System.out.println(BlockStateUpdaters.getLatestVersion());
