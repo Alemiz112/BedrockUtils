@@ -111,9 +111,11 @@ minecraft:bone_block{deprecated[0, 1, 2, 3], pillar_axis[x, y, z]}
 minecraft:bookshelf{}
 minecraft:border_block{wall_connection_type_east[short, none, tall], wall_connection_type_north[short, none, tall], wall_connection_type_south[short, none, tall], wall_connection_type_west[short, none, tall], wall_post_bit[0, 1]}
 minecraft:brain_coral{}
+minecraft:brain_coral_block{}
 minecraft:brain_coral_fan{coral_fan_direction[0, 1]}
 minecraft:brewing_stand{brewing_stand_slot_a_bit[0, 1], brewing_stand_slot_b_bit[0, 1], brewing_stand_slot_c_bit[0, 1]}
 minecraft:brick_block{}
+minecraft:brick_slab{minecraft:vertical_half[top, bottom]}
 minecraft:brick_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:brown_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:brown_candle_cake{lit[0, 1]}
@@ -130,6 +132,7 @@ minecraft:brown_terracotta{}
 minecraft:brown_wool{}
 minecraft:bubble_column{drag_down[0, 1]}
 minecraft:bubble_coral{}
+minecraft:bubble_coral_block{}
 minecraft:bubble_coral_fan{coral_fan_direction[0, 1]}
 minecraft:budding_amethyst{}
 minecraft:cactus{age[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
@@ -188,6 +191,7 @@ minecraft:cobbled_deepslate_slab{minecraft:vertical_half[top, bottom]}
 minecraft:cobbled_deepslate_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:cobbled_deepslate_wall{wall_connection_type_east[short, none, tall], wall_connection_type_north[short, none, tall], wall_connection_type_south[short, none, tall], wall_connection_type_west[short, none, tall], wall_post_bit[0, 1]}
 minecraft:cobblestone{}
+minecraft:cobblestone_slab{minecraft:vertical_half[top, bottom]}
 minecraft:cobblestone_wall{wall_block_type[prismarine, red_sandstone, mossy_stone_brick, mossy_cobblestone, sandstone, nether_brick, cobblestone, granite, red_nether_brick, stone_brick, end_brick, brick, andesite, diorite], wall_connection_type_east[short, none, tall], wall_connection_type_north[short, none, tall], wall_connection_type_south[short, none, tall], wall_connection_type_west[short, none, tall], wall_post_bit[0, 1]}
 minecraft:cocoa{age[0, 1, 2], direction[0, 1, 2, 3]}
 minecraft:colored_torch_bp{color_bit[0, 1], torch_facing_direction[east, top, south, north, west, unknown]}
@@ -201,7 +205,6 @@ minecraft:copper_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1
 minecraft:copper_grate{}
 minecraft:copper_ore{}
 minecraft:copper_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
-minecraft:coral_block{coral_color[red, pink, blue, yellow, purple], dead_bit[0, 1]}
 minecraft:coral_fan_hang{coral_direction[0, 1, 2, 3], coral_hang_type_bit[0, 1], dead_bit[0, 1]}
 minecraft:coral_fan_hang2{coral_direction[0, 1, 2, 3], coral_hang_type_bit[0, 1], dead_bit[0, 1]}
 minecraft:coral_fan_hang3{coral_direction[0, 1, 2, 3], coral_hang_type_bit[0, 1], dead_bit[0, 1]}
@@ -266,14 +269,19 @@ minecraft:darkoak_wall_sign{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:daylight_detector{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:daylight_detector_inverted{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:dead_brain_coral{}
+minecraft:dead_brain_coral_block{}
 minecraft:dead_brain_coral_fan{coral_fan_direction[0, 1]}
 minecraft:dead_bubble_coral{}
+minecraft:dead_bubble_coral_block{}
 minecraft:dead_bubble_coral_fan{coral_fan_direction[0, 1]}
 minecraft:dead_fire_coral{}
+minecraft:dead_fire_coral_block{}
 minecraft:dead_fire_coral_fan{coral_fan_direction[0, 1]}
 minecraft:dead_horn_coral{}
+minecraft:dead_horn_coral_block{}
 minecraft:dead_horn_coral_fan{coral_fan_direction[0, 1]}
 minecraft:dead_tube_coral{}
+minecraft:dead_tube_coral_block{}
 minecraft:dead_tube_coral_fan{coral_fan_direction[0, 1]}
 minecraft:deadbush{}
 minecraft:decorated_pot{direction[0, 1, 2, 3]}
@@ -306,7 +314,6 @@ minecraft:dirt{dirt_type[normal, coarse]}
 minecraft:dirt_with_roots{}
 minecraft:dispenser{facing_direction[0, 1, 2, 3, 4, 5], triggered_bit[0, 1]}
 minecraft:double_cut_copper_slab{minecraft:vertical_half[top, bottom]}
-minecraft:double_plant{double_plant_type[fern, syringa, grass, paeonia, rose, sunflower], upper_block_bit[0, 1]}
 minecraft:double_stone_block_slab{minecraft:vertical_half[top, bottom], stone_slab_type[cobblestone, quartz, wood, stone_brick, brick, smooth_stone, sandstone, nether_brick]}
 minecraft:double_stone_block_slab2{minecraft:vertical_half[top, bottom], stone_slab_type_2[prismarine_rough, red_sandstone, prismarine_dark, smooth_sandstone, purpur, red_nether_brick, prismarine_brick, mossy_cobblestone]}
 minecraft:double_stone_block_slab3{minecraft:vertical_half[top, bottom], stone_slab_type_3[smooth_red_sandstone, polished_granite, end_stone_brick, granite, polished_diorite, andesite, polished_andesite, diorite]}
@@ -457,8 +464,10 @@ minecraft:exposed_cut_copper_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1
 minecraft:exposed_double_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:farmland{moisturized_amount[0, 1, 2, 3, 4, 5, 6, 7]}
 minecraft:fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
+minecraft:fern{}
 minecraft:fire{age[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:fire_coral{}
+minecraft:fire_coral_block{}
 minecraft:fire_coral_fan{coral_fan_direction[0, 1]}
 minecraft:fletching_table{}
 minecraft:flower_pot{update_bit[0, 1]}
@@ -550,6 +559,7 @@ minecraft:honey_block{}
 minecraft:honeycomb_block{}
 minecraft:hopper{facing_direction[0, 1, 2, 3, 4, 5], toggle_bit[0, 1]}
 minecraft:horn_coral{}
+minecraft:horn_coral_block{}
 minecraft:horn_coral_fan{coral_fan_direction[0, 1]}
 minecraft:ice{}
 minecraft:infested_deepslate{pillar_axis[x, y, z]}
@@ -586,6 +596,7 @@ minecraft:lantern{hanging[0, 1]}
 minecraft:lapis_block{}
 minecraft:lapis_ore{}
 minecraft:large_amethyst_bud{minecraft:block_face[east, south, north, west, up, down]}
+minecraft:large_fern{upper_block_bit[0, 1]}
 minecraft:lava{liquid_depth[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:lectern{minecraft:cardinal_direction[east, south, north, west], powered_bit[0, 1]}
 minecraft:lever{lever_direction[east, south, north, up_north_south, west, down_east_west, down_north_south, up_east_west], open_bit[0, 1]}
@@ -613,6 +624,7 @@ minecraft:light_gray_terracotta{}
 minecraft:light_gray_wool{}
 minecraft:light_weighted_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:lightning_rod{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:lilac{upper_block_bit[0, 1]}
 minecraft:lily_of_the_valley{}
 minecraft:lime_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:lime_candle_cake{lit[0, 1]}
@@ -685,6 +697,7 @@ minecraft:muddy_mangrove_roots{pillar_axis[x, y, z]}
 minecraft:mycelium{}
 minecraft:nether_brick{}
 minecraft:nether_brick_fence{}
+minecraft:nether_brick_slab{minecraft:vertical_half[top, bottom]}
 minecraft:nether_brick_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:nether_gold_ore{}
 minecraft:nether_sprouts{}
@@ -734,6 +747,8 @@ minecraft:oxidized_double_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:packed_ice{}
 minecraft:packed_mud{}
 minecraft:pearlescent_froglight{pillar_axis[x, y, z]}
+minecraft:peony{upper_block_bit[0, 1]}
+minecraft:petrified_oak_slab{minecraft:vertical_half[top, bottom]}
 minecraft:pink_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:pink_candle_cake{lit[0, 1]}
 minecraft:pink_carpet{}
@@ -809,6 +824,7 @@ minecraft:purpur_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:quartz_block{chisel_type[default, chiseled, lines, smooth], pillar_axis[x, y, z]}
 minecraft:quartz_bricks{}
 minecraft:quartz_ore{}
+minecraft:quartz_slab{minecraft:vertical_half[top, bottom]}
 minecraft:quartz_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:rail{rail_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
 minecraft:raw_copper_block{}
@@ -842,8 +858,10 @@ minecraft:reinforced_deepslate{}
 minecraft:repeating_command_block{conditional_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:reserved6{}
 minecraft:respawn_anchor{respawn_anchor_charge[0, 1, 2, 3, 4]}
+minecraft:rose_bush{upper_block_bit[0, 1]}
 minecraft:sand{sand_type[red, normal]}
 minecraft:sandstone{sand_stone_type[default, cut, heiroglyphs, smooth]}
+minecraft:sandstone_slab{minecraft:vertical_half[top, bottom]}
 minecraft:sandstone_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:scaffolding{stability[0, 1, 2, 3, 4, 5, 6, 7], stability_check[0, 1]}
 minecraft:sculk{}
@@ -854,6 +872,7 @@ minecraft:sculk_vein{multi_face_direction_bits[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
 minecraft:sea_lantern{}
 minecraft:sea_pickle{cluster_count[0, 1, 2, 3], dead_bit[0, 1]}
 minecraft:seagrass{sea_grass_type[default, double_bot, double_top]}
+minecraft:short_grass{}
 minecraft:shroomlight{}
 minecraft:silver_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:skull{facing_direction[0, 1, 2, 3, 4, 5]}
@@ -867,6 +886,7 @@ minecraft:smooth_quartz_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 
 minecraft:smooth_red_sandstone_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:smooth_sandstone_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:smooth_stone{}
+minecraft:smooth_stone_slab{minecraft:vertical_half[top, bottom]}
 minecraft:sniffer_egg{cracked_state[max_cracked, no_cracks, cracked]}
 minecraft:snow{}
 minecraft:snow_layer{covered_bit[0, 1], height[0, 1, 2, 3, 4, 5, 6, 7]}
@@ -900,10 +920,10 @@ minecraft:standing_sign{ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
 minecraft:sticky_piston{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:sticky_piston_arm_collision{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:stone{}
-minecraft:stone_block_slab{minecraft:vertical_half[top, bottom], stone_slab_type[cobblestone, quartz, wood, stone_brick, brick, smooth_stone, sandstone, nether_brick]}
 minecraft:stone_block_slab2{minecraft:vertical_half[top, bottom], stone_slab_type_2[prismarine_rough, red_sandstone, prismarine_dark, smooth_sandstone, purpur, red_nether_brick, prismarine_brick, mossy_cobblestone]}
 minecraft:stone_block_slab3{minecraft:vertical_half[top, bottom], stone_slab_type_3[smooth_red_sandstone, polished_granite, end_stone_brick, granite, polished_diorite, andesite, polished_andesite, diorite]}
 minecraft:stone_block_slab4{minecraft:vertical_half[top, bottom], stone_slab_type_4[mossy_stone_brick, smooth_quartz, cut_sandstone, cut_red_sandstone, stone]}
+minecraft:stone_brick_slab{minecraft:vertical_half[top, bottom]}
 minecraft:stone_brick_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:stone_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:stone_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
@@ -934,10 +954,11 @@ minecraft:stripped_warped_hyphae{pillar_axis[x, y, z]}
 minecraft:stripped_warped_stem{pillar_axis[x, y, z]}
 minecraft:structure_block{structure_block_type[data, load, corner, save, invalid, export]}
 minecraft:structure_void{structure_void_type[void, air]}
+minecraft:sunflower{upper_block_bit[0, 1]}
 minecraft:suspicious_gravel{brushed_progress[0, 1, 2, 3], hanging[0, 1]}
 minecraft:suspicious_sand{brushed_progress[0, 1, 2, 3], hanging[0, 1]}
 minecraft:sweet_berry_bush{growth[0, 1, 2, 3, 4, 5, 6, 7]}
-minecraft:tallgrass{tall_grass_type[default, fern, snow, tall]}
+minecraft:tall_grass{upper_block_bit[0, 1]}
 minecraft:target{}
 minecraft:tinted_glass{}
 minecraft:tnt{allow_underwater_bit[0, 1], explode_bit[0, 1]}
@@ -946,10 +967,11 @@ minecraft:torchflower{}
 minecraft:torchflower_crop{growth[0, 1, 2, 3, 4, 5, 6, 7]}
 minecraft:trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
 minecraft:trapped_chest{minecraft:cardinal_direction[east, south, north, west]}
-minecraft:trial_spawner{trial_spawner_state[0, 1, 2, 3, 4, 5]}
+minecraft:trial_spawner{ominous[0, 1], trial_spawner_state[0, 1, 2, 3, 4, 5]}
 minecraft:trip_wire{attached_bit[0, 1], disarmed_bit[0, 1], powered_bit[0, 1], suspended_bit[0, 1]}
 minecraft:tripwire_hook{attached_bit[0, 1], direction[0, 1, 2, 3], powered_bit[0, 1]}
 minecraft:tube_coral{}
+minecraft:tube_coral_block{}
 minecraft:tube_coral_fan{coral_fan_direction[0, 1]}
 minecraft:tuff{}
 minecraft:tuff_brick_double_slab{minecraft:vertical_half[top, bottom]}
@@ -969,7 +991,7 @@ minecraft:unknown{}
 minecraft:unlit_redstone_torch{torch_facing_direction[east, top, south, north, west, unknown]}
 minecraft:unpowered_comparator{minecraft:cardinal_direction[east, south, north, west], output_lit_bit[0, 1], output_subtract_bit[0, 1]}
 minecraft:unpowered_repeater{minecraft:cardinal_direction[east, south, north, west], repeater_delay[0, 1, 2, 3]}
-minecraft:vault{minecraft:cardinal_direction[east, south, north, west], vault_state[inactive, unlocking, active, ejecting]}
+minecraft:vault{minecraft:cardinal_direction[east, south, north, west], ominous[0, 1], vault_state[inactive, unlocking, active, ejecting]}
 minecraft:verdant_froglight{pillar_axis[x, y, z]}
 minecraft:vine{vine_direction_bits[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:wall_banner{facing_direction[0, 1, 2, 3, 4, 5]}

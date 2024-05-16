@@ -1,9 +1,5 @@
 package eu.mizerak.alemiz.bedrockutils.block;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import eu.mizerak.alemiz.bedrockutils.block.state.BlockDefinition;
 import org.cloudburstmc.blockstateupdater.BlockStateUpdaters;
 import org.cloudburstmc.blockstateupdater.util.tagupdater.CompoundTagUpdaterContext;
@@ -15,13 +11,9 @@ import eu.mizerak.alemiz.bedrockutils.BedrockUtils;
 import eu.mizerak.alemiz.bedrockutils.block.creator.*;
 import lombok.extern.log4j.Log4j2;
 
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.StringJoiner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -60,6 +52,7 @@ public class BlockUtils {
         creators.add(new BlockPaletteCreator649()); // hard_stained_glass, hard_stained_glass_pane have own type per color
         creators.add(new BlockPaletteCreator662()); // double_wooden_slab, leaves, leaves2, wood, wooden_slab have own type
         creators.add(new BlockPaletteCreator671()); // sapling, red_flower, coral_fan, coral_fan_dead have own type
+        creators.add(new BlockPaletteCreator685()); // tallgrass, double plant, coral block, stone slabs were split
 
         // generateAllBlockPalettes(creators);
 
@@ -76,9 +69,9 @@ public class BlockUtils {
         // Generate a pretty block palette dump
         createPaletteDump(latest, "block_properties.txt");
 
-        // findExtraStates(latest, creators.get(creators.size() - 1));
+        // findExtraStates(latest, creators.get(creators.size() - 2));
 
-        int vanilla = CompoundTagUpdaterContext.makeVersion(1, 20, 80);
+        int vanilla = CompoundTagUpdaterContext.makeVersion(1, 21, 0);
         System.out.println(latest.getVersion() - vanilla);
 
         System.out.println(BlockStateUpdaters.getLatestVersion());
