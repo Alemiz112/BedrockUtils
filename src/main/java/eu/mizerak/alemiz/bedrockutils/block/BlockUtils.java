@@ -53,7 +53,8 @@ public class BlockUtils {
         creators.add(new BlockPaletteCreator662()); // double_wooden_slab, leaves, leaves2, wood, wooden_slab have own type
         creators.add(new BlockPaletteCreator671()); // sapling, red_flower, coral_fan, coral_fan_dead have own type
         creators.add(new BlockPaletteCreator685()); // tallgrass, double plant, coral block, stone slabs were split
-        creators.add(new BlockPaletteCreator712()); // a lot was change :)
+        creators.add(new BlockPaletteCreator712()); // a lot was changed :)
+        creators.add(new BlockPaletteCreator729()); // structure_void, tnt, sponge, purpur_block, cobblestone_wall, and some edu blocks were split
 
         // generateAllBlockPalettes(creators);
 
@@ -72,7 +73,7 @@ public class BlockUtils {
 
         // findExtraStates(latest, creators.get(creators.size() - 2));
 
-        int vanilla = CompoundTagUpdaterContext.makeVersion(1, 21, 20);
+        int vanilla = CompoundTagUpdaterContext.makeVersion(1, 21, 30);
         System.out.println(latest.getVersion() - vanilla);
 
         System.out.println(BlockStateUpdaters.getLatestVersion());
