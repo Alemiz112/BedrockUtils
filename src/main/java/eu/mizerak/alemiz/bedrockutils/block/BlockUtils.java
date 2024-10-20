@@ -91,7 +91,7 @@ public class BlockUtils {
 
         System.out.println(BlockStateUpdaters.getLatestVersion());
 
-        updateBlockIdsJson(Paths.get("block_id_map.json"));
+        // updateBlockIdsJson(Paths.get("block_id_map.json"));
     }
 
     public static void generateBlockPalette(BlockPaletteCreator blockCreator, String saveFile) {
