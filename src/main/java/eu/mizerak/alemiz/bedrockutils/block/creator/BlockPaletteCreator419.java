@@ -56,7 +56,11 @@ public class BlockPaletteCreator419 extends BlockPaletteCreator {
             JsonArray blockValues = requiredStates.getAsJsonArray(blockIdentifier);
             for (JsonElement element : blockValues) {
                 String identifier = "minecraft:" + blockIdentifier;
-                int blockId = blockIdMap.getBlockId(identifier);
+                int blockId = blockIdMap.getBlockId("_" + identifier); // check for legacy block id first
+                if (blockId == -1) {
+                    blockId = blockIdMap.getBlockId(identifier);
+                }
+
                 if (blockId == -1) {
                     log.warn("Can not find blockId for " + identifier);
                     continue;
@@ -75,7 +79,7 @@ public class BlockPaletteCreator419 extends BlockPaletteCreator {
             String identifier = state.getString("name");
 
             boolean stateOverload = false;
-            if (!identifier.equals(blockIdMap.gteBlockIdentifier(blockState.getBlockId()))) {
+            if (!identifier.equals(blockIdMap.getBlockIdentifier(blockState.getBlockId()))) {
                 int blockId = blockIdMap.getBlockId(identifier);
                 if (blockId != -1 && blockState.getBlockId() != blockId) {
                     stateOverload = true;

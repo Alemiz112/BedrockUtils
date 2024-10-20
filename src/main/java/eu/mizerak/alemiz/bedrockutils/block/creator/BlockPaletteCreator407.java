@@ -48,12 +48,15 @@ public class BlockPaletteCreator407 extends BlockPaletteCreator {
             JsonArray blockValues = requiredStates.getAsJsonArray(blockIdentifier);
             for (JsonElement element : blockValues) {
                 String identifier = "minecraft:" + blockIdentifier;
-                int blockId = blockIdMap.getBlockId(identifier);
+                int blockId = blockIdMap.getBlockId("_" + identifier); // check for legacy block id first
+                if (blockId == -1) {
+                    blockId = blockIdMap.getBlockId(identifier);
+                }
+
                 if (blockId == -1) {
                     log.warn("Can not find blockId for " + identifier);
                     continue;
                 }
-
 
                 short damage = element.getAsShort();
                 NbtMap blockState = this.createUpdaterState(identifier, blockId, damage);
