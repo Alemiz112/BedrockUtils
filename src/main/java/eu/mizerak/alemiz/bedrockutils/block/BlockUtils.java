@@ -55,6 +55,7 @@ public class BlockUtils {
         creators.add(new BlockPaletteCreator685()); // tallgrass, double plant, coral block, stone slabs were split
         creators.add(new BlockPaletteCreator712()); // a lot was changed :)
         creators.add(new BlockPaletteCreator729()); // structure_void, tnt, sponge, purpur_block, cobblestone_wall, and some edu blocks were split
+        creators.add(new BlockPaletteCreator748()); // skull and brown_mushroom_block blocks were flattened, and this should be the end of flattening YAY
 
         // generateAllBlockPalettes(creators);
 
@@ -73,8 +74,8 @@ public class BlockUtils {
 
         // findExtraStates(latest, creators.get(creators.size() - 2));
 
-        int vanilla = CompoundTagUpdaterContext.makeVersion(1, 21, 30);
-        System.out.println(latest.getVersion() - vanilla);
+        int vanilla = CompoundTagUpdaterContext.makeVersion(1, 21, 40);
+        System.out.println(1 + (latest.getVersion() - vanilla));
 
         System.out.println(BlockStateUpdaters.getLatestVersion());
     }
