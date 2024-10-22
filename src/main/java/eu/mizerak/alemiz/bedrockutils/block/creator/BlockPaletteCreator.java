@@ -30,8 +30,14 @@ public abstract class BlockPaletteCreator {
     }
 
     public abstract BlockPalette createBlockPalette();
-    protected abstract NbtMap createUpdaterState(String identifier, int blockId, short damage);
-    protected abstract NbtMapBuilder createStateNbt(BlockState blockState, int runtimeId);
+
+    public int includeMissingBlockStates(BlockPalette palette) {
+        return 0;
+    }
+
+    protected abstract NbtMap createUpdaterState(String identifier, short damage);
+
+    protected abstract NbtMapBuilder createStateNbt(BlockState blockState, int runtimeId, boolean stateOverload);
 
     public NbtMap updateBlockState(NbtMap tag, int version) {
         return this.context.update(tag, version);

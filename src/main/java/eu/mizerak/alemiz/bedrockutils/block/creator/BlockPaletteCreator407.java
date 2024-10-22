@@ -59,7 +59,7 @@ public class BlockPaletteCreator407 extends BlockPaletteCreator {
                 }
 
                 short damage = element.getAsShort();
-                NbtMap blockState = this.createUpdaterState(identifier, blockId, damage);
+                NbtMap blockState = this.createUpdaterState(identifier, damage);
                 createdStates.add(new BlockState(identifier, blockId, damage, blockState));
             }
         }
@@ -70,7 +70,7 @@ public class BlockPaletteCreator407 extends BlockPaletteCreator {
                 palette.getUnmatchedStates().add(blockState);
             } else {
                 // Runtime id will be incrementally allocated when server starts
-                NbtMap nukkitState = this.createStateNbt(blockState, 0).build();
+                NbtMap nukkitState = this.createStateNbt(blockState, 0, false).build();
                 palette.getBlockStates().add(new BlockState(blockState.getIdentifier(), blockState.getBlockId(), blockState.getData(), nukkitState));
             }
         }
@@ -89,7 +89,7 @@ public class BlockPaletteCreator407 extends BlockPaletteCreator {
     }
 
     @Override
-    protected NbtMap createUpdaterState(String identifier, int blockId, short damage) {
+    protected NbtMap createUpdaterState(String identifier, short damage) {
         NbtMap emptyState = NbtMap.builder()
                 .putString("name", identifier)
                 .putShort("val", damage)
@@ -102,7 +102,7 @@ public class BlockPaletteCreator407 extends BlockPaletteCreator {
     }
 
     @Override
-    protected NbtMapBuilder createStateNbt(BlockState blockEntry, int runtimeId) {
+    protected NbtMapBuilder createStateNbt(BlockState blockEntry, int runtimeId, boolean stateOverload) {
         NbtMapBuilder builder = NbtMap.builder();
         builder.putCompound("block", blockEntry.getBlockState());
         builder.putInt("id", blockEntry.getBlockId());

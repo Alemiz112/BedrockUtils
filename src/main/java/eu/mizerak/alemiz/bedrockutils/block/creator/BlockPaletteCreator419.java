@@ -11,10 +11,7 @@ import eu.mizerak.alemiz.bedrockutils.block.state.BlockState;
 import eu.mizerak.alemiz.bedrockutils.block.LegacyBlockMapping;
 import lombok.extern.log4j.Log4j2;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static eu.mizerak.alemiz.bedrockutils.block.BlockUtils.cleanBlockState;
 
@@ -67,7 +64,7 @@ public class BlockPaletteCreator419 extends BlockPaletteCreator {
                 }
 
                 short damage = element.getAsShort();
-                NbtMap blockState = this.createUpdaterState(identifier, blockId, damage);
+                NbtMap blockState = this.createUpdaterState(identifier, damage);
                 createdStates.add(new BlockState(identifier, blockId, damage, blockState));
             }
         }
@@ -94,8 +91,7 @@ public class BlockPaletteCreator419 extends BlockPaletteCreator {
                 runtimeId = stateToRuntimeId.get(getFirstState(blockPalette, "minecraft:info_update"));
             }
 
-            NbtMapBuilder nukkitState = this.createStateNbt(blockState, runtimeId);
-            nukkitState.putBoolean("stateOverload", stateOverload);
+            NbtMapBuilder nukkitState = this.createStateNbt(blockState, runtimeId, stateOverload);
 
             blockState = blockState.toBuilder()
                     .blockState(nukkitState.build())
@@ -106,7 +102,57 @@ public class BlockPaletteCreator419 extends BlockPaletteCreator {
     }
 
     @Override
-    protected NbtMap createUpdaterState(String identifier, int blockId, short damage) {
+    public int includeMissingBlockStates(BlockPalette palette) {
+        Set<String> knownStates = new HashSet<>();
+        for (BlockState state : palette.getBlockStates()) {
+            knownStates.add(state.getBlockState().getString("name"));
+        }
+
+        List<NbtMap> vanillaStates = new ArrayList<>();
+        for (NbtMap nbtMap : this.getBlockPalette()) {
+            vanillaStates.add(cleanBlockState(nbtMap));
+        }
+
+        int added = 0;
+
+        LegacyBlockMapping legacyMapping = this.getIdentifier2LegacyMap();
+        for (Map.Entry<String, Integer> entry : legacyMapping.getIdentifier2BlockId().entrySet()) {
+            boolean legacy = entry.getKey().charAt(0) == '_';
+            String identifier = legacy ? entry.getKey().substring(1) : entry.getKey();
+            if (knownStates.contains(identifier)) {
+                continue; // already mapped
+            }
+
+            NbtMap state;
+            if (legacy) {
+                state = this.createUpdaterState(identifier, (short) 0);
+            } else {
+                state = this.getFirstState(vanillaStates, identifier);
+                if (state == null) {
+                    state = this.createUpdaterState(identifier, (short) 0);
+                }
+            }
+
+            BlockState blockState = new BlockState(identifier, entry.getValue(), (short) 0, state);
+
+            int runtimeId = vanillaStates.indexOf(state);
+            if (runtimeId == -1) {
+                palette.getUnmatchedStates().add(blockState);
+                continue;
+            }
+
+            added++;
+
+            blockState = blockState.toBuilder()
+                    .blockState(this.createStateNbt(blockState, runtimeId, false).build())
+                    .build();
+            palette.getBlockStates().add(blockState);
+        }
+        return added;
+    }
+
+    @Override
+    protected NbtMap createUpdaterState(String identifier, short damage) {
         NbtMap emptyState = NbtMap.builder()
                 .putString("name", identifier)
                 .putShort("val", damage)
@@ -118,11 +164,14 @@ public class BlockPaletteCreator419 extends BlockPaletteCreator {
     }
 
     @Override
-    protected NbtMapBuilder createStateNbt(BlockState blockState, int runtimeId) {
+    protected NbtMapBuilder createStateNbt(BlockState blockState, int runtimeId, boolean stateOverload) {
         NbtMapBuilder builder = blockState.getBlockState().toBuilder();
         builder.putInt("id", blockState.getBlockId());
         builder.putShort("data", blockState.getData());
         builder.putInt("runtimeId", runtimeId);
+        if (stateOverload) {
+            builder.putBoolean("stateOverload", true);
+        }
         return builder;
     }
 

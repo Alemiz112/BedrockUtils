@@ -75,11 +75,12 @@ public class BlockUtils {
         int version = getBedrockVersion(latest);
 
         // Generate a Nukkit friendly block palette
-        generateBlockPalette(latest, "runtime_block_states_" + version + ".dat");
-
+        BlockPalette palette = generateBlockPalette(latest, "runtime_block_states_" + version + ".dat");
         // Compare block states between latest and previous palette
         BlockPaletteCreator previous = CREATORS.get(CREATORS.size() - 2);
         // compareBlockPalettes(latest, previous);
+        // Build version with all vanilla default states
+        withMissingBlockStates(latest, palette, "full_runtime_block_states_" + version + ".dat");
 
         // Generate a pretty block palette dump
         createPaletteDump(latest, "block_properties.txt");
@@ -94,8 +95,18 @@ public class BlockUtils {
         // updateBlockIdsJson(Paths.get("block_id_map.json"));
     }
 
-    public static void generateBlockPalette(BlockPaletteCreator blockCreator, String saveFile) {
+    public static BlockPalette generateBlockPalette(BlockPaletteCreator blockCreator, String saveFile) {
         BlockPalette blockPalette = blockCreator.createBlockPalette();
+        blockPalette.printUnmatchedStates();
+        blockPalette.save(saveFile);
+        blockPalette.saveVanilla(saveFile.replace("dat", "nbt"));
+        return blockPalette;
+    }
+
+    public static void withMissingBlockStates(BlockPaletteCreator blockCreator, BlockPalette blockPalette, String saveFile) {
+        int newStates = blockCreator.includeMissingBlockStates(blockPalette);
+        log.info("Added {} missing vanilla states!", newStates);
+
         blockPalette.printUnmatchedStates();
         blockPalette.save(saveFile);
         blockPalette.saveVanilla(saveFile.replace("dat", "nbt"));
