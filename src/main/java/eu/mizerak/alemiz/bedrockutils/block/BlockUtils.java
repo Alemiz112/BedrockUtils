@@ -66,6 +66,7 @@ public class BlockUtils {
         CREATORS.add(new BlockPaletteCreator712()); // a lot was changed :)
         CREATORS.add(new BlockPaletteCreator729()); // structure_void, tnt, sponge, purpur_block, cobblestone_wall, and some edu blocks were split
         CREATORS.add(new BlockPaletteCreator748()); // skull and brown_mushroom_block blocks were flattened, and this should be the end of flattening YAY
+        CREATORS.add(new BlockPaletteCreator765());
     }
 
     public static void main(String[] args) {

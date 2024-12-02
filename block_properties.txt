@@ -159,6 +159,7 @@ minecraft:cave_vines_body_with_berries{growing_plant_age[0, 1, 2, 3, 4, 5, 6, 7,
 minecraft:cave_vines_head_with_berries{growing_plant_age[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]}
 minecraft:chain{pillar_axis[x, y, z]}
 minecraft:chain_command_block{conditional_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:chalkboard{direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:chemical_heat{}
 minecraft:cherry_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:cherry_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
@@ -186,6 +187,7 @@ minecraft:chiseled_nether_bricks{}
 minecraft:chiseled_polished_blackstone{}
 minecraft:chiseled_quartz_block{pillar_axis[x, y, z]}
 minecraft:chiseled_red_sandstone{}
+minecraft:chiseled_resin_bricks{}
 minecraft:chiseled_sandstone{}
 minecraft:chiseled_stone_bricks{}
 minecraft:chiseled_tuff{}
@@ -194,6 +196,7 @@ minecraft:chorus_flower{age[0, 1, 2, 3, 4, 5]}
 minecraft:chorus_plant{}
 minecraft:clay{}
 minecraft:client_request_placeholder_block{}
+minecraft:closed_eyeblossom{}
 minecraft:coal_block{}
 minecraft:coal_ore{}
 minecraft:coarse_dirt{}
@@ -229,6 +232,7 @@ minecraft:cracked_polished_blackstone_bricks{}
 minecraft:cracked_stone_bricks{}
 minecraft:crafter{crafting[0, 1], orientation[up_east, up_south, west_up, up_north, north_up, down_west, down_east, south_up, up_west, down_south, east_up, down_north], triggered_bit[0, 1]}
 minecraft:crafting_table{}
+minecraft:creaking_heart{active[0, 1], natural[0, 1], pillar_axis[x, y, z]}
 minecraft:creeper_head{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:crimson_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:crimson_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
@@ -798,6 +802,7 @@ minecraft:oak_wood{pillar_axis[x, y, z]}
 minecraft:observer{minecraft:facing_direction[east, south, north, west, up, down], powered_bit[0, 1]}
 minecraft:obsidian{}
 minecraft:ochre_froglight{pillar_axis[x, y, z]}
+minecraft:open_eyeblossom{}
 minecraft:orange_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:orange_candle_cake{lit[0, 1]}
 minecraft:orange_carpet{}
@@ -823,6 +828,26 @@ minecraft:oxidized_cut_copper_stairs{upside_down_bit[0, 1], weirdo_direction[0, 
 minecraft:oxidized_double_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:packed_ice{}
 minecraft:packed_mud{}
+minecraft:pale_hanging_moss{tip[0, 1]}
+minecraft:pale_moss_block{}
+minecraft:pale_moss_carpet{pale_moss_carpet_side_east[short, none, tall], pale_moss_carpet_side_north[short, none, tall], pale_moss_carpet_side_south[short, none, tall], pale_moss_carpet_side_west[short, none, tall], upper_block_bit[0, 1]}
+minecraft:pale_oak_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:pale_oak_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:pale_oak_double_slab{minecraft:vertical_half[top, bottom]}
+minecraft:pale_oak_fence{}
+minecraft:pale_oak_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
+minecraft:pale_oak_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
+minecraft:pale_oak_leaves{persistent_bit[0, 1], update_bit[0, 1]}
+minecraft:pale_oak_log{pillar_axis[x, y, z]}
+minecraft:pale_oak_planks{}
+minecraft:pale_oak_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
+minecraft:pale_oak_sapling{age_bit[0, 1]}
+minecraft:pale_oak_slab{minecraft:vertical_half[top, bottom]}
+minecraft:pale_oak_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
+minecraft:pale_oak_standing_sign{ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
+minecraft:pale_oak_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
+minecraft:pale_oak_wall_sign{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:pale_oak_wood{pillar_axis[x, y, z]}
 minecraft:pearlescent_froglight{pillar_axis[x, y, z]}
 minecraft:peony{upper_block_bit[0, 1]}
 minecraft:petrified_oak_double_slab{minecraft:vertical_half[top, bottom]}
@@ -961,6 +986,13 @@ minecraft:reeds{age[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:reinforced_deepslate{}
 minecraft:repeating_command_block{conditional_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:reserved6{}
+minecraft:resin_block{}
+minecraft:resin_brick_double_slab{minecraft:vertical_half[top, bottom]}
+minecraft:resin_brick_slab{minecraft:vertical_half[top, bottom]}
+minecraft:resin_brick_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
+minecraft:resin_brick_wall{wall_connection_type_east[short, none, tall], wall_connection_type_north[short, none, tall], wall_connection_type_south[short, none, tall], wall_connection_type_west[short, none, tall], wall_post_bit[0, 1]}
+minecraft:resin_bricks{}
+minecraft:resin_clump{multi_face_direction_bits[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63]}
 minecraft:respawn_anchor{respawn_anchor_charge[0, 1, 2, 3, 4]}
 minecraft:rose_bush{upper_block_bit[0, 1]}
 minecraft:sand{}
@@ -1063,6 +1095,8 @@ minecraft:stripped_mangrove_log{pillar_axis[x, y, z]}
 minecraft:stripped_mangrove_wood{pillar_axis[x, y, z]}
 minecraft:stripped_oak_log{pillar_axis[x, y, z]}
 minecraft:stripped_oak_wood{pillar_axis[x, y, z]}
+minecraft:stripped_pale_oak_log{pillar_axis[x, y, z]}
+minecraft:stripped_pale_oak_wood{pillar_axis[x, y, z]}
 minecraft:stripped_spruce_log{pillar_axis[x, y, z]}
 minecraft:stripped_spruce_wood{pillar_axis[x, y, z]}
 minecraft:stripped_warped_hyphae{pillar_axis[x, y, z]}
