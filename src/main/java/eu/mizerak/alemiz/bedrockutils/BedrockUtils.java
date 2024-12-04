@@ -10,6 +10,7 @@ public class BedrockUtils {
 
     public static void saveCompound(Object tag, String fileName) {
         File file = new File(System.getProperty("user.dir"), fileName);
+        file.getParentFile().mkdirs();
         try (OutputStream stream = new FileOutputStream(file);
              NBTOutputStream outputStream = NbtUtils.createWriter(stream)) {
             outputStream.writeTag(tag);
@@ -20,6 +21,8 @@ public class BedrockUtils {
 
     public static void saveCompoundCompressed(Object tag, String fileName) {
         File file = new File(System.getProperty("user.dir"), fileName);
+        file.getParentFile().mkdirs();
+
         try (OutputStream stream = new FileOutputStream(file);
              NBTOutputStream outputStream = NbtUtils.createGZIPWriter(stream)) {
             outputStream.writeTag(tag);
@@ -30,6 +33,7 @@ public class BedrockUtils {
 
     public static Object loadNetworkCompound(String fileName) {
         File file = new File(System.getProperty("user.dir"), fileName);
+        file.getParentFile().mkdirs();
         try (InputStream stream = new FileInputStream(file);
              NBTInputStream inputStream = NbtUtils.createNetworkReader(stream)) {
             return inputStream.readTag();
@@ -40,6 +44,7 @@ public class BedrockUtils {
 
     public static void saveBytes(byte[] bytes, String fileName) {
         File file = new File(System.getProperty("user.dir"), fileName);
+        file.getParentFile().mkdirs();
         try (OutputStream stream = new FileOutputStream(file)) {
             stream.write(bytes);
         } catch (IOException e) {

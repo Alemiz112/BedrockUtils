@@ -999,6 +999,7 @@
       2,
       3,
       4,
+      // there is no 5 - 7 because of some weird Nukkit logic
       8,
       9,
       10,
@@ -2219,7 +2220,9 @@
       4,
       5,
       6,
-      7
+      7,
+      8,
+      9
     ],
     "frosted_ice": [
       0,
@@ -5006,7 +5009,9 @@
       4,
       5,
       6,
-      7
+      7,
+      8,
+      9
     ],
     "copper_block": [
       0
@@ -6106,6 +6111,21 @@
       13,
       14,
       15
+    ],
+    "ochre_froglight": [
+      0,
+      1,
+      2
+    ],
+    "pearlescent_froglight": [
+      0,
+      1,
+      2
+    ],
+    "verdant_froglight": [
+      0,
+      1,
+      2
     ]
   }
 }

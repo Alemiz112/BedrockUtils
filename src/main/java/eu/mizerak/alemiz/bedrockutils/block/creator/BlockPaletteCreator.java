@@ -1,5 +1,7 @@
 package eu.mizerak.alemiz.bedrockutils.block.creator;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import eu.mizerak.alemiz.bedrockutils.block.state.BlockDefinition;
@@ -166,7 +168,8 @@ public abstract class BlockPaletteCreator {
     public JsonObject getRequiredBlockStates() {
         JsonObject json;
         try (InputStream stream = BlockStateUpdaters.class.getClassLoader().getResourceAsStream("block/required_block_states.json")) {
-            json = (JsonObject) JsonParser.parseReader(new InputStreamReader(stream, StandardCharsets.UTF_8));
+            Gson gson = new GsonBuilder().setLenient().create();
+            json = gson.fromJson(new InputStreamReader(stream, StandardCharsets.UTF_8), JsonObject.class);
         } catch (Exception e) {
             throw new AssertionError("Error loading required block states!");
         }

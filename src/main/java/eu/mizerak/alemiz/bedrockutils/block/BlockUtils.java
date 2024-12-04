@@ -94,6 +94,7 @@ public class BlockUtils {
         System.out.println(BlockStateUpdaters.getLatestVersion());
 
         // updateBlockIdsJson(Paths.get("block_id_map.json"));
+        generateAllPalettes();
     }
 
     public static BlockPalette generateBlockPalette(BlockPaletteCreator blockCreator, String saveFile) {
@@ -200,6 +201,14 @@ public class BlockUtils {
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         BedrockUtils.saveBytes(gson.toJson(newMapping).getBytes(StandardCharsets.UTF_8), "block_id_map_new.json");
+    }
+
+    public static void generateAllPalettes() {
+        for (BlockPaletteCreator creator : CREATORS) {
+            int version = getBedrockVersion(creator);
+            BlockPalette palette = generateBlockPalette(creator, "all/runtime_block_states_" + version + ".dat");
+            withMissingBlockStates(creator, palette, "all/full_runtime_block_states_" + version + ".dat");
+        }
     }
 
     public static int getBedrockVersion(BlockPaletteCreator creator) {

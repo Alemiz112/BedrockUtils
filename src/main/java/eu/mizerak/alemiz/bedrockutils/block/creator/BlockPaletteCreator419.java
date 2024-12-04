@@ -51,6 +51,7 @@ public class BlockPaletteCreator419 extends BlockPaletteCreator {
 
         for (String blockIdentifier : requiredStates.keySet()) {
             JsonArray blockValues = requiredStates.getAsJsonArray(blockIdentifier);
+            int counter = 0;
             for (JsonElement element : blockValues) {
                 String identifier = "minecraft:" + blockIdentifier;
                 int blockId = blockIdMap.getBlockId("_" + identifier); // check for legacy block id first
@@ -58,14 +59,20 @@ public class BlockPaletteCreator419 extends BlockPaletteCreator {
                     blockId = blockIdMap.getBlockId(identifier);
                 }
 
+                int damage = counter++;
+
                 if (blockId == -1) {
                     log.warn("Can not find blockId for " + identifier);
                     continue;
                 }
 
-                short damage = element.getAsShort();
-                NbtMap blockState = this.createUpdaterState(identifier, damage);
-                createdStates.add(new BlockState(identifier, blockId, damage, blockState));
+                short nukkitDamage = element.getAsShort();
+                if (damage != nukkitDamage) {
+                    log.info("Damage mismatch for {} expected {} but got {}! This is probably not intentional", identifier, damage, nukkitDamage);
+                }
+
+                NbtMap blockState = this.createUpdaterState(identifier, (short) damage);
+                createdStates.add(new BlockState(identifier, blockId, nukkitDamage, blockState));
             }
         }
 
