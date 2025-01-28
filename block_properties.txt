@@ -1,8 +1,8 @@
 minecraft:acacia_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
-minecraft:acacia_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:acacia_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:acacia_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:acacia_fence{}
-minecraft:acacia_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
+minecraft:acacia_fence_gate{in_wall_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1]}
 minecraft:acacia_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
 minecraft:acacia_leaves{persistent_bit[0, 1], update_bit[0, 1]}
 minecraft:acacia_log{pillar_axis[x, y, z]}
@@ -35,10 +35,10 @@ minecraft:azure_bluet{}
 minecraft:bamboo{age_bit[0, 1], bamboo_leaf_size[small_leaves, large_leaves, no_leaves], bamboo_stalk_thickness[thick, thin]}
 minecraft:bamboo_block{pillar_axis[x, y, z]}
 minecraft:bamboo_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
-minecraft:bamboo_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:bamboo_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:bamboo_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:bamboo_fence{}
-minecraft:bamboo_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
+minecraft:bamboo_fence_gate{in_wall_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1]}
 minecraft:bamboo_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
 minecraft:bamboo_mosaic{}
 minecraft:bamboo_mosaic_double_slab{minecraft:vertical_half[top, bottom]}
@@ -64,10 +64,10 @@ minecraft:beetroot{growth[0, 1, 2, 3, 4, 5, 6, 7]}
 minecraft:bell{attachment[standing, side, multiple, hanging], direction[0, 1, 2, 3], toggle_bit[0, 1]}
 minecraft:big_dripleaf{big_dripleaf_head[0, 1], big_dripleaf_tilt[unstable, partial_tilt, full_tilt, none], minecraft:cardinal_direction[east, south, north, west]}
 minecraft:birch_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
-minecraft:birch_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:birch_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:birch_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:birch_fence{}
-minecraft:birch_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
+minecraft:birch_fence_gate{in_wall_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1]}
 minecraft:birch_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
 minecraft:birch_leaves{persistent_bit[0, 1], update_bit[0, 1]}
 minecraft:birch_log{pillar_axis[x, y, z]}
@@ -162,10 +162,10 @@ minecraft:chain_command_block{conditional_bit[0, 1], facing_direction[0, 1, 2, 3
 minecraft:chalkboard{direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:chemical_heat{}
 minecraft:cherry_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
-minecraft:cherry_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:cherry_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:cherry_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:cherry_fence{}
-minecraft:cherry_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
+minecraft:cherry_fence_gate{in_wall_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1]}
 minecraft:cherry_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
 minecraft:cherry_leaves{persistent_bit[0, 1], update_bit[0, 1]}
 minecraft:cherry_log{pillar_axis[x, y, z]}
@@ -220,7 +220,7 @@ minecraft:compound_creator{direction[0, 1, 2, 3]}
 minecraft:conduit{}
 minecraft:copper_block{}
 minecraft:copper_bulb{lit[0, 1], powered_bit[0, 1]}
-minecraft:copper_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:copper_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:copper_grate{}
 minecraft:copper_ore{}
 minecraft:copper_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
@@ -232,13 +232,13 @@ minecraft:cracked_polished_blackstone_bricks{}
 minecraft:cracked_stone_bricks{}
 minecraft:crafter{crafting[0, 1], orientation[up_east, up_south, west_up, up_north, north_up, down_west, down_east, south_up, up_west, down_south, east_up, down_north], triggered_bit[0, 1]}
 minecraft:crafting_table{}
-minecraft:creaking_heart{active[0, 1], natural[0, 1], pillar_axis[x, y, z]}
+minecraft:creaking_heart{creaking_heart_state[uprooted, dormant, awake], natural[0, 1], pillar_axis[x, y, z]}
 minecraft:creeper_head{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:crimson_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
-minecraft:crimson_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:crimson_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:crimson_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:crimson_fence{}
-minecraft:crimson_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
+minecraft:crimson_fence_gate{in_wall_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1]}
 minecraft:crimson_fungus{}
 minecraft:crimson_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
 minecraft:crimson_hyphae{pillar_axis[x, y, z]}
@@ -276,10 +276,10 @@ minecraft:cyan_wool{}
 minecraft:damaged_anvil{minecraft:cardinal_direction[east, south, north, west]}
 minecraft:dandelion{}
 minecraft:dark_oak_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
-minecraft:dark_oak_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:dark_oak_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:dark_oak_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:dark_oak_fence{}
-minecraft:dark_oak_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
+minecraft:dark_oak_fence_gate{in_wall_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1]}
 minecraft:dark_oak_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
 minecraft:dark_oak_leaves{persistent_bit[0, 1], update_bit[0, 1]}
 minecraft:dark_oak_log{pillar_axis[x, y, z]}
@@ -497,7 +497,7 @@ minecraft:ender_chest{minecraft:cardinal_direction[east, south, north, west]}
 minecraft:exposed_chiseled_copper{}
 minecraft:exposed_copper{}
 minecraft:exposed_copper_bulb{lit[0, 1], powered_bit[0, 1]}
-minecraft:exposed_copper_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:exposed_copper_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:exposed_copper_grate{}
 minecraft:exposed_copper_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
 minecraft:exposed_cut_copper{}
@@ -505,7 +505,7 @@ minecraft:exposed_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:exposed_cut_copper_stairs{upside_down_bit[0, 1], weirdo_direction[0, 1, 2, 3]}
 minecraft:exposed_double_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:farmland{moisturized_amount[0, 1, 2, 3, 4, 5, 6, 7]}
-minecraft:fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
+minecraft:fence_gate{in_wall_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1]}
 minecraft:fern{}
 minecraft:fire{age[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:fire_coral{}
@@ -621,16 +621,16 @@ minecraft:info_update2{}
 minecraft:invisible_bedrock{}
 minecraft:iron_bars{}
 minecraft:iron_block{}
-minecraft:iron_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:iron_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:iron_ore{}
 minecraft:iron_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
 minecraft:jigsaw{facing_direction[0, 1, 2, 3, 4, 5], rotation[0, 1, 2, 3]}
 minecraft:jukebox{}
 minecraft:jungle_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
-minecraft:jungle_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:jungle_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:jungle_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:jungle_fence{}
-minecraft:jungle_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
+minecraft:jungle_fence_gate{in_wall_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1]}
 minecraft:jungle_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
 minecraft:jungle_leaves{persistent_bit[0, 1], update_bit[0, 1]}
 minecraft:jungle_log{pillar_axis[x, y, z]}
@@ -728,10 +728,10 @@ minecraft:magenta_terracotta{}
 minecraft:magenta_wool{}
 minecraft:magma{}
 minecraft:mangrove_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
-minecraft:mangrove_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:mangrove_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:mangrove_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:mangrove_fence{}
-minecraft:mangrove_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
+minecraft:mangrove_fence_gate{in_wall_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1]}
 minecraft:mangrove_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
 minecraft:mangrove_leaves{persistent_bit[0, 1], update_bit[0, 1]}
 minecraft:mangrove_log{pillar_axis[x, y, z]}
@@ -819,7 +819,7 @@ minecraft:oxeye_daisy{}
 minecraft:oxidized_chiseled_copper{}
 minecraft:oxidized_copper{}
 minecraft:oxidized_copper_bulb{lit[0, 1], powered_bit[0, 1]}
-minecraft:oxidized_copper_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:oxidized_copper_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:oxidized_copper_grate{}
 minecraft:oxidized_copper_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
 minecraft:oxidized_cut_copper{}
@@ -832,10 +832,10 @@ minecraft:pale_hanging_moss{tip[0, 1]}
 minecraft:pale_moss_block{}
 minecraft:pale_moss_carpet{pale_moss_carpet_side_east[short, none, tall], pale_moss_carpet_side_north[short, none, tall], pale_moss_carpet_side_south[short, none, tall], pale_moss_carpet_side_west[short, none, tall], upper_block_bit[0, 1]}
 minecraft:pale_oak_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
-minecraft:pale_oak_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:pale_oak_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:pale_oak_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:pale_oak_fence{}
-minecraft:pale_oak_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
+minecraft:pale_oak_fence_gate{in_wall_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1]}
 minecraft:pale_oak_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
 minecraft:pale_oak_leaves{persistent_bit[0, 1], update_bit[0, 1]}
 minecraft:pale_oak_log{pillar_axis[x, y, z]}
@@ -1047,10 +1047,10 @@ minecraft:soul_torch{torch_facing_direction[east, top, south, north, west, unkno
 minecraft:sponge{}
 minecraft:spore_blossom{}
 minecraft:spruce_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
-minecraft:spruce_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:spruce_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:spruce_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:spruce_fence{}
-minecraft:spruce_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
+minecraft:spruce_fence_gate{in_wall_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1]}
 minecraft:spruce_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
 minecraft:spruce_leaves{persistent_bit[0, 1], update_bit[0, 1]}
 minecraft:spruce_log{pillar_axis[x, y, z]}
@@ -1148,10 +1148,10 @@ minecraft:vine{vine_direction_bits[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
 minecraft:wall_banner{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:wall_sign{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:warped_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
-minecraft:warped_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:warped_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:warped_double_slab{minecraft:vertical_half[top, bottom]}
 minecraft:warped_fence{}
-minecraft:warped_fence_gate{direction[0, 1, 2, 3], in_wall_bit[0, 1], open_bit[0, 1]}
+minecraft:warped_fence_gate{in_wall_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1]}
 minecraft:warped_fungus{}
 minecraft:warped_hanging_sign{attached_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5], ground_sign_direction[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], hanging[0, 1]}
 minecraft:warped_hyphae{pillar_axis[x, y, z]}
@@ -1171,7 +1171,7 @@ minecraft:waterlily{}
 minecraft:waxed_chiseled_copper{}
 minecraft:waxed_copper{}
 minecraft:waxed_copper_bulb{lit[0, 1], powered_bit[0, 1]}
-minecraft:waxed_copper_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:waxed_copper_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:waxed_copper_grate{}
 minecraft:waxed_copper_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
 minecraft:waxed_cut_copper{}
@@ -1181,7 +1181,7 @@ minecraft:waxed_double_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:waxed_exposed_chiseled_copper{}
 minecraft:waxed_exposed_copper{}
 minecraft:waxed_exposed_copper_bulb{lit[0, 1], powered_bit[0, 1]}
-minecraft:waxed_exposed_copper_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:waxed_exposed_copper_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:waxed_exposed_copper_grate{}
 minecraft:waxed_exposed_copper_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
 minecraft:waxed_exposed_cut_copper{}
@@ -1191,7 +1191,7 @@ minecraft:waxed_exposed_double_cut_copper_slab{minecraft:vertical_half[top, bott
 minecraft:waxed_oxidized_chiseled_copper{}
 minecraft:waxed_oxidized_copper{}
 minecraft:waxed_oxidized_copper_bulb{lit[0, 1], powered_bit[0, 1]}
-minecraft:waxed_oxidized_copper_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:waxed_oxidized_copper_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:waxed_oxidized_copper_grate{}
 minecraft:waxed_oxidized_copper_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
 minecraft:waxed_oxidized_cut_copper{}
@@ -1201,7 +1201,7 @@ minecraft:waxed_oxidized_double_cut_copper_slab{minecraft:vertical_half[top, bot
 minecraft:waxed_weathered_chiseled_copper{}
 minecraft:waxed_weathered_copper{}
 minecraft:waxed_weathered_copper_bulb{lit[0, 1], powered_bit[0, 1]}
-minecraft:waxed_weathered_copper_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:waxed_weathered_copper_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:waxed_weathered_copper_grate{}
 minecraft:waxed_weathered_copper_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
 minecraft:waxed_weathered_cut_copper{}
@@ -1211,7 +1211,7 @@ minecraft:waxed_weathered_double_cut_copper_slab{minecraft:vertical_half[top, bo
 minecraft:weathered_chiseled_copper{}
 minecraft:weathered_copper{}
 minecraft:weathered_copper_bulb{lit[0, 1], powered_bit[0, 1]}
-minecraft:weathered_copper_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:weathered_copper_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:weathered_copper_grate{}
 minecraft:weathered_copper_trapdoor{direction[0, 1, 2, 3], open_bit[0, 1], upside_down_bit[0, 1]}
 minecraft:weathered_cut_copper{}
@@ -1237,7 +1237,7 @@ minecraft:white_wool{}
 minecraft:wither_rose{}
 minecraft:wither_skeleton_skull{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:wooden_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
-minecraft:wooden_door{direction[0, 1, 2, 3], door_hinge_bit[0, 1], open_bit[0, 1], upper_block_bit[0, 1]}
+minecraft:wooden_door{door_hinge_bit[0, 1], minecraft:cardinal_direction[east, south, north, west], open_bit[0, 1], upper_block_bit[0, 1]}
 minecraft:wooden_pressure_plate{redstone_signal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
 minecraft:yellow_candle{candles[0, 1, 2, 3], lit[0, 1]}
 minecraft:yellow_candle_cake{lit[0, 1]}

@@ -67,6 +67,7 @@ public class BlockUtils {
         CREATORS.add(new BlockPaletteCreator729()); // structure_void, tnt, sponge, purpur_block, cobblestone_wall, and some edu blocks were split
         CREATORS.add(new BlockPaletteCreator748()); // skull and brown_mushroom_block blocks were flattened, and this should be the end of flattening YAY
         CREATORS.add(new BlockPaletteCreator765());
+        CREATORS.add(new BlockPaletteCreator776()); // doors, gates use cardinal_direction now
     }
 
     public static void main(String[] args) {
@@ -88,13 +89,13 @@ public class BlockUtils {
 
         // findExtraStates(latest, creators.get(creators.size() - 2));
 
-        int vanilla = CompoundTagUpdaterContext.makeVersion(1, 21, 40);
+        int vanilla = CompoundTagUpdaterContext.makeVersion(1, 21, 60);
         System.out.println(1 + (latest.getVersion() - vanilla));
 
         System.out.println(BlockStateUpdaters.getLatestVersion());
 
         // updateBlockIdsJson(Paths.get("block_id_map.json"));
-        generateAllPalettes();
+        // generateAllPalettes();
     }
 
     public static BlockPalette generateBlockPalette(BlockPaletteCreator blockCreator, String saveFile) {
