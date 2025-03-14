@@ -68,6 +68,7 @@ public class BlockUtils {
         CREATORS.add(new BlockPaletteCreator748()); // skull and brown_mushroom_block blocks were flattened, and this should be the end of flattening YAY
         CREATORS.add(new BlockPaletteCreator765());
         CREATORS.add(new BlockPaletteCreator776()); // doors, gates use cardinal_direction now
+        CREATORS.add(new BlockPaletteCreator785());
     }
 
     public static void main(String[] args) {

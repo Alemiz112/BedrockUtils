@@ -142,7 +142,9 @@ minecraft:bubble_coral_block{}
 minecraft:bubble_coral_fan{coral_fan_direction[0, 1]}
 minecraft:bubble_coral_wall_fan{coral_direction[0, 1, 2, 3]}
 minecraft:budding_amethyst{}
+minecraft:bush{}
 minecraft:cactus{age[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
+minecraft:cactus_flower{}
 minecraft:cake{bite_counter[0, 1, 2, 3, 4, 5, 6]}
 minecraft:calcite{}
 minecraft:calibrated_sculk_sensor{minecraft:cardinal_direction[east, south, north, west], sculk_sensor_phase[0, 1, 2]}
@@ -512,6 +514,7 @@ minecraft:fire_coral{}
 minecraft:fire_coral_block{}
 minecraft:fire_coral_fan{coral_fan_direction[0, 1]}
 minecraft:fire_coral_wall_fan{coral_direction[0, 1, 2, 3]}
+minecraft:firefly_bush{}
 minecraft:fletching_table{}
 minecraft:flower_pot{update_bit[0, 1]}
 minecraft:flowering_azalea{}
@@ -652,6 +655,7 @@ minecraft:lapis_ore{}
 minecraft:large_amethyst_bud{minecraft:block_face[east, south, north, west, up, down]}
 minecraft:large_fern{upper_block_bit[0, 1]}
 minecraft:lava{liquid_depth[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
+minecraft:leaf_litter{growth[0, 1, 2, 3, 4, 5, 6, 7], minecraft:cardinal_direction[east, south, north, west]}
 minecraft:lectern{minecraft:cardinal_direction[east, south, north, west], powered_bit[0, 1]}
 minecraft:lever{lever_direction[east, south, north, up_north_south, west, down_east_west, down_north_south, up_east_west], open_bit[0, 1]}
 minecraft:light_block_0{}
@@ -1010,6 +1014,7 @@ minecraft:sculk_vein{multi_face_direction_bits[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
 minecraft:sea_lantern{}
 minecraft:sea_pickle{cluster_count[0, 1, 2, 3], dead_bit[0, 1]}
 minecraft:seagrass{sea_grass_type[default, double_bot, double_top]}
+minecraft:short_dry_grass{}
 minecraft:short_grass{}
 minecraft:shroomlight{}
 minecraft:silver_glazed_terracotta{facing_direction[0, 1, 2, 3, 4, 5]}
@@ -1107,6 +1112,7 @@ minecraft:sunflower{upper_block_bit[0, 1]}
 minecraft:suspicious_gravel{brushed_progress[0, 1, 2, 3], hanging[0, 1]}
 minecraft:suspicious_sand{brushed_progress[0, 1, 2, 3], hanging[0, 1]}
 minecraft:sweet_berry_bush{growth[0, 1, 2, 3, 4, 5, 6, 7]}
+minecraft:tall_dry_grass{}
 minecraft:tall_grass{upper_block_bit[0, 1]}
 minecraft:target{}
 minecraft:tinted_glass{}
@@ -1234,6 +1240,7 @@ minecraft:white_stained_glass_pane{}
 minecraft:white_terracotta{}
 minecraft:white_tulip{}
 minecraft:white_wool{}
+minecraft:wildflowers{growth[0, 1, 2, 3, 4, 5, 6, 7], minecraft:cardinal_direction[east, south, north, west]}
 minecraft:wither_rose{}
 minecraft:wither_skeleton_skull{facing_direction[0, 1, 2, 3, 4, 5]}
 minecraft:wooden_button{button_pressed_bit[0, 1], facing_direction[0, 1, 2, 3, 4, 5]}
