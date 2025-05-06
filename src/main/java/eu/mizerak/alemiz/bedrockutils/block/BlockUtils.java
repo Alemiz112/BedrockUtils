@@ -69,6 +69,7 @@ public class BlockUtils {
         CREATORS.add(new BlockPaletteCreator765());
         CREATORS.add(new BlockPaletteCreator776()); // doors, gates use cardinal_direction now
         CREATORS.add(new BlockPaletteCreator785());
+        CREATORS.add(new BlockPaletteCreator800());
     }
 
     public static void main(String[] args) {

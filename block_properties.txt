@@ -359,6 +359,7 @@ minecraft:dispenser{facing_direction[0, 1, 2, 3, 4, 5], triggered_bit[0, 1]}
 minecraft:double_cut_copper_slab{minecraft:vertical_half[top, bottom]}
 minecraft:dragon_egg{}
 minecraft:dragon_head{facing_direction[0, 1, 2, 3, 4, 5]}
+minecraft:dried_ghast{minecraft:cardinal_direction[east, south, north, west], rehydration_level[0, 1, 2, 3]}
 minecraft:dried_kelp_block{}
 minecraft:dripstone_block{}
 minecraft:dropper{facing_direction[0, 1, 2, 3, 4, 5], triggered_bit[0, 1]}
