@@ -38,3 +38,4 @@ package-lock.json
 *.dat
 
 runtime_block_states*
+full_runtime_block_states_*.nbt
