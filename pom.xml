@@ -18,7 +18,7 @@
         <dependency>
             <groupId>org.cloudburstmc</groupId>
             <artifactId>block-state-updater</artifactId>
-            <version>1.21.60-SNAPSHOT</version>
+            <version>1.21.110-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.cloudburstmc</groupId>
