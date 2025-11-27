@@ -71,6 +71,7 @@ public class BlockUtils {
         CREATORS.add(new BlockPaletteCreator800());
         CREATORS.add(new BlockPaletteCreator827());
         CREATORS.add(new BlockPaletteCreator843());
+        CREATORS.add(new BlockPaletteCreator859());
     }
 
     public static void main(String[] args) {

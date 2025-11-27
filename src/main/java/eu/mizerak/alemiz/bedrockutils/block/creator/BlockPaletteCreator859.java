@@ -1,14 +1,14 @@
 package eu.mizerak.alemiz.bedrockutils.block.creator;
 
-public class BlockPaletteCreator554 extends BlockPaletteCreator544 {
+public class BlockPaletteCreator859 extends BlockPaletteCreator843 {
 
     @Override
     public String getPaletteFileName() {
-        return "block/block_palette_554.nbt";
+        return "block/block_palette_859.nbt";
     }
 
     @Override
     public int getVersion() {
-        return 17959425;
+        return 18168865;
     }
 }

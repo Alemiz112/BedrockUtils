@@ -5,7 +5,7 @@ import org.cloudburstmc.blockstateupdater.BlockStateUpdater_1_21_110;
 
 import java.util.List;
 
-public class BlockPaletteCreator843 extends BlockPaletteCreator800 {
+public class BlockPaletteCreator843 extends BlockPaletteCreator827 {
 
     @Override
     public List<BlockStateUpdater> getUpdaters() {

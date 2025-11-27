@@ -1,9 +1,5 @@
 package eu.mizerak.alemiz.bedrockutils.block.creator;
 
-import org.cloudburstmc.blockstateupdater.BlockStateUpdater;
-
-import java.util.List;
-
 public class BlockPaletteCreator567 extends BlockPaletteCreator560 {
 
     @Override
