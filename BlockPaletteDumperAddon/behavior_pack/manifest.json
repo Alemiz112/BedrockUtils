@@ -5,7 +5,7 @@
         "description": "",
         "uuid": "9d1628ee-94b9-4a2a-accd-dc712eb531bd",
         "version": [ 1, 0, 2 ],
-        "min_engine_version": [ 1, 20, 40 ]
+        "min_engine_version": [ 1, 21, 130 ]
     },
     "modules": [
         {
@@ -25,7 +25,7 @@
     "dependencies": [
         {
             "module_name": "@minecraft/server",
-            "version": "1.7.0-beta"
+            "version": "2.4.0"
         },
         {
             "module_name": "@minecraft/server-admin",
