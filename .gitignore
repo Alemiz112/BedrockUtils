@@ -39,3 +39,4 @@ package-lock.json
 
 runtime_block_states*
 full_runtime_block_states_*.nbt
+BlockPaletteDumperAddon/http_server/block_states.json
