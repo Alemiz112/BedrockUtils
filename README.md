@@ -14,9 +14,21 @@ A vanilla-like block palette can be obtained from the game using the custom addo
 
 This tool requires BDS (Bedrock Dedicated Server). To set it up:
 
-1. Copy the `behavior_pack` directory into the `development_behavior_packs` folder of your BDS installation.
+1. Run the server once to generate the world files, then stop it.
 
-2. Enable the `@minecraft/server-net` module by modifying `config/default/permissions.json`:
+2. Copy the `behavior_pack` directory into the `development_behavior_packs` folder of your BDS installation.
+
+3. Add the behavior pack to your world by editing `worlds/Bedrock level/world_behavior_packs.json`:
+```json
+[
+    {
+        "pack_id": "9d1628ee-94b9-4a2a-accd-dc712eb531bd",
+        "version": [1, 0, 2]
+    }
+]
+```
+
+4. Enable the `@minecraft/server-net` module by modifying `config/default/permissions.json`:
 ```diff
  {
    "allowed_modules": [
@@ -39,11 +51,18 @@ This tool requires BDS (Bedrock Dedicated Server). To set it up:
 npm install
 ```
 
-This will install the required packages from `package.json`
-
-1. Start the server:
+3. Start the server:
 ```bash
 node index.js
 ```
 
-The server will listen on port 2001 and save the received block palette data from BDS.
+The server will listen on port 2001 and save the received block palette data.
+
+### Exporting
+
+Once everything is set up, run the following command to process and send the block palette data to the HTTP server:
+```bash
+gametest run blockdumptool:dump_all
+```
+
+This command can be run from the in-game chat or via the server console.
