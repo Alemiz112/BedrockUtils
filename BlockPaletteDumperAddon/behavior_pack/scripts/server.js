@@ -5,7 +5,10 @@ import {
     world,
     BlockComponentTypes,
     TickingAreaManager,
-    system
+    system,
+    ItemTypes,
+    ItemStack,
+    ItemType
 } from "@minecraft/server";
 
 import {
@@ -27,6 +30,8 @@ let currentPos = { x: BOUNDS.minX, y: BOUNDS.maxY, z: BOUNDS.minZ };
 world.afterEvents.worldLoad.subscribe(async () => {
     await world.tickingAreaManager.createTickingArea("state-dumper-tool", { dimension: world.getDimension("overworld"), from: { x: BOUNDS.minX, y: BOUNDS.minY, z: BOUNDS.minZ }, to: { x: BOUNDS.maxX, y: BOUNDS.maxY, z: BOUNDS.maxZ } });
     console.warn("Ready!");
+
+    dumpAllItems();
 });
 
 function nextPos() {
@@ -80,7 +85,7 @@ function stringifyState(state) {
     return str.slice(0, -1);
 }
 
-async function dumpAll(test) {
+async function dumpAllBlocks(test) {
     let data = {
         blocks: [],
         properties: [],
@@ -130,13 +135,71 @@ async function dumpAll(test) {
         }
     }
 
-    let request = new HttpRequest("http://localhost:2001");
+    let request = new HttpRequest("http://localhost:2001/blocks");
     request.setMethod(HttpRequestMethod.Post);
     request.setBody(JSON.stringify(data));
     http.request(request);
     test.succeed();
 }
 
-GameTest.register("blockdumptool", "dump_all", dumpAll).maxTicks(1000)
-    .structureName("blockdumptool:dump_all")
+function dumpAllItems() {
+    let data = {
+        items: []
+    }
+
+    const itemTypes = ItemTypes.getAll();   
+    for (const i in itemTypes) {
+        const type = itemTypes[i];
+        let stack = new ItemStack(type);
+        const itemData = {
+            type,
+            tags: stack.getTags(),
+            components: {}
+        }
+        let cooldownComponent = stack.getComponent("minecraft:cooldown");
+        if (cooldownComponent) {
+            itemData.components["minecraft:cooldown"] = {
+                "cooldownCategory": cooldownComponent.cooldownCategory,
+                "cooldownTicks": cooldownComponent.cooldownTicks
+            };
+        }
+        let dyeableComponent = stack.getComponent("minecraft:dyeable");
+        if (dyeableComponent) {
+            itemData.components["minecraft:dyeable"] = {
+                "defaultColor": dyeableComponent.defaultColor ? rgbaToHex(dyeableComponent.defaultColor) : undefined
+            };
+        }
+        let compostableComponent = stack.getComponent("minecraft:compostable");
+        if (compostableComponent) {
+            itemData.components["minecraft:compostable"] = {
+                "compostingChance": compostableComponent.compostingChance
+            };
+        }
+        let durabilityComponent = stack.getComponent("minecraft:durability");
+        if (durabilityComponent) {
+            let temp = {
+                "maxDurability": durabilityComponent.maxDurability,
+            };
+            try {
+                let range = durabilityComponent.getDamageChanceRange();
+                temp["damageChanceRange"] = {min: range.min, max: range.max};
+                temp["damageChance"] = {};
+                for (let i = 0; i <= 3; i++) {
+                    temp.damageChance[i] = durabilityComponent.getDamageChance(i);
+                }
+            } catch(e) {
+
+            }
+            itemData.components["minecraft:durability"] = temp;
+        }
+        data.items.push(itemData);
+    }
+    let request = new HttpRequest("http://localhost:2001/items");
+    request.setMethod(HttpRequestMethod.Post);
+    request.setBody(JSON.stringify(data));
+    http.request(request);
+}
+
+GameTest.register("dumptool", "blocks", dumpAllBlocks).maxTicks(1000)
+    .structureName("dumptool:blocks")
     .structureLocation({x: 0, y: 0, z: 0 });
