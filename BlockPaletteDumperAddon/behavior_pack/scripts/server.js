@@ -77,12 +77,10 @@ function prepareStateData(test, pos, current, data) {
 }
 
 function stringifyState(state) {
-    let str = "";
-    for (const key in state) {
-        let value = state[key];
-        str += key + "=" + value + ";";
-    }
-    return str.slice(0, -1);
+    return Object.keys(state)
+        .sort()
+        .map(key => `${key}=${state[key]}`)
+        .join(";");
 }
 
 async function dumpAllBlocks(test) {
@@ -103,9 +101,10 @@ async function dumpAllBlocks(test) {
     let inc = 0;
     for (let i = 0; i < blocks.length; i++) {
         let permutation = BlockPermutation.resolve(blocks[i].id);
+        const stateKeys = Object.keys(permutation.getAllStates());
         let blockData = {
             blockId: blocks[i].id,
-            properties: Object.keys(permutation.getAllStates()),
+            properties: [...stateKeys].sort(),
             data: {}
         }
         for (const i in blockData.properties) {
