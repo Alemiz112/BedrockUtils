@@ -63,7 +63,8 @@ function prepareStateData(test, pos, current, data) {
     test.setBlockPermutation(current, pos);
     let block = test.getBlock(pos);
     //console.warn(block.type.id);
-    data.mapColor = rgbaToHex(block.getMapColor());
+    const mc = block.getComponent("minecraft:map_color");
+    data.mapColor = mc ? rgbaToHex(mc.color) : null;
     data.isWaterlogged = block.isWaterlogged;
     data.localizationKey = block.localizationKey;
     data.isLiquid = block.isLiquid;
